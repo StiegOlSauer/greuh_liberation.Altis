@@ -19,7 +19,6 @@ if ( count _allposts > 0 ) then {
 		_unitclasspost createUnit [ _squadpos, _grp2, 'nextunit_post = this; this addMPEventHandler [''MPKilled'', {_this spawn kill_manager}]', 0.5, 'private'];
 		nextunit_post setpos (_building_positions select 1);
 		nextunit_post setdir (180 + (getdir _x ));
-
 	} foreach _allposts;
 
 	_totalx2 = 0;
@@ -31,6 +30,10 @@ if ( count _allposts > 0 ) then {
 		_spawned_units_local pushback _x;
 		_totalx2 = _totalx2 + ((getpos _x) select 0);
 		_totaly2 = _totaly2 + ((getpos _x) select 1);
+		switch (typeOf _x) do {
+			case opfor_machinegunner: {[ _x ] call  opfor_heavygunner_loadout};
+			case opfor_marksman: {[ _x ] call  opfor_sharpshooter_loadout};			
+		};
 	} foreach (units _grp2);
 
 	_avgx2 = _totalx2 / ( count (units _grp2) );
