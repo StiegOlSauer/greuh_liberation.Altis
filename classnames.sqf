@@ -13,9 +13,10 @@ if ( isNil "FOB_box_typename" ) then { FOB_box_typename = "B_Slingload_01_Cargo_
 if ( isNil "FOB_truck_typename" ) then { FOB_truck_typename = "B_Truck_01_box_F"; };
 if ( isNil "Arsenal_typename" ) then { Arsenal_typename = "B_supplyCrate_F"; };
 if ( isNil "Respawn_truck_typename" ) then { Respawn_truck_typename = "B_Truck_01_medical_F"; };
-if ( isNil "huron_typename" ) then { huron_typename = "B_Heli_Transport_03_unarmed_F"; };
+if ( isNil "huron_typename" ) then { huron_typename = "RHS_CH_47F_10"; };
 if ( isNil "ammobox_b_typename" ) then { ammobox_b_typename = "Box_NATO_AmmoVeh_F"; };
 if ( isNil "ammobox_o_typename" ) then { ammobox_o_typename = "Box_East_AmmoVeh_F"; };
+if ( isNil "ammocrate_o_typename" ) then { ammocrate_o_typename = "Box_East_Wps_F"; };
 if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "O_Truck_03_transport_F"; };  // Make sure this thing can transport ammo boxes (see box_transport_config down below) otherwise thins will break
 
 
@@ -30,69 +31,69 @@ if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "O_Truck
 
 infantry_units = [
 ["B_soldier_F",2,0,0],
-["B_soldier_GL_F",3,0,0],
 ["B_soldier_AR_F",3,0,0],
 ["B_medic_F",3,0,0],
 ["B_soldier_M_F",3,0,0],
 ["B_engineer_F",3,0,0],
-["B_soldier_LAT_F",4,0,0],
-["B_Sharpshooter_F",5,0,0],
-["B_HeavyGunner_F",5,0,0],
-["B_recon_F",4,0,0],
 ["B_recon_medic_F",4,0,0],
-["B_recon_M_F",5,0,0],
-["B_Recon_Sharpshooter_F",8,0,0],
 ["B_soldier_AA_F",5,10,0],
 ["B_soldier_AT_F",5,10,0],
-["B_sniper_F",10,0,0],
-["B_soldier_PG_F",2,0,0],
 ["B_crew_F",1,0,0],
 ["B_helipilot_F",1,0,0]
 ];
 
 light_vehicles = [
 ["B_Quadbike_01_F",0,0,1],
-["B_MRAP_01_F",0,0,2],
-["B_MRAP_01_hmg_F",0,10,2],
-["B_MRAP_01_gmg_F",0,20,2],
-["B_Truck_01_transport_F",0,0,5],
-["B_Truck_01_covered_F",0,0,5],
-["B_UGV_01_F",0,0,5],
-["B_UGV_01_rcws_F",0,50,5],
+["CUP_O_UAZ_AGS30_RU",0,5,2],
+["CUP_B_LR_Special_Des_CZ_D",0,5,2],
+["rhs_tigr_sts_vv",0,15,5],
+["CUP_O_UAZ_METIS_RU",0,30,5],
+["CUP_O_BRDM2_CHDKZ",0,25,5],
+["CUP_O_BRDM2_ATGM_CHDKZ",0,50,5],
+["rhs_btr80a_vv",0,90,10],
 ["B_Boat_Transport_01_F",0,0,2],
 ["B_Boat_Armed_01_minigun_F",0,30,10]
 ];
 
 heavy_vehicles = [
-["B_APC_Wheeled_01_cannon_F",0,30,8],
-["B_APC_Tracked_01_rcws_F",0,30,15],
-["B_APC_Tracked_01_AA_F",0,40,15],
-["B_MBT_01_cannon_F",0,75,20],
-["B_MBT_01_TUSK_F",0,100,25],
-["B_MBT_01_arty_F",0,750,30],
-["B_MBT_01_mlrs_F",0,2500,100]
+["rhs_bmd1p",0,45,10],
+["rhs_bmp1p_msv",0,55,15],
+["rhs_bmd2m",0,135,10],
+["rhs_bmp2d_tv",0,100,15],
+["rhs_bmp3m_msv",0,160,15],
+["CUP_O_ZSU23_TK",0,90,20],
+["rhs_sprut_vdv",0,160,30],
+["rhs_t72ba_tv",0,200,35],
+["rhs_t72bc_tv",0,270,35],
+["rhs_t80a",0,300,40],
+["rhs_t90_tv",0,350,35],
+["rhs_t80um",0,380,40],
+["rhs_t72bd_tv",0,420,35],
+["rhs_2s3_tv",0,300,45],
+["RHS_BM21_MSV_01",0,350,55]
 ];
 
 air_vehicles = [
-["B_Heli_Light_01_F",0,0,10],
-["B_Heli_Light_01_armed_F",0,30,10],
-["B_Heli_Transport_01_F",0,20,12],
-["B_Heli_Transport_03_F",0,20,15],
-["B_Heli_Attack_01_F",0,150,30],
-["B_Plane_CAS_01_F",0,500,50],
-["B_UAV_01_F",0,0,5],
-["B_UAV_02_F",0,250,20],
-["B_UAV_02_CAS_F",0,250,20]
+["CUP_C_DC3_CIV",0,0,10],
+["B_Heli_Light_01_F",0,0,15],
+["B_Heli_Light_01_armed_F",0,55,15],
+["RHS_Mi8mt_vvs",0,5,15],
+["RHS_Mi8AMTSh_vvs",0,150,20],
+["RHS_Mi24P_CAS_vvs",0,200,30],
+["RHS_Mi24V_AT_vvs",0,200,30],
+["RHS_Ka52_vvsc",0,400,40],
+["RHS_Su25SM_vvs",0,200,35],
+["RHS_CH_47F_10",0,50,30],
+["CUP_O_SU34_AGM_RU",0,400,35]
 ];
 
 static_vehicles = [
-["B_HMG_01_F",0,10,0],
-["B_HMG_01_high_F",0,10,0],
-["B_GMG_01_F",0,20,0],
-["B_GMG_01_high_F",0,20,0],
-["B_static_AA_F",0,25,0],
-["B_static_AT_F",0,30,0],
-["B_Mortar_01_F",0,50,0]
+["rhs_KORD_high_INS",0,10,0],
+["RHS_NSV_TriPod_MSV",0,20,0],
+["RHS_AGS30_TriPod_MSV",0,20,0],
+["rhs_Igla_AA_pod_msv",0,25,0],
+["rhs_Metis_9k115_2_msv",0,30,0],
+["rhs_2b14_82mm_msv",0,60,0]
 ];
 
 buildings = [
@@ -141,7 +142,6 @@ support_vehicles = [
 [Respawn_truck_typename,20,0,5],
 [FOB_box_typename,30,50,0],
 [FOB_truck_typename,30,50,5],
-["B_APC_Tracked_01_CRV_F",0,30,10],
 ["C_Offroad_01_repair_F",5,0,2],
 ["B_Truck_01_Repair_F",10,0,5],
 ["B_Truck_01_fuel_F",10,0,5],
@@ -150,7 +150,8 @@ support_vehicles = [
 ["B_Slingload_01_Fuel_F",5,0,0],
 ["B_Slingload_01_Ammo_F",5,0,0],
 ["Box_NATO_AmmoVeh_F",0,154,0],
-["Box_East_AmmoVeh_F",0,115,0]
+["Box_East_AmmoVeh_F",0,115,0],
+["Box_East_Wps_F",0,20,0]
 ];
 
 // Pre-made squads for the commander build menu
@@ -177,15 +178,15 @@ squads = [
 uavs = [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","B_UGV_01_rcws_F" ];
 
 // Vehicles unlocked through military base control. The game will pick which base unlocks which at the start of each new campaign.
-elite_vehicles = ["B_UGV_01_rcws_F","B_MBT_01_TUSK_F","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","B_Plane_CAS_01_F","B_UAV_02_F","B_UAV_02_CAS_F"];
+elite_vehicles = ["rhs_t72bc_tv","RHS_Ka52_vvsc","rhs_bmd2m","CUP_B_AV8B_Hydra19","rhs_tigr_sts_vv","RHS_BM21_MSV_01"];
 
 // Everything the AI troups should be able to resupply from
 ai_resupply_sources = [ Respawn_truck_typename, huron_typename, Arsenal_typename, "B_Slingload_01_Ammo_F", "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
 
 // Everything that can resupply other vehicles
-vehicle_repair_sources = [ "B_APC_Tracked_01_CRV_F", "C_Offroad_01_repair_F", "B_Truck_01_Repair_F", "B_Slingload_01_Repair_F", "JNS_Skycrane_Pod_Repair_BLU_Black" ];
-vehicle_rearm_sources = [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "B_Slingload_01_Ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
-vehicle_refuel_sources = [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_fuel_F", "B_Slingload_01_Fuel_F" ];
+vehicle_repair_sources = [ "B_Slingload_01_Repair_F", "JNS_Skycrane_Pod_Repair_BLU_Black" ];
+vehicle_rearm_sources = [ "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
+vehicle_refuel_sources = [ "B_Slingload_01_Fuel_F" ];
 
 // Commander
 commander_classname = "B_officer_F";
@@ -202,52 +203,54 @@ crewman_classname = "B_crew_F";
 // *** BADDIES ***
 
 // All OPFOR infantry
-opfor_sentry = "O_Soldier_lite_F";
-opfor_rifleman = "O_Soldier_F";
-opfor_grenadier = "O_Soldier_GL_F";
-opfor_squad_leader = "O_Soldier_SL_F";
-opfor_team_leader = "O_Soldier_TL_F";
-opfor_marksman = "O_soldier_M_F";
-opfor_machinegunner = "O_Soldier_AR_F";
-opfor_heavygunner = "O_HeavyGunner_F";
-opfor_medic = "O_medic_F";
-opfor_rpg = "O_Soldier_LAT_F";
-opfor_at = "O_Soldier_AT_F";
-opfor_aa = "O_Soldier_AA_F";
-opfor_officer = "O_officer_F";
-opfor_sharpshooter = "O_Sharpshooter_F";
-opfor_sniper = "O_sniper_F";
-opfor_engineer = "O_engineer_F";
+opfor_sentry = "LOP_SLA_Infantry_Rifleman_2";
+opfor_rifleman = "LOP_SLA_Infantry_Rifleman";
+opfor_grenadier = "LOP_SLA_Infantry_GL";
+opfor_squad_leader = "LOP_SLA_Infantry_SL";
+opfor_team_leader = "LOP_SLA_Infantry_TL";
+opfor_machinegunner = "CUP_O_sla_Soldier_AR";		
+opfor_heavygunner = "LOP_SLA_Infantry_MG";
+opfor_medic = "LOP_SLA_Infantry_Corpsman";
+opfor_rpg = "LOP_SLA_Infantry_AT";
+opfor_at = "LOP_SLA_Infantry_AT_Asst";
+opfor_aa = "LOP_SLA_Infantry_AA";
+opfor_officer = "LOP_SLA_Infantry_Officer";
+opfor_marksman = "LOP_SLA_Infantry_Marksman";
+opfor_sharpshooter = "CUP_O_SLA_Sniper_SVD_Night";
+opfor_sniper = "CUP_O_sla_Sniper_KSVK";
+opfor_engineer = "LOP_SLA_Infantry_Engineer";
+opfor_crew = ["CUP_O_TK_Engineer","CUP_O_TK_Crew","LOP_TKA_Infantry_Crewman"];
 
 // Militia infantry. It's only classnames the game will pick from randomly
 militia_squad = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
 
 // Militia vehicles to choose from
-militia_vehicles = [ "rhs_btr70_chdkz","rhs_zsu234_chdkz","I_MU_mercs_Offroad_01_armed_F","I_MU_mercs_Offroad_01_armed_F","B_G_Offroad_01_armed_F","B_G_Offroad_01_armed_F","LOP_AFR_BTR60","LOP_AFR_M113_W","LOP_AFR_T72BA","I_MU_mercs_Offroad_01_armed_F"];
+militia_vehicles = ["CUP_I_BRDM2_TK_Gue","CUP_I_BRDM2_TK_Gue","I_MU_mercs_Offroad_01_armed_F","CUP_I_Datsun_PK_TK","CUP_I_Datsun_PK_TK_Random","B_G_Offroad_01_armed_F","CUP_O_BMP2_ZU_TKA","CUP_I_Datsun_PK_TK", "LOP_SLA_UAZ_DshKM","CUP_O_Ural_ZU23_TKA","CUP_O_LR_SPG9_TKA", "LOP_SLA_UAZ_DshKM", "LOP_ISTS_Landrover_M2", "CUP_O_UAZ_SPG9_TKA"];
 
 // All the vehicles that can spawn as sector defenders and patrols
-opfor_vehicles = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_APC_Tracked_02_AA_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F"];
+opfor_vehicles = ["CUP_B_LAV25_USMC", "rhsusf_m113d_usarmy_M240","rhsusf_m113d_usarmy_M240","CUP_B_HMMWV_TOW_USA","CUP_B_HMMWV_DSHKM_GPK_ACR","CUP_B_HMMWV_AGS_GPK_ACR","CUP_B_HMMWV_DSHKM_GPK_ACR","CUP_I_M163_RACS", "CUP_B_Dingo_CZ_Des", "rhsusf_m113d_usarmy_MK19","CUP_B_HMMWV_AGS_GPK_ACR", "CUP_B_Jackal2_L2A1_GB_D", "CUP_B_Jackal2_GMG_GB_D", "rhsusf_m1025_d_Mk19", "rhsusf_m1025_d_s_Mk19", "CUP_B_HMMWV_Avenger_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M2_USMC", "CUP_B_HMMWV_M2_GPK_USA", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2", "CUP_B_M1126_ICV_M2_Desert",  "CUP_B_M1128_MGS_Desert"];
 // Same with lighter choices to be used  when the alert level is low
-opfor_vehicles_low_intensity = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F"];
+opfor_vehicles_low_intensity = ["LOP_AFR_BTR60","CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_Dingo_CZ_Des", "CUP_B_HMMWV_Avenger_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M2_USMC", "CUP_B_HMMWV_M2_GPK_USA", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2", "rhsusf_m1025_d_s_m2"];
 
 // All the vehicles that can spawn as battlegroup members
-opfor_battlegroup_vehicles = ["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_APC_Tracked_02_AA_F","O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_bench_F", "O_Truck_03_transport_F"];
+opfor_battlegroup_vehicles = ["CUP_B_LAV25_USMC", "CUP_B_LAV25M240_USMC", "RHS_M2A2", "RHS_M2A2_BUSKI", "LOP_IA_M1A1_AIM_D", "rhsusf_m1a1fep_d", "rhsusf_m1a2sep1tuskiid_usarmy", "rhsusf_m1a1aim_tuski_d", "rhsusf_m1a2sep1d_usarmy", "rhsusf_m1a2sep1tuskid_usarmy", "rhsusf_m1a1aimd_usarmy", "rhsusf_m113d_usarmy_M240","CUP_B_HMMWV_TOW_USA","CUP_B_HMMWV_TOW_USA","CUP_B_UH1Y_GUNSHIP_USMC", "CUP_B_UH1Y_GUNSHIP_USMC","RHS_AH1Z_GS","CUP_I_UH60L_FFV_RACS", "RHS_AH64D","CUP_I_M163_RACS", "CUP_B_HMMWV_AGS_GPK_ACR","CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_Dingo_CZ_Des",  "CUP_B_Dingo_CZ_Des", "rhsusf_m113d_usarmy_MK19", "CUP_B_Jackal2_L2A1_GB_D", "CUP_B_Jackal2_GMG_GB_D", "rhsusf_m1025_d_Mk19", "CUP_B_HMMWV_Avenger_USMC", "CUP_B_HMMWV_M1114_USMC", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2","O_Truck_03_covered_F", "O_Truck_03_transport_F", "CUP_B_HMMWV_M2_USMC", "CUP_B_HMMWV_M2_GPK_USA", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2","O_Truck_03_covered_F", "O_Truck_03_transport_F","CUP_B_HMMWV_TOW_USA","CUP_I_M163_RACS", "CUP_B_M1128_MGS_Desert_Slat", "CUP_B_M1128_MGS_Desert", "CUP_B_M1135_ATGMV_Desert", "CUP_B_M1126_ICV_MK19_Desert", "CUP_B_M1126_ICV_M2_Desert"];
+
 // Same with lighter choices to be used  when the alert level is low
-opfor_battlegroup_vehicles_low_intensity = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F", "O_Truck_03_transport_F"];
+opfor_battlegroup_vehicles_low_intensity = ["CUP_B_HMMWV_AGS_GPK_ACR","CUP_B_HMMWV_DSHKM_GPK_ACR", "CUP_B_Dingo_CZ_Des", "rhsusf_m113d_usarmy_MK19", "CUP_B_Jackal2_L2A1_GB_D", "CUP_B_Jackal2_GMG_GB_D", "rhsusf_m1025_d_Mk19", "CUP_B_HMMWV_Avenger_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M2_USMC", "CUP_B_HMMWV_M2_GPK_USA", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2","O_Truck_03_covered_F","CUP_I_UH60L_FFV_RACS", "O_Truck_03_transport_F", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M2_USMC", "CUP_B_HMMWV_M2_GPK_USA", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2","O_Truck_03_covered_F", "O_Truck_03_transport_F","CUP_B_HMMWV_TOW_USA"];
 
 // All the vehicles that can spawn as battlegroup members (see above) and hold 8 soldiers as passengers.
 // If something can't hold all 8 soldiers then buggy behaviours may occur
-opfor_troup_transports = ["O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F", "O_Truck_03_transport_F", "O_Heli_Light_02_F"];
+opfor_troup_transports = ["rhsusf_m113d_usarmy_MK19","rhsusf_m113d_usarmy_M240","O_Truck_03_covered_F","CUP_I_UH60L_FFV_RACS", "O_Truck_03_transport_F", "CUP_B_UH1Y_GUNSHIP_USMC"];
 
 // Battlegroup members that will need to spawn in flight. Should be only helos but, who knows
-opfor_choppers = ["O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_bench_F"];
+opfor_choppers = ["CUP_B_UH1Y_GUNSHIP_USMC","RHS_AH1Z_GS","RHS_AH64D","CUP_I_UH60L_FFV_RACS"];
 
 // Opfor attack aircrafts to choose from
-opfor_air = ["O_Plane_CAS_02_F"];
+opfor_air = ["CUP_B_AV8B_Hydra19"];
 
 // Vehicles to be used in secondary objectives
 opfor_mrap = "O_MRAP_02_F";
-opfor_mrap_armed = "O_MRAP_02_gmg_F";
+opfor_mrap_armed = "rhsusf_m1025_d_m2";
 opfor_transport_helo = "O_Heli_Transport_04_bench_F";
 opfor_transport_truck = "O_Truck_03_covered_F";
 opfor_fuel_truck = "O_Truck_03_fuel_F";
@@ -259,12 +262,423 @@ opfor_flag = "Flag_CSAT_F";
 
 
 
-
-
-
 // Civilians to randomly choose from
 civilians = ["C_man_1","C_man_polo_6_F","C_man_polo_3_F","C_man_polo_2_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_1_F","C_man_p_beggar_F","C_man_1_2_F","C_man_p_fugitive_F","C_man_hunter_1_F","C_journalist_F","C_man_shorts_2_F","C_man_w_worker_F"];
 civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F", "C_Quadbike_01_F" ];
+
+//allowed weapons
+GRLIB_whitelisted_from_arsenal = [
+"CUP_glaunch_M79",
+"rhs_weap_pkm",
+"hlc_rifle_ak74_dirty",
+"hlc_rifle_ak74_dirty2",
+"hlc_rifle_aks74u",
+"rhs_weap_svds",
+"hlc_rifle_M14",
+"RH_M16a1",
+"RH_M16A1gl",
+"RH_M16A2",
+"rhs_weap_akm",
+"rhs_weap_akm_gp25",
+"RH_m9",
+"RH_mak",
+"RH_m1911",
+"CUP_launch_RPG18",
+"rhs_weap_rpg7",
+"rhs_weap_M136_hedp"
+];
+
+//all weapons
+GRLIB_arsenal_all = [];
+
+GRLIB_allowed_weapons = [
+"rhs_weap_m16a4_carryhandle_grip_pmag",
+"CUP_arifle_AK107",
+"CUP_arifle_AK107_GL",
+"CUP_arifle_CZ805_A1",
+"CUP_arifle_CZ805_A2",
+"CUP_arifle_CZ805_B",
+"CUP_arifle_CZ805_B_GL",
+"CUP_arifle_CZ805_GL",
+"CUP_arifle_Mk16_CQC",
+"CUP_arifle_Mk16_CQC_EGLM",
+"CUP_arifle_Mk16_CQC_FG",
+"CUP_arifle_Mk16_CQC_SFG",
+"CUP_arifle_Mk16_STD",
+"CUP_arifle_Mk16_STD_EGLM",
+"CUP_arifle_Mk16_STD_FG",
+"CUP_arifle_Mk16_STD_SFG",
+"CUP_arifle_Mk16_SV",
+"CUP_arifle_Mk17_CQC",
+"CUP_arifle_Mk17_CQC_EGLM",
+"CUP_arifle_Mk17_CQC_FG",
+"CUP_arifle_Mk17_CQC_SFG",
+"CUP_arifle_Mk17_STD",
+"CUP_arifle_Mk17_STD_EGLM",
+"CUP_arifle_Mk17_STD_FG",
+"CUP_arifle_Mk17_STD_SFG",
+"CUP_arifle_Mk20",
+"CUP_arifle_RPK74M",
+"CUP_arifle_Sa58P",
+"CUP_arifle_Sa58P_des",
+"CUP_arifle_Sa58RIS1",
+"CUP_arifle_Sa58RIS1_des",
+"CUP_arifle_Sa58RIS2",
+"CUP_arifle_Sa58RIS2_camo",
+"CUP_arifle_Sa58RIS2_gl",
+"CUP_arifle_Sa58V",
+"CUP_arifle_Sa58V_camo",
+"CUP_glaunch_6G30",
+"CUP_glaunch_Mk13",
+"CUP_hgun_Compact",
+"CUP_hgun_Duty",
+"CUP_hgun_PB6P9",
+"CUP_hgun_Phantom",
+"CUP_hgun_TaurusTracker455_gold",
+"CUP_launch_M47",
+"CUP_launch_MAAWS",
+"CUP_launch_Metis",
+"CUP_lmg_Mk48_des",
+"CUP_lmg_Mk48_wdl",
+"CUP_lmg_UK59",
+"CUP_sgun_AA12",
+"CUP_sgun_M1014",
+"CUP_sgun_Saiga12K",
+"CUP_smg_bizon",
+"CUP_srifle_AS50",
+"CUP_srifle_CZ550",
+"CUP_srifle_CZ550_rail",
+"CUP_srifle_CZ750",
+"CUP_srifle_G22_des",
+"CUP_srifle_ksvk",
+"CUP_srifle_LeeEnfield",
+"CUP_srifle_LeeEnfield_rail",
+"CUP_srifle_M107_Base",
+"CUP_srifle_M110",
+"CUP_srifle_M24_des",
+"CUP_srifle_M24_wdl",
+"CUP_srifle_M40A3",
+"CUP_srifle_VSSVintorez",
+"hgun_ACPC2_F",
+"hgun_P07_F",
+"hgun_PDW2000_F",
+"hgun_Pistol_heavy_01_F",
+"hlc_lmg_M249E2",
+"hlc_lmg_m249para",
+"hlc_lmg_m60",
+"hlc_lmg_M60E4",
+"hlc_lmg_minimi",
+"hlc_lmg_minimi_railed",
+"hlc_lmg_minimipara",
+"hlc_m249_pip1",
+"hlc_m249_pip2",
+"hlc_m249_pip3",
+"hlc_m249_pip4",
+"hlc_m249_SQuantoon",
+"hlc_rifle_aek971",
+"hlc_rifle_aek971worn",
+"hlc_rifle_ak12",
+"hlc_rifle_ak12GL",
+"hlc_rifle_ak47",
+"hlc_rifle_ak74",
+"hlc_rifle_akm",
+"hlc_rifle_akmgl",
+"hlc_rifle_aks74",
+"hlc_rifle_aks74_GL",
+"hlc_rifle_awcovert",
+"hlc_rifle_awcovert_BL",
+"hlc_rifle_awcovert_FDE",
+"hlc_rifle_awmagnum",
+"hlc_rifle_awmagnum_BL",
+"hlc_rifle_awMagnum_BL_ghillie",
+"hlc_rifle_awmagnum_FDE",
+"hlc_rifle_awMagnum_FDE_ghillie",
+"hlc_rifle_awMagnum_OD_ghillie",
+"hlc_rifle_bcmjack",
+"hlc_rifle_Bushmaster300",
+"hlc_rifle_c1A1",
+"hlc_rifle_Colt727",
+"hlc_rifle_Colt727_GL",
+"hlc_rifle_CQBR",
+"hlc_rifle_FAL5061",
+"hlc_rifle_FAL5061Rail",
+"hlc_rifle_falosw",
+"hlc_rifle_g3a3",
+"hlc_rifle_g3a3ris",
+"hlc_rifle_g3ka4",
+"HLC_Rifle_g3ka4_GL",
+"hlc_rifle_g3sg1",
+"hlc_rifle_hk51",
+"hlc_rifle_hk53",
+"hlc_rifle_honeybadger",
+"hlc_rifle_L1A1SLR",
+"hlc_rifle_LAR",
+"hlc_rifle_M14_Bipod",
+"hlc_rifle_M14_Rail",
+"hlc_rifle_m14dmr",
+"hlc_rifle_m14sopmod",
+"hlc_rifle_M21",
+"hlc_rifle_M4",
+"hlc_rifle_m4m203",
+"hlc_rifle_osw_GL",
+"hlc_rifle_psg1",
+"hlc_rifle_rpk",
+"hlc_rifle_rpk74n",
+"hlc_rifle_RU556",
+"hlc_rifle_RU5562",
+"hlc_rifle_saiga12k",
+"hlc_rifle_SAMR",
+"hlc_rifle_samr2",
+"hlc_rifle_SLR",
+"hlc_rifle_SLRchopmod",
+"hlc_rifle_STG58F",
+"hlc_rifle_vendimus",
+"hlc_smg_9mmar",
+"hlc_smg_mp510",
+"hlc_smg_mp5a2",
+"hlc_smg_mp5a3",
+"hlc_smg_mp5a4",
+"hlc_smg_mp5k",
+"hlc_smg_mp5k_PDW",
+"hlc_smg_MP5N",
+"hlc_smg_mp5sd5",
+"hlc_smg_mp5sd6",
+"launch_B_Titan_F",
+"launch_B_Titan_short_F",
+"launch_I_Titan_F",
+"launch_I_Titan_short_F",
+"launch_NLAW_F",
+"launch_O_Titan_F",
+"launch_O_Titan_short_F",
+"launch_RPG32_F",
+"RH_ar10",
+"RH_bull",
+"RH_bullb",
+"RH_cz75",
+"RH_deagle",
+"RH_Deagleg",
+"RH_Deaglem",
+"RH_Deagles",
+"RH_fn57",
+"RH_fn57_g",
+"RH_fn57_t",
+"RH_fnp45",
+"RH_fnp45t",
+"RH_g17",
+"RH_g18",
+"RH_g19",
+"RH_g19t",
+"RH_gsh18",
+"RH_hb",
+"RH_hb_b",
+"RH_Hk416",
+"RH_hk416_des",
+"RH_hk416_tg",
+"RH_hk416_wdl",
+"RH_Hk416c",
+"RH_hk416c_des",
+"RH_hk416c_tg",		
+"RH_hk416c_wdl",
+"RH_Hk416s",
+"RH_hk416s_des",
+"RH_hk416s_tg",
+"RH_hk416s_wdl",
+"RH_kimber",
+"RH_kimber_nw",
+"RH_m110",
+"RH_M16A2gl",
+"RH_M16A3",
+"RH_m16a4_des",
+"RH_M16A4_m",
+"RH_m16a4_m_des",
+"RH_m16a4_m_tg",
+"RH_m16a4_m_wdl",
+"RH_m16a4_tg",
+"RH_m16a4_wdl",
+"RH_M16A4gl",
+"RH_m16a4gl_des",
+"RH_m16a4gl_tg",
+"RH_m16a4gl_wdl",
+"RH_M16A6",
+"RH_m16a6_des",
+"RH_m16a6_tg",
+"RH_m16a6_wdl",			
+"RH_M27IAR",
+"RH_M27IAR_des",
+"RH_M27IAR_tg",
+"RH_M27IAR_wdl",
+"RH_m4_des",
+"RH_M4_M203",
+"RH_m4_m203_des",
+"RH_m4_m203_tg",
+"RH_m4_m203_wdl",
+"RH_M4_moe",
+"RH_M4_moe_b",
+"RH_M4_moe_g",
+"RH_M4_ris",
+"RH_M4_ris_m",
+"RH_M4_ris_M203",
+"RH_M4_ris_M203s",
+"RH_m4_ris_m_des",
+"RH_m4_ris_m_tg",
+"RH_m4_ris_m_wdl",
+"RH_m4_tg",
+"RH_m4_wdl",
+"RH_M4A1_ris",
+"RH_m4a1_ris_des",			
+"RH_M4A1_ris_M203",		
+"RH_m4a1_ris_m203_des",	
+"RH_m4a1_ris_m203_tg",		
+"RH_m4a1_ris_m203_wdl",	
+"RH_M4A1_ris_M203s",		
+"RH_m4a1_ris_m203s_des",	
+"RH_m4a1_ris_m203s_tg",	
+"RH_m4a1_ris_m203s_wdl",	
+"RH_m4a1_ris_tg",			
+"RH_m4a1_ris_wdl",			
+"RH_M4A6",					
+"RH_m4a6_des",				
+"RH_m4a6_tg",				
+"RH_m4a6_wdl",				
+"RH_M4m",					
+"RH_M4m_b",				
+"RH_M4m_g",				
+"RH_M4sbr",				
+"RH_M4sbr_b",				
+"RH_M4sbr_g",				
+"RH_m9c",
+"RH_mateba",				
+"RH_Mk11",					
+"RH_Mk12mod1",				
+"RH_Mk12mod1_des",			
+"RH_Mk12mod1_tg",			
+"RH_Mk12mod1_wdl",			
+"RH_mk2",					
+"RH_mp412",				
+"RH_muzi",					
+"RH_p226",					
+"RH_p226s",				
+"RH_PDW",					
+"RH_python",
+"RH_SAMR",				
+"RH_SAMR_des",
+"RH_SAMR_tg",		
+"RH_SAMR_wdl",				
+"RH_sbr9",			
+"RH_sbr9_des",
+"RH_sbr9_tg",				
+"RH_sbr9_wdl",				
+"RH_SR25EC",				
+"RH_sw659",				
+"RH_tec9",					
+"RH_tt33",					
+"RH_ttracker",
+"RH_ttracker_g",			
+"RH_usp",					
+"RH_uspm",					
+"RH_vp70",					
+"RH_vz61",					
+"rhs_weap_ak103",			
+"rhs_weap_ak103_gp25",
+"rhs_weap_ak103_gp25_npz",	
+"rhs_weap_ak103_npz",		
+"rhs_weap_ak104",			
+"rhs_weap_ak104_npz",		
+"rhs_weap_ak105",			
+"rhs_weap_ak105_npz",		
+"rhs_weap_ak74m",			
+"rhs_weap_ak74m_2mag",		
+"rhs_weap_ak74m_2mag_camo",
+"rhs_weap_ak74m_2mag_npz",	
+"rhs_weap_ak74m_camo",		
+"rhs_weap_ak74m_desert",				
+"rhs_weap_ak74m_desert_npz",			
+"rhs_weap_ak74m_folded",				
+"rhs_weap_ak74m_gp25",					
+"rhs_weap_ak74m_gp25_npz",				
+"rhs_weap_ak74m_npz",					
+"rhs_weap_ak74m_plummag",				
+"rhs_weap_ak74m_plummag_npz",
+"rhs_weap_akms",						
+"rhs_weap_akms_gp25",					
+"rhs_weap_asval",						
+"rhs_weap_asval_npz",					
+"rhs_weap_fgm148",						
+"rhs_weap_fim92",						
+"rhs_weap_igla",						
+"rhs_weap_M136",						
+"rhs_weap_M136_hp",					
+"rhs_weap_m14ebrri",					
+"rhs_weap_m16a4",						
+"rhs_weap_m16a4_carryhandle",
+"rhs_weap_m16a4_carryhandle_grip",		
+"rhs_weap_m16a4_carryhandle_M203",		
+"rhs_weap_m16a4_carryhandle_pmag",		
+"rhs_weap_m16a4_grip",					
+"rhs_weap_m249_pip_L",					
+"rhs_weap_m249_pip_L_para",			
+"rhs_weap_m249_pip_L_vfg",				
+"rhs_weap_m249_pip_S",					
+"rhs_weap_m249_pip_S_para",			
+"rhs_weap_m249_pip_S_vfg",				
+"rhs_weap_m32",						
+"rhs_weap_M320",						
+"rhs_weap_m4",							
+"rhs_weap_m4_carryhandle",				
+"rhs_weap_m4_carryhandle_pmag",		
+"rhs_weap_m4_grip",					
+"rhs_weap_m4_grip2",					
+"rhs_weap_m4_m203",					
+"rhs_weap_m4_m203S",					
+"rhs_weap_m4_m320",					
+"rhs_weap_m4a1",						
+"rhs_weap_m4a1_carryhandle",	
+"rhs_weap_m4a1_carryhandle_grip",		
+"rhs_weap_m4a1_carryhandle_grip2",		
+"rhs_weap_m4a1_carryhandle_m203",		
+"rhs_weap_m4a1_carryhandle_m203S",		
+"rhs_weap_m4a1_carryhandle_pmag",		
+"rhs_weap_m4a1_grip",					
+"rhs_weap_m4a1_grip2",		
+"rhs_weap_m4a1_m203",		
+"rhs_weap_m4a1_m203s",		
+"rhs_weap_m4a1_m320",		
+"rhs_weap_M590_5RD",		
+"rhs_weap_M590_8RD",		
+"rhs_weap_makarov_pmm",	
+"rhs_weap_pkp",			
+"rhs_weap_pya",			
+"rhs_weap_rpg26",			
+"rhs_weap_rshg2",			
+"rhs_weap_smaw",			
+"rhs_weap_smaw_green",		
+"rhs_weap_sr25",			
+"rhs_weap_sr25_ec",		
+"rhs_weap_svdp",			
+"rhs_weap_svdp_npz",		
+"rhs_weap_svdp_wd",		
+"rhs_weap_svdp_wd_npz",	
+"rhs_weap_svds_npz",		
+"rhs_weap_tr8",			
+"rhs_weap_XM2010",			
+"rhs_weap_XM2010_d",		
+"rhs_weap_XM2010_sa",		
+"rhs_weap_XM2010_wd",		
+"SMG_01_F",
+"SMG_02_F",	
+"srifle_DMR_01_F",	
+"srifle_DMR_02_camo_F",
+"srifle_DMR_02_F",
+"srifle_DMR_03_F",
+"srifle_DMR_03_multicam_F",
+"srifle_DMR_04_F",	
+"srifle_DMR_05_blk_F",	
+"srifle_DMR_06_camo_F",
+"srifle_DMR_06_olive_F",
+"srifle_EBR_F",	
+"srifle_GM6_camo_F",
+"srifle_LRR_camo_F"
+];
 
 // Blacklisted arsenal items such as deployable weapons  that should be bought instead
 GRLIB_blacklisted_from_arsenal = [
