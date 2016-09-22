@@ -97,6 +97,7 @@ static_vehicles = [
 ];
 
 buildings = [
+["ACE_Wheel",0,0,0],
 ["Land_CncBarrierMedium4_F",0,0,0],
 ["Land_CncWall4_F",0,0,0],
 ["Land_CncShelter_F",0,0,0],
