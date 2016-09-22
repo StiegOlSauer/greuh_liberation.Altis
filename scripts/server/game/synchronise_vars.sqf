@@ -10,6 +10,7 @@ waitUntil{ !isNil "fuel_cap" };
 waitUntil{ !isNil "combat_readiness" };
 waitUntil{ !isNil "unitcap" };
 waitUntil{ !isNil "resources_intel" };
+waitUntil{ !isNil "unitcap_respawns_limit" };
 
 
 _infantry_cap_old = -999;
@@ -20,6 +21,7 @@ _resources_fuel_old = -999;
 _resources_intel_old = -999;
 _unitcap_old = -1;
 _combat_readiness_old = -1;
+_unitcap_respawns_limit_old = -1;
 
 while { true } do {
 
@@ -32,9 +34,10 @@ while { true } do {
 		|| _unitcap_old != unitcap
 		|| _combat_readiness_old != combat_readiness
 		|| _resources_intel_old != resources_intel
+		|| _unitcap_respawns_limit_old != unitcap_respawns_limit
 	};
 	sleep 0.25;
-	sync_vars = [resources_infantry, resources_ammo, resources_fuel,infantry_cap,fuel_cap, unitcap, combat_readiness, resources_intel];
+	sync_vars = [resources_infantry, resources_ammo, resources_fuel,infantry_cap,fuel_cap, unitcap, combat_readiness, resources_intel, unitcap_respawns_limit];
 	publicVariable "sync_vars";
 
 	_infantry_cap_old = infantry_cap;
@@ -45,4 +48,5 @@ while { true } do {
 	_unitcap_old = unitcap;
 	_combat_readiness_old = combat_readiness;
 	_resources_intel_old = resources_intel;
+	_unitcap_respawns_limit_old = unitcap_respawns_limit;
 };

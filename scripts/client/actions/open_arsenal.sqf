@@ -76,6 +76,8 @@ if ( load_loadout > 0 ) then {
 if ( edit_loadout > 0 ) then {
 	closeDialog 0;
 	waitUntil { !dialog };
+	//re-init arsenal
+	[] call F_updateArsenalRestrictions;
 	[ "Open", false ] spawn BIS_fnc_arsenal;
 };
 

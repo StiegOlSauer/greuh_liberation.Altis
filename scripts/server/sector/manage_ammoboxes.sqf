@@ -60,7 +60,23 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 			};
 		};
 	};
-
+	
+	_spawnclass = ammocrate_o_typename;
+	_spawnpos = zeropos;
+	while { _spawnpos distance zeropos < 1000 } do {
+		_spawnpos =  ( [ ( markerpos _sector), random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [10, 100, 'B_Heli_Transport_01_F'];
+		if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
+	};
+    
+	_newbox = _spawnclass createVehicle _spawnpos;
+	_newbox setpos _spawnpos;
+	_newbox setdir (random 360);
+	clearWeaponCargoGlobal _newbox;
+	clearMagazineCargoGlobal _newbox;
+	clearItemCargoGlobal _newbox;
+	clearBackpackCargoGlobal _newbox;
+	_newbox addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
+	
 	_nearbuildings = [ nearestObjects [ markerpos _sector , _compatible_classnames, _intel_range ], { alive _x } ] call BIS_fnc_conditionalSelect;
 
 	if ( count _nearbuildings > 0 ) then {
