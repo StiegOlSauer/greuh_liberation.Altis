@@ -9,6 +9,7 @@ csat_abandon_vehicle = compileFinal preprocessFileLineNumbers "scripts\server\ai
 patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\patrol_ai.sqf";
 prisonner_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\prisonner_ai.sqf";
 troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\ai\troup_transport.sqf";
+fnc_searchBuilding = compileFinal preprocessFileLineNumbers "scripts\server\ai\fn_SearchBuilding.sqf";
 
 // Battlegroup
 spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_air.sqf";
@@ -28,6 +29,12 @@ recalculate_caps = compileFinal preprocessFileLineNumbers "scripts\server\resour
 // Secondary objectives
 fob_hunting = compileFinal preprocessFileLineNumbers "scripts\server\secondary\fob_hunting.sqf";
 convoy_hijack = compileFinal preprocessFileLineNumbers "scripts\server\secondary\convoy_hijack.sqf";
+veh_hunt = compileFinal preprocessFileLineNumbers "scripts\server\secondary\veh_hunt.sqf";
+terror_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\terror.sqf";
+planecrash_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\planecrash.sqf";
+
+// Tasks
+task_banditCamp = compileFinal preprocessFileLineNumbers "scripts\server\tasks\banditCamp.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
@@ -69,3 +76,15 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\unit_cap.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\lose_sectors.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_sectors.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\init_tasks.sqf";
+
+
+GRLIB_allowed_weapons = GRLIB_allowed_weapons - GRLIB_whitelisted_from_arsenal;
+//perform initial shuffle of allowed weapons array
+_shufflingArray = GRLIB_allowed_weapons;
+GRLIB_allowed_weapons = [_shufflingArray, 5000] call KK_fnc_arrayShufflePlus;
+publicVariable "GRLIB_allowed_weapons";
+//publicVariable "GRLIB_whitelisted_from_arsenal";
+
+GRLIB_tasksAssigned = [];
+GRLIB_tasksRunning = [];

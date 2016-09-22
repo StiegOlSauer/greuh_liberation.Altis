@@ -9,7 +9,7 @@ GRLIB_vulnerability_timer = 1200;
 GRLIB_defended_buildingpos_part = 0.4;
 GRLIB_sector_military_value = 3;
 GRLIB_secondary_objective_impact = 0.6;
-GRLIB_blufor_cap = 80								* GRLIB_unitcap;
+GRLIB_blufor_cap = 150								* GRLIB_unitcap;
 GRLIB_sector_cap = 175								* GRLIB_unitcap;
 GRLIB_battlegroup_cap = 135							* GRLIB_unitcap;
 GRLIB_patrol_cap = 135								* GRLIB_unitcap;
@@ -18,9 +18,32 @@ GRLIB_civilians_amount = 8 						* GRLIB_civilian_activity;
 GRLIB_fob_range = 125;
 GRLIB_cleanup_delay = 1200;
 GRLIB_surrender_chance = 75;
-GRLIB_secondary_missions_costs = [ 10, 10 ];
-GRLIB_halo_altitude = 4000;
+GRLIB_secondary_missions_costs = [ 10, 10, 10, 10, 10 ];
+GRLIB_halo_altitude = 3000;
 
-if ( GRLIB_blufor_cap > 100 ) then { GRLIB_blufor_cap = 100 }; // Don't forget that the human commander manages those, not the server
+unitcap_respawns_limit = 25;
+unitcap = unitcap_respawns_limit;
+
+if ( GRLIB_blufor_cap > 300 ) then { GRLIB_blufor_cap = 100 }; // Don't forget that the human commander manages those, not the server
 
 GRLIB_offload_diag = false;
+
+GRLIB_terror_civilians = [];
+GRLIB_terror_enabled = false;
+
+GRLIB_markerToTask = [
+["task_c_capture_13_1_2_26_12",[0]],
+["task_c_capture_13_1_2_26_27_1",[0]],
+["task_c_capture_13_1_2_26_27",[0]],
+["task_c_capture_13_1_2_26_15",[0]],
+["task_c_capture_13_1_2_26_14",[0]],
+["task_c_capture_66",[0]],
+["task_c_capture_13_1_2_26_19",[0]],
+["task_c_capture_13_1_2_26_5_1",[0]],
+["task_c_capture_13_1_2_26_5",[0]],
+["task_c_capture_67",[0]]
+];
+
+GRLIB_taskDescriptions = [
+["kill bandits", "Local town authority asked us to purge unclean in bandit's camp location nearby", "Eliminate bandits camp"]
+];
