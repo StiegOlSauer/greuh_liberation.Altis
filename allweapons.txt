@@ -1,0 +1,734 @@
+RANK		| NAME |				CLASSNAME
+ACE_VMH3							|		VMH3	|		Weapon	|	Handgun
+ACE_VMM3							|		VMM3	|		Weapon	|	Handgun
+arifle_AK12_F							|		AK-12 7.62 mm	|		Weapon	|	AssaultRifle
+arifle_AK12_GL_F							|		AK-12 GL 7.62 mm	|		Weapon	|	AssaultRifle
+arifle_AKM_F							|		AKM 7.62 mm	|		Weapon	|	AssaultRifle
+arifle_AKS_F							|		AKS-74U 5.45 mm	|		Weapon	|	AssaultRifle
+arifle_ARX_blk_F							|		Type 115 6.5 mm (Black)	|		Weapon	|	AssaultRifle
+arifle_ARX_ghex_F							|		Type 115 6.5 mm (Green Hex)	|		Weapon	|	AssaultRifle
+arifle_ARX_hex_F							|		Type 115 6.5 mm (Hex)	|		Weapon	|	AssaultRifle
+arifle_CTAR_blk_F							|		QBZ-95-1 (Black)	|		Weapon	|	AssaultRifle
+arifle_CTAR_ghex_F							|		CAR-95 5.8 mm (Green Hex)	|		Weapon	|	AssaultRifle
+arifle_CTAR_GL_blk_F							|		QBZ-95-1 GL (Black)	|		Weapon	|	AssaultRifle
+arifle_CTAR_GL_ghex_F							|		CAR-95 GL 5.8 mm (Green Hex)	|		Weapon	|	AssaultRifle
+arifle_CTAR_GL_hex_F							|		CAR-95 GL 5.8 mm (Hex)	|		Weapon	|	AssaultRifle
+arifle_CTAR_hex_F							|		CAR-95 5.8 mm (Hex)	|		Weapon	|	AssaultRifle
+arifle_CTARS_blk_F							|		QBZ-95-1 LSW (Black)	|		Weapon	|	AssaultRifle
+arifle_CTARS_ghex_F							|		CAR-95-1 5.8mm (Green Hex)	|		Weapon	|	AssaultRifle
+arifle_CTARS_hex_F							|		CAR-95-1 5.8mm (Hex)	|		Weapon	|	AssaultRifle
+arifle_Katiba_C_F							|		KH2002C Sama	|		Weapon	|	AssaultRifle
+arifle_Katiba_F							|		KH2002 Sama	|		Weapon	|	AssaultRifle
+arifle_Katiba_GL_F							|		KH2002 Sama KGL	|		Weapon	|	AssaultRifle
+arifle_Mk20_F							|		F2000 (Camo)	|		Weapon	|	AssaultRifle
+arifle_Mk20_GL_F							|		F2000 EGLM (Camo)	|		Weapon	|	AssaultRifle
+arifle_Mk20_GL_plain_F							|		F2000 EGLM	|		Weapon	|	AssaultRifle
+arifle_Mk20_plain_F							|		F2000	|		Weapon	|	AssaultRifle
+arifle_Mk20C_F							|		F2000 Tactical (Camo)	|		Weapon	|	AssaultRifle
+arifle_Mk20C_plain_F							|		F2000 Tactical	|		Weapon	|	AssaultRifle
+arifle_MX_Black_F							|		MX (Black)	|		Weapon	|	AssaultRifle
+arifle_MX_F							|		MX	|		Weapon	|	AssaultRifle
+arifle_MX_GL_Black_F							|		MX 3GL (Black)	|		Weapon	|	AssaultRifle
+arifle_MX_GL_F							|		MX 3GL	|		Weapon	|	AssaultRifle
+arifle_MX_GL_khk_F							|		MX 3GL 6.5 mm (Khaki)	|		Weapon	|	AssaultRifle
+arifle_MX_khk_F							|		MX 6.5 mm (Khaki)	|		Weapon	|	AssaultRifle
+arifle_MX_SW_Black_F							|		MX LSW (Black)	|		Weapon	|	MachineGun
+arifle_MX_SW_F							|		MX LSW	|		Weapon	|	MachineGun
+arifle_MX_SW_khk_F							|		MX SW 6.5 mm (Khaki)	|		Weapon	|	MachineGun
+arifle_MXC_Black_F							|		MXC (Black)	|		Weapon	|	AssaultRifle
+arifle_MXC_F							|		MXC	|		Weapon	|	AssaultRifle
+arifle_MXC_khk_F							|		MXC 6.5 mm (Khaki)	|		Weapon	|	AssaultRifle
+arifle_MXM_Black_F							|		MXM (Black)	|		Weapon	|	AssaultRifle
+arifle_MXM_F							|		MXM	|		Weapon	|	AssaultRifle
+arifle_MXM_khk_F							|		MXM 6.5 mm (Khaki)	|		Weapon	|	AssaultRifle
+arifle_SDAR_F							|		RFB SDAR	|		Weapon	|	AssaultRifle
+arifle_SPAR_01_blk_F							|		HK416A5 10" (Black)	|		Weapon	|	AssaultRifle
+arifle_SPAR_01_GL_blk_F							|		HK416A5 10" GL (Black)	|		Weapon	|	AssaultRifle
+arifle_SPAR_01_GL_khk_F							|		HK416A5 10" GL (Khaki)	|		Weapon	|	AssaultRifle
+arifle_SPAR_01_GL_snd_F							|		HK416A5 10" GL (Sand)	|		Weapon	|	AssaultRifle
+arifle_SPAR_01_khk_F							|		HK416A5 10" (Khaki)	|		Weapon	|	AssaultRifle
+arifle_SPAR_01_snd_F							|		HK416A5 10" (Sand)	|		Weapon	|	AssaultRifle
+arifle_SPAR_02_blk_F							|		HK416A5 14.5" (Black)	|		Weapon	|	AssaultRifle
+arifle_SPAR_02_khk_F							|		HK416A5 14.5" (Khaki)	|		Weapon	|	AssaultRifle
+arifle_SPAR_02_snd_F							|		HK416A5 14.5" (Sand)	|		Weapon	|	AssaultRifle
+arifle_SPAR_03_blk_F							|		HK417A2 20" (Black)	|		Weapon	|	AssaultRifle
+arifle_SPAR_03_khk_F							|		HK417A2 20" (Khaki)	|		Weapon	|	AssaultRifle
+arifle_SPAR_03_snd_F							|		HK417A2 20" (Sand)	|		Weapon	|	AssaultRifle
+arifle_TRG20_F							|		CTAR-21	|		Weapon	|	AssaultRifle
+arifle_TRG21_F							|		TAR-21	|		Weapon	|	AssaultRifle
+arifle_TRG21_GL_F							|		TAR-21 EGLM	|		Weapon	|	AssaultRifle
+CUP_arifle_AK107							|		AK-107	|		Weapon	|	AssaultRifle
+CUP_arifle_AK107_GL							|		AK-107 GP-25	|		Weapon	|	AssaultRifle
+CUP_arifle_AK47							|		AK-47	|		Weapon	|	AssaultRifle
+CUP_arifle_AK74							|		AK-74	|		Weapon	|	AssaultRifle
+CUP_arifle_AK74_GL							|		AK-74 GP-25	|		Weapon	|	AssaultRifle
+CUP_arifle_AK74M							|		AK-74M	|		Weapon	|	AssaultRifle
+CUP_arifle_AK74M_GL							|		AK-74M GP-25	|		Weapon	|	AssaultRifle
+CUP_arifle_AKM							|		AKM	|		Weapon	|	AssaultRifle
+CUP_arifle_AKS							|		AKS	|		Weapon	|	AssaultRifle
+CUP_arifle_AKS74							|		AKS-74	|		Weapon	|	AssaultRifle
+CUP_arifle_AKS74U							|		AKS-74U	|		Weapon	|	AssaultRifle
+CUP_arifle_AKS_Gold							|		AKS	|		Weapon	|	AssaultRifle
+CUP_arifle_CZ805_A1							|		CZ 805 BREN A1	|		Weapon	|	AssaultRifle
+CUP_arifle_CZ805_A2							|		CZ 805 BREN A2	|		Weapon	|	AssaultRifle
+CUP_arifle_CZ805_B							|		CZ 805 BREN B1	|		Weapon	|	AssaultRifle
+CUP_arifle_CZ805_B_GL							|		CZ 805 BREN B1 G1	|		Weapon	|	AssaultRifle
+CUP_arifle_CZ805_GL							|		CZ 805 BREN A1 G1	|		Weapon	|	AssaultRifle
+CUP_arifle_FNFAL							|		FN FAL	|		Weapon	|	AssaultRifle
+CUP_arifle_FNFAL5061							|		FN FAL 50.61	|		Weapon	|	AssaultRifle
+CUP_arifle_FNFAL5062							|		FN FAL 50.62	|		Weapon	|	AssaultRifle
+CUP_arifle_FNFAL_OSW							|		FN FAL OSW	|		Weapon	|	AssaultRifle
+CUP_arifle_FNFAL_railed							|		FN FAL (railed)	|		Weapon	|	AssaultRifle
+CUP_arifle_G36A							|		G36 A	|		Weapon	|	AssaultRifle
+CUP_arifle_G36A_camo							|		G36A (Camo)	|		Weapon	|	AssaultRifle
+CUP_arifle_G36C							|		G36 C	|		Weapon	|	AssaultRifle
+CUP_arifle_G36C_camo							|		G36C (Camo)	|		Weapon	|	AssaultRifle
+CUP_arifle_G36K							|		G36 K	|		Weapon	|	AssaultRifle
+CUP_arifle_G36K_camo							|		G36K (Camo)	|		Weapon	|	AssaultRifle
+CUP_arifle_L85A2							|		L85A2	|		Weapon	|	AssaultRifle
+CUP_arifle_L85A2_G							|		L85A2 (Grip)	|		Weapon	|	AssaultRifle
+CUP_arifle_L85A2_GL							|		L85A2 UGL	|		Weapon	|	AssaultRifle
+CUP_arifle_L85A2_NG							|		L85A2 (No Grip)	|		Weapon	|	AssaultRifle
+CUP_arifle_L86A2							|		L86A2 LSW	|		Weapon	|	AssaultRifle
+CUP_arifle_M16A2							|		M16A2	|		Weapon	|	AssaultRifle
+CUP_arifle_M16A2_GL							|		M16A2 M203	|		Weapon	|	AssaultRifle
+CUP_arifle_M16A4_Base							|		M16A4	|		Weapon	|	AssaultRifle
+CUP_arifle_M16A4_GL							|		M16A4 M203	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1							|		M4A1	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1_black							|		M4A1	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1_BUIS_camo_GL							|		M4A1 M203 (woodland)	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1_BUIS_desert_GL							|		M4A1 M203 (desert)	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1_BUIS_GL							|		M4A1 M203	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1_camo							|		M4A1 (woodland)	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A1_desert							|		M4A1 (desert)	|		Weapon	|	AssaultRifle
+CUP_arifle_M4A3_desert							|		M4A3	|		Weapon	|	AssaultRifle
+CUP_arifle_MG36							|		MG36	|		Weapon	|	AssaultRifle
+CUP_arifle_MG36_camo							|		MG36 (Camo)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_CQC							|		Mk16 CQC	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_CQC_EGLM							|		Mk16 CQC EGLM	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_CQC_FG							|		Mk16 CQC (foregrip)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_CQC_SFG							|		Mk16 CQC (surefire)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_STD							|		Mk16 Standard	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_STD_EGLM							|		Mk16 Standard EGLM	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_STD_FG							|		Mk16 Standard (foregrip)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_STD_SFG							|		Mk16 Standard (surefire)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk16_SV							|		Mk16 SV	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_CQC							|		Mk17 CQC	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_CQC_EGLM							|		Mk17 CQC EGLM	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_CQC_FG							|		Mk17 CQC (foregrip)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_CQC_SFG							|		Mk17 CQC (surefire)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_STD							|		Mk17 Standard	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_STD_EGLM							|		Mk17 Standard EGLM	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_STD_FG							|		Mk17 Standard (foregrip)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk17_STD_SFG							|		Mk17 Standard (surefire)	|		Weapon	|	AssaultRifle
+CUP_arifle_Mk20							|		Mk17 Sniper	|		Weapon	|	AssaultRifle
+CUP_arifle_RPK74							|		RPK-74 (drum)	|		Weapon	|	AssaultRifle
+CUP_arifle_RPK74_45							|		RPK-74	|		Weapon	|	AssaultRifle
+CUP_arifle_RPK74M							|		RPK-74M	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58P							|		Sa-58P	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58P_des							|		Sa-58P (Desert)	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58RIS1							|		Sa-58 RIS1	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58RIS1_des							|		Sa-58 RIS1 (Desert)	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58RIS2							|		Sa-58 RIS2	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58RIS2_camo							|		Sa-58 RIS2 (Desert)	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58RIS2_gl							|		Sa-58 RIS2 GL	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58V							|		Sa-58V	|		Weapon	|	AssaultRifle
+CUP_arifle_Sa58V_camo							|		Sa-58V (Desert)	|		Weapon	|	AssaultRifle
+CUP_arifle_XM8_Carbine							|		XM8 Carbine	|		Weapon	|	AssaultRifle
+CUP_arifle_XM8_Carbine_FG							|		XM8 CQC	|		Weapon	|	AssaultRifle
+CUP_arifle_XM8_Carbine_GL							|		XM8 Carbine + M320	|		Weapon	|	AssaultRifle
+CUP_arifle_XM8_Compact							|		XM8 Compact	|		Weapon	|	AssaultRifle
+CUP_arifle_XM8_Compact_Rail							|		XM8 Compact (rail)	|		Weapon	|	AssaultRifle
+CUP_arifle_XM8_Railed							|		XM8 Carbine (rail)	|		Weapon	|	AssaultRifle
+CUP_arifle_xm8_SAW							|		XM8 SAW	|		Weapon	|	AssaultRifle
+CUP_arifle_xm8_sharpshooter							|		XM8 Sharpshooter	|		Weapon	|	AssaultRifle
+CUP_glaunch_6G30							|		6G30	|		Weapon	|	AssaultRifle
+CUP_glaunch_M32							|		M32	|		Weapon	|	AssaultRifle
+CUP_glaunch_M79							|		M79	|		Weapon	|	AssaultRifle
+CUP_glaunch_Mk13							|		Mk13	|		Weapon	|	AssaultRifle
+CUP_hgun_BallisticShield_Armed							|		Ballistic Shield (M9)	|		Weapon	|	AssaultRifle
+CUP_hgun_Colt1911							|		M1911	|		Weapon	|	Handgun
+CUP_hgun_Compact							|		CZ 75 COMPACT	|		Weapon	|	Handgun
+CUP_hgun_Duty							|		CZ 75 DUTY	|		Weapon	|	Handgun
+CUP_hgun_Glock17							|		G17	|		Weapon	|	Handgun
+CUP_hgun_M9							|		M9	|		Weapon	|	Handgun
+CUP_hgun_Makarov							|		Makarov PM	|		Weapon	|	Handgun
+CUP_hgun_MicroUzi							|		Micro UZI PDW	|		Weapon	|	Handgun
+CUP_hgun_PB6P9							|		PB 6P9	|		Weapon	|	Handgun
+CUP_hgun_Phantom							|		CZ 75 PHANTOM	|		Weapon	|	Handgun
+CUP_hgun_SA61							|		Sa-61	|		Weapon	|	Handgun
+CUP_hgun_TaurusTracker455							|		Taurus Tracker Model 455	|		Weapon	|	Handgun
+CUP_hgun_TaurusTracker455_gold							|		Taurus Tracker Model 455 (Gold)	|		Weapon	|	Handgun
+CUP_launch_9K32Strela							|		Strela-2 9K32	|		Weapon	|	MissileLauncher
+CUP_launch_FIM92Stinger							|		FIM-92F Stinger	|		Weapon	|	MissileLauncher
+CUP_launch_Igla							|		Igla 9K38	|		Weapon	|	MissileLauncher
+CUP_launch_Javelin							|		FGM-148 Javelin	|		Weapon	|	MissileLauncher
+CUP_launch_M136							|		M136 Launcher	|		Weapon	|	MissileLauncher
+CUP_launch_M47							|		M47 Dragon	|		Weapon	|	MissileLauncher
+CUP_launch_MAAWS							|		MAAWS	|		Weapon	|	RocketLauncher
+CUP_launch_Metis							|		Metis AT-13	|		Weapon	|	RocketLauncher
+CUP_launch_Mk153Mod0							|		Mk153 Mod 0 SMAW	|		Weapon	|	RocketLauncher
+CUP_launch_NLAW							|		NLAW	|		Weapon	|	MissileLauncher
+CUP_launch_RPG18							|		RPG18	|		Weapon	|	RocketLauncher
+CUP_launch_RPG7V							|		RPG-7V Launcher	|		Weapon	|	RocketLauncher
+CUP_lmg_L110A1							|		L110A1	|		Weapon	|	MachineGun
+CUP_lmg_L7A2							|		L7A2 GPMG	|		Weapon	|	MachineGun
+CUP_lmg_M240							|		M240	|		Weapon	|	MachineGun
+CUP_lmg_M249_E2							|		M249E2	|		Weapon	|	MachineGun
+CUP_lmg_m249_para							|		M249E2 Para(13.7in.)	|		Weapon	|	MachineGun
+CUP_lmg_m249_pip1							|		M249 PIP (RIS/18.3 in.)	|		Weapon	|	MachineGun
+CUP_lmg_m249_pip2							|		M249E2 (RIS/13.7 in.)	|		Weapon	|	MachineGun
+CUP_lmg_m249_pip3							|		M249 PIP (RIS/PIP Stock)	|		Weapon	|	MachineGun
+CUP_lmg_m249_pip4							|		M249 PIP (VFG/PIP Stock)	|		Weapon	|	MachineGun
+CUP_lmg_m249_SQuantoon							|		M249 (Squantoon Special)	|		Weapon	|	MachineGun
+CUP_lmg_M60E4							|		M60E4 Railed	|		Weapon	|	MachineGun
+CUP_lmg_minimi							|		FN Minimi (18.3 in.)	|		Weapon	|	MachineGun
+CUP_lmg_minimi_railed							|		FN Minimi (RIS/Solid Stock)	|		Weapon	|	MachineGun
+CUP_lmg_minimipara							|		FN Minimi Para	|		Weapon	|	MachineGun
+CUP_lmg_Mk48_des							|		Mk 48 Mod 0 (Desert)	|		Weapon	|	MachineGun
+CUP_lmg_Mk48_wdl							|		Mk 48 Mod 0 (Woodland)	|		Weapon	|	MachineGun
+CUP_lmg_Pecheneg							|		PKP	|		Weapon	|	MachineGun
+CUP_lmg_PKM							|		PKM	|		Weapon	|	MachineGun
+CUP_lmg_UK59							|		UK-59	|		Weapon	|	MachineGun
+CUP_sgun_AA12							|		AA-12	|		Weapon	|	AssaultRifle
+CUP_sgun_M1014							|		M1014	|		Weapon	|	AssaultRifle
+CUP_sgun_Saiga12K							|		Saiga 12K	|		Weapon	|	AssaultRifle
+CUP_smg_bizon							|		Bizon PP-19	|		Weapon	|	AssaultRifle
+CUP_smg_EVO							|		CZ SCORPION EVO 3	|		Weapon	|	AssaultRifle
+CUP_smg_MP5A5							|		MP5A5	|		Weapon	|	AssaultRifle
+CUP_smg_MP5SD6							|		MP5SD6	|		Weapon	|	AssaultRifle
+CUP_srifle_AS50							|		AS50	|		Weapon	|	SniperRifle
+CUP_srifle_AWM_des							|		L115A3 LRR (Desert)	|		Weapon	|	AssaultRifle
+CUP_srifle_AWM_wdl							|		L115A3 LRR (Woodland)	|		Weapon	|	AssaultRifle
+CUP_srifle_CZ550							|		CZ 550	|		Weapon	|	AssaultRifle
+CUP_srifle_CZ550_rail							|		CZ 550 (picatinny rail)	|		Weapon	|	AssaultRifle
+CUP_srifle_CZ750							|		CZ 750	|		Weapon	|	AssaultRifle
+CUP_srifle_G22_des							|		G22	|		Weapon	|	AssaultRifle
+CUP_srifle_ksvk							|		KSVK	|		Weapon	|	AssaultRifle
+CUP_srifle_L129A1							|		L129a1	|		Weapon	|	AssaultRifle
+CUP_srifle_L129A1_HG							|		L129a1 w/ HG	|		Weapon	|	AssaultRifle
+CUP_srifle_LeeEnfield							|		Lee Enfield	|		Weapon	|	AssaultRifle
+CUP_srifle_LeeEnfield_rail							|		Lee Enfield (picatinny rail)	|		Weapon	|	AssaultRifle
+CUP_srifle_M107_Base							|		M107	|		Weapon	|	SniperRifle
+CUP_srifle_M110							|		M110	|		Weapon	|	AssaultRifle
+CUP_srifle_M14							|		M14	|		Weapon	|	AssaultRifle
+CUP_srifle_M14_DMR							|		M14 DMR	|		Weapon	|	AssaultRifle
+CUP_srifle_M24_des							|		M24 Desert	|		Weapon	|	AssaultRifle
+CUP_srifle_M24_wdl							|		M24	|		Weapon	|	AssaultRifle
+CUP_srifle_M40A3							|		M40A3	|		Weapon	|	AssaultRifle
+CUP_srifle_Mk12SPR							|		Mk12 SPR	|		Weapon	|	AssaultRifle
+CUP_srifle_SVD							|		SVD Dragunov	|		Weapon	|	AssaultRifle
+CUP_srifle_SVD_des							|		SVD Dragunov (desert)	|		Weapon	|	AssaultRifle
+CUP_srifle_VSSVintorez							|		VSS Vintorez	|		Weapon	|	AssaultRifle
+FirstAidKit							|		First Aid Kit	|		Weapon	|	UnknownWeapon
+hgun_ACPC2_F							|		Custom Covert II	|		Weapon	|	Handgun
+hgun_P07_F							|		P99	|		Weapon	|	Handgun
+hgun_P07_khk_F							|		P99 (Khaki)	|		Weapon	|	Handgun
+hgun_PDW2000_F							|		CPW	|		Weapon	|	AssaultRifle
+hgun_Pistol_01_F							|		Makarov PM	|		Weapon	|	Handgun
+hgun_Pistol_heavy_01_F							|		FNX-45 Tactical	|		Weapon	|	Handgun
+hgun_Pistol_heavy_02_F							|		Chiappa Rhino 60DS	|		Weapon	|	Handgun
+hgun_Pistol_Signal_F							|		Taurus Judge	|		Weapon	|	Handgun
+hgun_Rook40_F							|		MP-443 Grach	|		Weapon	|	Handgun
+hlc_lmg_M249E2							|		M249E2	|		Weapon	|	MachineGun
+hlc_lmg_m249para							|		M249E2 Para(13.7in.)	|		Weapon	|	MachineGun
+hlc_lmg_m60							|		M60	|		Weapon	|	MachineGun
+hlc_lmg_M60E4							|		M60E4	|		Weapon	|	MachineGun
+hlc_lmg_minimi							|		FN Minimi (18.3 in.)	|		Weapon	|	MachineGun
+hlc_lmg_minimi_railed							|		FN Minimi (RIS/Solid Stock)	|		Weapon	|	MachineGun
+hlc_lmg_minimipara							|		FN Minimi Para	|		Weapon	|	MachineGun
+hlc_lmg_mk48							|		Mk.48 Mod.0	|		Weapon	|	MachineGun
+hlc_lmg_mk48mod1							|		Mk.48 Mod.1	|		Weapon	|	MachineGun
+hlc_m249_pip1							|		M249 PIP (RIS/18.3 in.)	|		Weapon	|	MachineGun
+hlc_m249_pip2							|		M249E2 (RIS/13.7 in.)	|		Weapon	|	MachineGun
+hlc_m249_pip3							|		M249 PIP (RIS/PIP Stock)	|		Weapon	|	MachineGun
+hlc_m249_pip4							|		M249 PIP (VFG/PIP Stock)	|		Weapon	|	MachineGun
+hlc_m249_SQuantoon							|		M249 (Squantoon Special)	|		Weapon	|	MachineGun
+hlc_rifle_aek971							|		ZID AEK971S	|		Weapon	|	AssaultRifle
+hlc_rifle_aek971_mtk							|		ZID AEK971S(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_aek971worn							|		ZID AEK971S(Worn)	|		Weapon	|	AssaultRifle
+hlc_rifle_ak12							|		Izhmash AK12	|		Weapon	|	AssaultRifle
+hlc_rifle_ak12GL							|		Izhmash AK12(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_ak47							|		Izhmash AK47	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74							|		Izhmash AK74	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74_dirty							|		Izhmash AK74(Worn)	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74_dirty2							|		Izhmash AK74(Worn)	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74_MTK							|		Izhmash AK74(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74m							|		Izhmash AK74M	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74m_gl							|		Izhmash AK74M(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_ak74m_MTK							|		Izhmash AK74M(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_akm							|		Izhmash AKM	|		Weapon	|	AssaultRifle
+hlc_rifle_akm_MTK							|		Izhmash AKM(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_akmgl							|		Izhmash AKM (GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_aks74							|		Izhmash AKS74	|		Weapon	|	AssaultRifle
+hlc_rifle_aks74_GL							|		Izhmash AKS74(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_aks74_MTK							|		Izhmash AKS74(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_aks74u							|		Izhmash AKS74U	|		Weapon	|	AssaultRifle
+hlc_rifle_aks74u_MTK							|		Izhmash AKS74U(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_aku12							|		Izhmash AK12U	|		Weapon	|	AssaultRifle
+hlc_rifle_awcovert							|		AI AWC-M (OD)	|		Weapon	|	SniperRifle
+hlc_rifle_awcovert_BL							|		AI AWC-M (Black)	|		Weapon	|	SniperRifle
+hlc_rifle_awcovert_FDE							|		AI AWC-M (FDE)	|		Weapon	|	SniperRifle
+hlc_rifle_awmagnum							|		AI AWM (OD)	|		Weapon	|	SniperRifle
+hlc_rifle_awmagnum_BL							|		AI AWM (Black)	|		Weapon	|	SniperRifle
+hlc_rifle_awMagnum_BL_ghillie							|		AI AWM (Black+Ghillie)	|		Weapon	|	SniperRifle
+hlc_rifle_awmagnum_FDE							|		AI AWM (FDE)	|		Weapon	|	SniperRifle
+hlc_rifle_awMagnum_FDE_ghillie							|		AI AWM (FDE+Ghillie)	|		Weapon	|	SniperRifle
+hlc_rifle_awMagnum_OD_ghillie							|		AI AWM (OD+Ghillie)	|		Weapon	|	SniperRifle
+hlc_rifle_bcmjack							|		BCM 'Jack' Carbine	|		Weapon	|	AssaultRifle
+hlc_rifle_Bushmaster300							|		Bushmaster .300 Carbine	|		Weapon	|	AssaultRifle
+hlc_rifle_c1A1							|		CAL C1A1	|		Weapon	|	AssaultRifle
+hlc_rifle_Colt727							|		Colt Carbine	|		Weapon	|	AssaultRifle
+hlc_rifle_Colt727_GL							|		Colt Carbine(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_CQBR							|		Colt M4 CQB-R	|		Weapon	|	AssaultRifle
+hlc_rifle_FAL5000							|		FN FAL 50.00	|		Weapon	|	AssaultRifle
+hlc_rifle_FAL5000Rail							|		FN FAL 50.00 (RIS)	|		Weapon	|	AssaultRifle
+hlc_rifle_FAL5061							|		FN FAL 50.61'Para'	|		Weapon	|	AssaultRifle
+hlc_rifle_FAL5061Rail							|		FN FAL 50.61'Para' (RIS)	|		Weapon	|	AssaultRifle
+hlc_rifle_falosw							|		DSArms FAL OSW	|		Weapon	|	AssaultRifle
+hlc_rifle_G36A1							|		HK G36A1	|		Weapon	|	AssaultRifle
+hlc_rifle_G36A1AG36							|		HK G36A1(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36C							|		HK G36C	|		Weapon	|	AssaultRifle
+hlc_rifle_G36CMLIC							|		HK G36C-MLI(C)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36CTac							|		HK G36CV(KAC)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36CV							|		HK G36CV	|		Weapon	|	AssaultRifle
+hlc_rifle_G36E1							|		HK G36E	|		Weapon	|	AssaultRifle
+hlc_rifle_G36E1AG36							|		HK G36E(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36KA1							|		HK G36KA1	|		Weapon	|	AssaultRifle
+hlc_rifle_G36KE1							|		HK G36KE	|		Weapon	|	AssaultRifle
+hlc_rifle_G36KMLIC							|		HK G36K-MLI(C)	|		Weapon	|	AssaultRifle
+hlc_rifle_g36KTac							|		HK G36KV(KAC)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36KV							|		HK G36KV	|		Weapon	|	AssaultRifle
+hlc_rifle_G36MLIAG36							|		HK G36MLI(C)(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36MLIC							|		HK G36-MLI(C)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36TAC							|		HK G36V(KAC)	|		Weapon	|	AssaultRifle
+hlc_rifle_G36V							|		HK G36V	|		Weapon	|	AssaultRifle
+hlc_rifle_G36VAG36							|		HK G36V(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_g3a3							|		HK G3A3	|		Weapon	|	AssaultRifle
+hlc_rifle_g3a3ris							|		HK G3A3 RIS	|		Weapon	|	AssaultRifle
+hlc_rifle_g3a3v							|		HK G3A3 (Widegrip)	|		Weapon	|	AssaultRifle
+hlc_rifle_g3ka4							|		HK G3KA4 RAS	|		Weapon	|	AssaultRifle
+HLC_Rifle_g3ka4_GL							|		HK G3KA4 RAS(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_g3sg1							|		HK G3/SG1	|		Weapon	|	AssaultRifle
+hlc_rifle_hk33a2							|		HK HK33A2	|		Weapon	|	AssaultRifle
+hlc_rifle_hk33a2RIS							|		HK HK33A2(RIS)	|		Weapon	|	AssaultRifle
+hlc_rifle_hk51							|		FR Ordnance MC51	|		Weapon	|	AssaultRifle
+hlc_rifle_hk53							|		HK HK53	|		Weapon	|	AssaultRifle
+hlc_rifle_hk53RAS							|		HK HK53(RAS)	|		Weapon	|	AssaultRifle
+hlc_rifle_honeybadger							|		AAC 'Honey-Badger'	|		Weapon	|	AssaultRifle
+hlc_rifle_L1A1SLR							|		Enfield L1A1 SLR	|		Weapon	|	AssaultRifle
+hlc_rifle_LAR							|		FN LAR	|		Weapon	|	AssaultRifle
+hlc_rifle_M14							|		Springfield Armory M14	|		Weapon	|	AssaultRifle
+hlc_rifle_M14_Bipod							|		Springfield Armory M14(Bipod)	|		Weapon	|	AssaultRifle
+hlc_rifle_M14_Rail							|		Springfield Armory M14(Rail)	|		Weapon	|	AssaultRifle
+hlc_rifle_m14dmr							|		Springfield Armory M14DMR	|		Weapon	|	AssaultRifle
+hlc_rifle_m14sopmod							|		Troy M14 SOPMOD	|		Weapon	|	AssaultRifle
+hlc_rifle_M21							|		Springfield Armory M21	|		Weapon	|	AssaultRifle
+hlc_rifle_M4							|		Colt M4 Carbine	|		Weapon	|	AssaultRifle
+hlc_rifle_m4m203							|		Colt M4 Carbine (GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_MG36							|		HK MG36A1	|		Weapon	|	AssaultRifle
+hlc_rifle_osw_GL							|		DSArms FAL OSW(GL)	|		Weapon	|	AssaultRifle
+hlc_rifle_psg1							|		HK PSG1	|		Weapon	|	AssaultRifle
+hlc_rifle_psg1A1							|		HK PSG1A1	|		Weapon	|	AssaultRifle
+hlc_rifle_PSG1A1_RIS							|		HK PSG1A1(RIS)	|		Weapon	|	AssaultRifle
+hlc_rifle_RK62							|		Valmet Rk.62	|		Weapon	|	AssaultRifle
+hlc_rifle_rpk							|		Izhmash RPK	|		Weapon	|	MachineGun
+hlc_rifle_RPK12							|		Izhmash RPK12	|		Weapon	|	MachineGun
+hlc_rifle_rpk74n							|		Izhmash RPK74	|		Weapon	|	AssaultRifle
+hlc_rifle_RU556							|		AR15 Sanitised Carbine	|		Weapon	|	AssaultRifle
+hlc_rifle_RU5562							|		AR15 Magpul Carbine	|		Weapon	|	AssaultRifle
+hlc_rifle_saiga12k							|		Izhmash Saiga12K	|		Weapon	|	AssaultRifle
+hlc_rifle_SAMR							|		RRA LAR-15	|		Weapon	|	AssaultRifle
+hlc_rifle_samr2							|		RRA LAR-15	|		Weapon	|	AssaultRifle
+hlc_rifle_SLR							|		Lithgow SLR	|		Weapon	|	AssaultRifle
+hlc_rifle_slr107u							|		Arsenal Inc. SLR107U	|		Weapon	|	AssaultRifle
+hlc_rifle_slr107u_MTK							|		Arsenal Inc. SLR107U(MTK)	|		Weapon	|	AssaultRifle
+hlc_rifle_SLRchopmod							|		Lithgow SLR Chopmod	|		Weapon	|	AssaultRifle
+hlc_rifle_STG58F							|		Steyr STG.58	|		Weapon	|	AssaultRifle
+hlc_rifle_vendimus							|		AR15 .300 Dissipator	|		Weapon	|	AssaultRifle
+hlc_smg_9mmar							|		HK MP5N '9MMAR'	|		Weapon	|	AssaultRifle
+hlc_smg_mp510							|		HK MP5/10	|		Weapon	|	AssaultRifle
+hlc_smg_mp5a2							|		HK MP5A2	|		Weapon	|	AssaultRifle
+hlc_smg_mp5a3							|		HK MP5A3	|		Weapon	|	AssaultRifle
+hlc_smg_mp5a4							|		HK MP5A4	|		Weapon	|	AssaultRifle
+hlc_smg_mp5k							|		HK MP5K	|		Weapon	|	Handgun
+hlc_smg_mp5k_PDW							|		HK MP5K-PDW	|		Weapon	|	AssaultRifle
+hlc_smg_MP5N							|		HK MP5N	|		Weapon	|	AssaultRifle
+hlc_smg_mp5sd5							|		HK MP5SD5	|		Weapon	|	AssaultRifle
+hlc_smg_mp5sd6							|		HK MP5SD6	|		Weapon	|	AssaultRifle
+launch_B_Titan_F							|		Titan MPRL (Sand)	|		Weapon	|	MissileLauncher
+launch_B_Titan_short_F							|		Titan MPRL Compact (Sand)	|		Weapon	|	MissileLauncher
+launch_B_Titan_short_tna_F							|		Titan MPRL Compact (Tropic)	|		Weapon	|	MissileLauncher
+launch_B_Titan_tna_F							|		Titan MPRL (Tropic)	|		Weapon	|	MissileLauncher
+launch_I_Titan_F							|		Titan MPRL (Digital)	|		Weapon	|	MissileLauncher
+launch_I_Titan_short_F							|		Titan MPRL Compact (Olive)	|		Weapon	|	MissileLauncher
+launch_NLAW_F							|		NLAW	|		Weapon	|	RocketLauncher
+launch_O_Titan_F							|		Titan MPRL (Hex)	|		Weapon	|	MissileLauncher
+launch_O_Titan_ghex_F							|		Titan MPRL (Green Hex)	|		Weapon	|	MissileLauncher
+launch_O_Titan_short_F							|		Titan MPRL Compact (Coyote)	|		Weapon	|	MissileLauncher
+launch_O_Titan_short_ghex_F							|		Titan MPRL Compact (Green Hex)	|		Weapon	|	MissileLauncher
+launch_RPG32_F							|		RPG-32	|		Weapon	|	RocketLauncher
+launch_RPG32_ghex_F							|		RPG-32 (Green Hex)	|		Weapon	|	RocketLauncher
+launch_RPG7_F							|		RPG-7	|		Weapon	|	RocketLauncher
+LMG_03_F							|		M249 SPW	|		Weapon	|	MachineGun
+LMG_Mk200_F							|		Stoner 99 LMG	|		Weapon	|	MachineGun
+LMG_Zafir_F							|		Negev NG7	|		Weapon	|	MachineGun
+LOP_Weap_LeeEnfield							|		Lee Enfield	|		Weapon	|	AssaultRifle
+LOP_Weap_LeeEnfield_railed							|		Lee Enfield - railed	|		Weapon	|	AssaultRifle
+Medikit							|		Medikit	|		Weapon	|	UnknownWeapon
+MMG_01_tan_F							|		HK121 (Tan)	|		Weapon	|	MachineGun
+MMG_02_black_F							|		LWMMG (Black)	|		Weapon	|	MachineGun
+MMG_02_sand_F							|		LWMMG (Sand)	|		Weapon	|	MachineGun
+RH_ar10							|		AR-10	|		Weapon	|	SniperRifle
+RH_bull							|		Taurus Raging Bull	|		Weapon	|	Handgun
+RH_bullb							|		Taurus Raging Bull Black	|		Weapon	|	Handgun
+RH_cz75							|		CZ 75	|		Weapon	|	Handgun
+RH_deagle							|		Desert Eagle	|		Weapon	|	Handgun
+RH_Deagleg							|		Desert Eagle Gold	|		Weapon	|	Handgun
+RH_Deaglem							|		Desert Eagle Modern	|		Weapon	|	Handgun
+RH_Deagles							|		Desert Eagle Silver	|		Weapon	|	Handgun
+RH_fn57							|		FN Five-seven	|		Weapon	|	Handgun
+RH_fn57_g							|		FN Five-seven ODG	|		Weapon	|	Handgun
+RH_fn57_t							|		FN Five-seven FDE	|		Weapon	|	Handgun
+RH_fnp45							|		FNP45 Tactical	|		Weapon	|	Handgun
+RH_fnp45t							|		FNP45 Tactical Tan	|		Weapon	|	Handgun
+RH_g17							|		Glock 17	|		Weapon	|	Handgun
+RH_g18							|		Glock 18	|		Weapon	|	Handgun
+RH_g19							|		Glock 19	|		Weapon	|	Handgun
+RH_g19t							|		Glock 19 Tan	|		Weapon	|	Handgun
+RH_gsh18							|		GSH-18	|		Weapon	|	Handgun
+RH_hb							|		AAC Honey Badger	|		Weapon	|	SniperRifle
+RH_hb_b							|		AAC Honey Badger Black	|		Weapon	|	SniperRifle
+RH_Hk416							|		Hk416 D14.5RS	|		Weapon	|	AssaultRifle
+RH_hk416_des							|		Hk416 D14.5RS Tan camo	|		Weapon	|	AssaultRifle
+RH_hk416_tg							|		Hk416 D14.5RS TG camo	|		Weapon	|	AssaultRifle
+RH_hk416_wdl							|		Hk416 D14.5RS Wdl camo	|		Weapon	|	AssaultRifle
+RH_Hk416c							|		Hk416C	|		Weapon	|	AssaultRifle
+RH_hk416c_des							|		Hk416C Tan camo	|		Weapon	|	AssaultRifle
+RH_hk416c_tg							|		Hk416C TG camo	|		Weapon	|	AssaultRifle
+RH_hk416c_wdl							|		Hk416C Wdl camo	|		Weapon	|	AssaultRifle
+RH_Hk416s							|		Hk416 D10RS	|		Weapon	|	AssaultRifle
+RH_hk416s_des							|		Hk416 D10RS Tan camo	|		Weapon	|	AssaultRifle
+RH_hk416s_tg							|		Hk416 D10RS TG camo	|		Weapon	|	AssaultRifle
+RH_hk416s_wdl							|		Hk416 D10RS Wdl camo	|		Weapon	|	AssaultRifle
+RH_kimber							|		Kimber Desert Warrior	|		Weapon	|	Handgun
+RH_kimber_nw							|		Kimber Night Warrior	|		Weapon	|	Handgun
+RH_m110							|		M110	|		Weapon	|	SniperRifle
+RH_M16a1							|		M16A1	|		Weapon	|	AssaultRifle
+RH_M16A1gl							|		M16A1 M203	|		Weapon	|	AssaultRifle
+RH_M16A2							|		M16A2	|		Weapon	|	AssaultRifle
+RH_M16A2gl							|		M16A2 M203	|		Weapon	|	AssaultRifle
+RH_M16A3							|		M16A3	|		Weapon	|	AssaultRifle
+RH_M16A4							|		M16A4	|		Weapon	|	AssaultRifle
+RH_m16a4_des							|		M16A4 Tan camo	|		Weapon	|	AssaultRifle
+RH_M16A4_m							|		M16A4 Matech	|		Weapon	|	AssaultRifle
+RH_m16a4_m_des							|		M16A4 Matech Tan camo	|		Weapon	|	AssaultRifle
+RH_m16a4_m_tg							|		M16A4 Matech TG camo	|		Weapon	|	AssaultRifle
+RH_m16a4_m_wdl							|		M16A4 Matech Wdl camo	|		Weapon	|	AssaultRifle
+RH_m16a4_tg							|		M16A4 TG camo	|		Weapon	|	AssaultRifle
+RH_m16a4_wdl							|		M16A4 Wdl camo	|		Weapon	|	AssaultRifle
+RH_M16A4gl							|		M16A4 M203	|		Weapon	|	AssaultRifle
+RH_m16a4gl_des							|		M16A4 M203 Tan camo	|		Weapon	|	AssaultRifle
+RH_m16a4gl_tg							|		M16A4 M203 TG camo	|		Weapon	|	AssaultRifle
+RH_m16a4gl_wdl							|		M16A4 M203 Wdl camo	|		Weapon	|	AssaultRifle
+RH_M16A6							|		M16A6	|		Weapon	|	AssaultRifle
+RH_m16a6_des							|		M16A6 Tan camo	|		Weapon	|	AssaultRifle
+RH_m16a6_tg							|		M16A6 TG camo	|		Weapon	|	AssaultRifle
+RH_m16a6_wdl							|		M16A6 Wdl camo	|		Weapon	|	AssaultRifle
+RH_m1911							|		M1911A1	|		Weapon	|	Handgun
+RH_M27IAR							|		M27 IAR	|		Weapon	|	AssaultRifle
+RH_M27IAR_des							|		M27 IAR Tan camo	|		Weapon	|	AssaultRifle
+RH_M27IAR_tg							|		M27 IAR TG camo	|		Weapon	|	AssaultRifle
+RH_M27IAR_wdl							|		M27 IAR Wdl camo	|		Weapon	|	AssaultRifle
+RH_m4							|		M4	|		Weapon	|	AssaultRifle
+RH_m4_des							|		M4 Tan camo	|		Weapon	|	AssaultRifle
+RH_M4_M203							|		M4 M203	|		Weapon	|	AssaultRifle
+RH_m4_m203_des							|		M4 M203 Tan camo	|		Weapon	|	AssaultRifle
+RH_m4_m203_tg							|		M4 M203 TG camo	|		Weapon	|	AssaultRifle
+RH_m4_m203_wdl							|		M4 M203 Wdl camo	|		Weapon	|	AssaultRifle
+RH_M4_moe							|		M4A1 MOE Tan	|		Weapon	|	AssaultRifle
+RH_M4_moe_b							|		M4A1 MOE Black	|		Weapon	|	AssaultRifle
+RH_M4_moe_g							|		M4A1 MOE Green	|		Weapon	|	AssaultRifle
+RH_M4_ris							|		M4 RIS	|		Weapon	|	AssaultRifle
+RH_M4_ris_m							|		M4A1 RIS Matech	|		Weapon	|	AssaultRifle
+RH_M4_ris_M203							|		M4 RIS M203	|		Weapon	|	AssaultRifle
+RH_M4_ris_M203s							|		M4 RIS M203S	|		Weapon	|	AssaultRifle
+RH_m4_ris_m_des							|		M4A1 RIS Matech Tan camo	|		Weapon	|	AssaultRifle
+RH_m4_ris_m_tg							|		M4A1 RIS Matech TG camo	|		Weapon	|	AssaultRifle
+RH_m4_ris_m_wdl							|		M4A1 RIS Matech Wdl camo	|		Weapon	|	AssaultRifle
+RH_m4_tg							|		M4 TG camo	|		Weapon	|	AssaultRifle
+RH_m4_wdl							|		M4 Wdl camo	|		Weapon	|	AssaultRifle
+RH_M4A1_ris							|		M4A1 RIS	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_des							|		M4A1 RIS Tan camo	|		Weapon	|	AssaultRifle
+RH_M4A1_ris_M203							|		M4A1 RIS M203	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_m203_des							|		M4A1 RIS M203 Tan camo	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_m203_tg							|		M4A1 RIS M203 TG camo	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_m203_wdl							|		M4A1 RIS M203 Wdl camo	|		Weapon	|	AssaultRifle
+RH_M4A1_ris_M203s							|		M4A1 RIS M203S	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_m203s_des							|		M4A1 RIS M203S Tan camo	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_m203s_tg							|		M4A1 RIS M203S TG camo	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_m203s_wdl							|		M4A1 RIS M203S Wdl camo	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_tg							|		M4A1 RIS TG camo	|		Weapon	|	AssaultRifle
+RH_m4a1_ris_wdl							|		M4A1 RIS Wdl camo	|		Weapon	|	AssaultRifle
+RH_M4A6							|		M4A6	|		Weapon	|	AssaultRifle
+RH_m4a6_des							|		M4A6 Tan camo	|		Weapon	|	AssaultRifle
+RH_m4a6_tg							|		M4A6 TG camo	|		Weapon	|	AssaultRifle
+RH_m4a6_wdl							|		M4A6 Wdl camo	|		Weapon	|	AssaultRifle
+RH_M4m							|		M4A1 Magpul	|		Weapon	|	AssaultRifle
+RH_M4m_b							|		M4A1 Magpul Black	|		Weapon	|	AssaultRifle
+RH_M4m_g							|		M4A1 Magpul Green	|		Weapon	|	AssaultRifle
+RH_M4sbr							|		Vltor SBR Tan	|		Weapon	|	AssaultRifle
+RH_M4sbr_b							|		Vltor SBR Black	|		Weapon	|	AssaultRifle
+RH_M4sbr_g							|		Vltor SBR Green	|		Weapon	|	AssaultRifle
+RH_m9							|		Beretta M9	|		Weapon	|	Handgun
+RH_m9c							|		Beretta M9 camo	|		Weapon	|	Handgun
+RH_mak							|		Makarov PM	|		Weapon	|	Handgun
+RH_mateba							|		Mateba Model 6 Unica	|		Weapon	|	Handgun
+RH_Mk11							|		Mk11	|		Weapon	|	SniperRifle
+RH_Mk12mod1							|		Mk12 mod1	|		Weapon	|	AssaultRifle
+RH_Mk12mod1_des							|		Mk12 mod1 Tan camo	|		Weapon	|	AssaultRifle
+RH_Mk12mod1_tg							|		Mk12 mod1 TG camo	|		Weapon	|	AssaultRifle
+RH_Mk12mod1_wdl							|		Mk12 mod1 Wdl camo	|		Weapon	|	AssaultRifle
+RH_mk2							|		Ruger Mk2	|		Weapon	|	Handgun
+RH_mp412							|		MP412 REX	|		Weapon	|	Handgun
+RH_muzi							|		Micro Uzi	|		Weapon	|	Handgun
+RH_p226							|		Sig P226	|		Weapon	|	Handgun
+RH_p226s							|		Sig P226 Silver	|		Weapon	|	Handgun
+RH_PDW							|		KAC PDW	|		Weapon	|	AssaultRifle
+RH_python							|		Colt Python	|		Weapon	|	Handgun
+RH_SAMR							|		SAM-R	|		Weapon	|	AssaultRifle
+RH_SAMR_des							|		SAM-R Tan camo	|		Weapon	|	AssaultRifle
+RH_SAMR_tg							|		SAM-R TG camo	|		Weapon	|	AssaultRifle
+RH_SAMR_wdl							|		SAM-R Wdl camo	|		Weapon	|	AssaultRifle
+RH_sbr9							|		SBR9	|		Weapon	|	SubmachineGun
+RH_sbr9_des							|		SBR9 Tan camo	|		Weapon	|	SubmachineGun
+RH_sbr9_tg							|		SBR9 TG camo	|		Weapon	|	SubmachineGun
+RH_sbr9_wdl							|		SBR9 Wdl camo	|		Weapon	|	SubmachineGun
+RH_SR25EC							|		SR25EC	|		Weapon	|	SniperRifle
+RH_sw659							|		SW 659	|		Weapon	|	Handgun
+RH_tec9							|		Intratec TEC-9	|		Weapon	|	Handgun
+RH_tt33							|		TT33	|		Weapon	|	Handgun
+RH_ttracker							|		Taurus Tracker 455	|		Weapon	|	Handgun
+RH_ttracker_g							|		Taurus Tracker 455 Gold	|		Weapon	|	Handgun
+RH_usp							|		USP45	|		Weapon	|	Handgun
+RH_uspm							|		USP40 Match	|		Weapon	|	Handgun
+RH_vp70							|		VP70	|		Weapon	|	Handgun
+RH_vz61							|		Vz61 Skorpion	|		Weapon	|	Handgun
+rhs_weap_ak103							|		AK-103 (Steel Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_1							|		AK-103-1 (Steel Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_1_folded							|		AK-103-1 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_1_npz							|		AK-103-1 (Steel Mag./NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_2							|		AK-103-2 (Steel Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_2_folded							|		AK-103-2 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_2_npz							|		AK-103-2 (Steel Mag./NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_folded							|		AK-103 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_gp25							|		AK-103 (GP-25/Steel Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_gp25_npz							|		AK-103 (GP-25/NPZ/Steel Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak103_npz							|		AK-103 (Steel Mag./NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak104							|		AK-104	|		Weapon	|	AssaultRifle
+rhs_weap_ak104_folded							|		AK-104 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak104_npz							|		AK-104 (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak105							|		AK-105	|		Weapon	|	AssaultRifle
+rhs_weap_ak105_folded							|		AK-105 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak105_npz							|		AK-105 (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m							|		AK-74M	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_2mag							|		AK-74M (2 Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_2mag_camo							|		AK-74M (2 Mag./Camo)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_2mag_npz							|		AK-74M (2 Mag./NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_camo							|		AK-74M (Camo)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_camo_folded							|		AK-74M (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_desert							|		AK-74M (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_desert_folded							|		AK-74M (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_desert_npz							|		AK-74M (Desert/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_folded							|		AK-74M (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_fullplum							|		AK-74M (Plum)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_fullplum_gp25							|		AK-74M (GP-25/Plum)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_fullplum_gp25_npz							|		AK-74M (GP-25/Plum/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_fullplum_npz							|		AK-74M (Plum/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_gp25							|		AK-74M (GP-25)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_gp25_npz							|		AK-74M (GP-25/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_npz							|		AK-74M (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_plummag							|		AK-74M (Plum Mag.)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_plummag_folded							|		AK-74M (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_ak74m_plummag_npz							|		AK-74M (Plum Mag./NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_akm							|		AKM	|		Weapon	|	AssaultRifle
+rhs_weap_akm_gp25							|		AKM (GP-25)	|		Weapon	|	AssaultRifle
+rhs_weap_akms							|		AKMS	|		Weapon	|	AssaultRifle
+rhs_weap_akms_gp25							|		AKMS (GP-25)	|		Weapon	|	AssaultRifle
+rhs_weap_aks74u							|		AKS-74U	|		Weapon	|	AssaultRifle
+rhs_weap_aks74u_folded							|		AKS-74U (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_aks74un							|		AKS-74UN	|		Weapon	|	AssaultRifle
+rhs_weap_aks74un_folded							|		AKS-74UN (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_asval							|		AS Val	|		Weapon	|	AssaultRifle
+rhs_weap_asval_grip							|		AS Val (GRIP)	|		Weapon	|	AssaultRifle
+rhs_weap_asval_grip_npz							|		AS Val (GRIP/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_asval_npz							|		AS Val (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_fgm148							|		FGM-148 Javelin	|		Weapon	|	MissileLauncher
+rhs_weap_fim92							|		FIM-92F	|		Weapon	|	MissileLauncher
+rhs_weap_hk416d10							|		HK416 D10	|		Weapon	|	AssaultRifle
+rhs_weap_hk416d10_LMT							|		HK416 D10 (SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_hk416d10_m320							|		HK416 D10 (M320)	|		Weapon	|	AssaultRifle
+rhs_weap_hk416d145							|		HK416 D14.5	|		Weapon	|	AssaultRifle
+rhs_weap_hk416d145_m320							|		HK416 D14.5 (M320)	|		Weapon	|	AssaultRifle
+rhs_weap_igla							|		9K38 Igla	|		Weapon	|	MissileLauncher
+rhs_weap_kar98k							|		Karabiner 98 Kurz	|		Weapon	|	AssaultRifle
+rhs_weap_M107							|		M107	|		Weapon	|	AssaultRifle
+rhs_weap_M107_d							|		M107 (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_M107_w							|		M107 (Woodland)	|		Weapon	|	AssaultRifle
+rhs_weap_M136							|		M136 (HEAT)	|		Weapon	|	RocketLauncher
+rhs_weap_M136_hedp							|		M136 (HEDP)	|		Weapon	|	RocketLauncher
+rhs_weap_M136_hp							|		M136 (HP)	|		Weapon	|	RocketLauncher
+rhs_weap_m14ebrri							|		M14 EBR-RI	|		Weapon	|	AssaultRifle
+rhs_weap_m16a4							|		M16A4	|		Weapon	|	AssaultRifle
+rhs_weap_m16a4_carryhandle							|		M16A4 (Carryhandle)	|		Weapon	|	AssaultRifle
+rhs_weap_m16a4_carryhandle_M203							|		M16A4 (Carryhandle/M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m16a4_carryhandle_pmag							|		M16A4 (Carryhandle/PMAG)	|		Weapon	|	AssaultRifle
+rhs_weap_m16a4_pmag							|		M16A4 (PMAG)	|		Weapon	|	AssaultRifle
+rhs_weap_m21a							|		M-21A	|		Weapon	|	AssaultRifle
+rhs_weap_m21a_fold							|		M-21A (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_m21a_pr							|		M-21A (Picatinny)	|		Weapon	|	AssaultRifle
+rhs_weap_m21s							|		M-21S	|		Weapon	|	AssaultRifle
+rhs_weap_m21s_fold							|		M-21S (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_m21s_pr							|		M-21S (Picatinny)	|		Weapon	|	AssaultRifle
+rhs_weap_m240B							|		M240B	|		Weapon	|	MachineGun
+rhs_weap_m240B_CAP							|		M240B (CAP)	|		Weapon	|	MachineGun
+rhs_weap_m240G							|		M240G	|		Weapon	|	MachineGun
+rhs_weap_m249_pip_L							|		M249 PIP (Long)	|		Weapon	|	MachineGun
+rhs_weap_m249_pip_L_para							|		M249 PIP (Long/Para)	|		Weapon	|	MachineGun
+rhs_weap_m249_pip_L_vfg							|		M249 PIP (Long/VFG)	|		Weapon	|	MachineGun
+rhs_weap_m249_pip_S							|		M249 PIP (Short)	|		Weapon	|	MachineGun
+rhs_weap_m249_pip_S_para							|		M249 PIP (Short/Para)	|		Weapon	|	MachineGun
+rhs_weap_m249_pip_S_vfg							|		M249 PIP (Short/VFG)	|		Weapon	|	MachineGun
+rhs_weap_m24sws							|		M24 SWS	|		Weapon	|	AssaultRifle
+rhs_weap_m24sws_blk							|		M24 SWS (Black)	|		Weapon	|	AssaultRifle
+rhs_weap_m24sws_ghillie							|		M24 SWS (Ghillie)	|		Weapon	|	AssaultRifle
+rhs_weap_m27iar							|		M27 IAR	|		Weapon	|	AssaultRifle
+rhs_weap_m27iar_grip							|		M27 IAR (TD Grip)	|		Weapon	|	AssaultRifle
+rhs_weap_m32							|		M32 MGL	|		Weapon	|	AssaultRifle
+rhs_weap_M320							|		M320 GLM	|		Weapon	|	Handgun
+rhs_weap_m38							|		Mosin Nagant M38	|		Weapon	|	AssaultRifle
+rhs_weap_m4							|		M4	|		Weapon	|	AssaultRifle
+rhs_weap_m4_carryhandle							|		M4 (Carryhandle)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_carryhandle_mstock							|		M4 (Carryhandle/PMAG/M-Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_carryhandle_pmag							|		M4 (Carryhandle/PMAG)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_m203							|		M4 (M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_m203S							|		M4 (M203S)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_m320							|		M4 (M320)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_mstock							|		M4 (PMAG/Magpull Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4_pmag							|		M4 (PMAG)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1							|		M4A1 PIP	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII							|		M4A1 Block II	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_bk							|		M4A1 Block II (Black Rail)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_d							|		M4A1 Block II (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_KAC							|		M4A1 Block II (SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_KAC_bk							|		M4A1 Block II (Black Rail/SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_KAC_d							|		M4A1 Block II (Desert/SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_KAC_wd							|		M4A1 Block II (Woodland/SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_M203							|		M4A1 Block II (M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_M203_bk							|		M4A1 Block II (Black Rail/M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_M203_d							|		M4A1 Block II (Desert/M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_M203_wd							|		M4A1 Block II (Woodland/M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_blockII_wd							|		M4A1 Block II (Woodland)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_carryhandle							|		M4A1	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_carryhandle_m203							|		M4A1 (M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_carryhandle_m203S							|		M4A1 (M203S)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_carryhandle_mstock							|		M4A1 (PMAG/Magpull Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_carryhandle_pmag							|		M4A1 (PMAG)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_d							|		M4A1 PIP (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_d_mstock							|		M4A1 PIP (Desert/PMAG/Magpull Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_m203							|		M4A1 PIP (M203)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_m203s							|		M4A1 PIP (M203S)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_m203s_d							|		M4A1 PIP (Desert/M203S)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_m320							|		M4A1 PIP (M320)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_mstock							|		M4A1 PIP (PMAG/Magpull Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_m4a1_pmag							|		M4A1 PIP (PMAG)	|		Weapon	|	AssaultRifle
+rhs_weap_M590_5RD							|		M590A1 (Short)	|		Weapon	|	AssaultRifle
+rhs_weap_M590_8RD							|		M590A1 (Long)	|		Weapon	|	AssaultRifle
+rhs_weap_m70ab2							|		M-70AB2	|		Weapon	|	AssaultRifle
+rhs_weap_m70ab2_fold							|		M-70AB2 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_m70b1							|		M-70B1	|		Weapon	|	AssaultRifle
+rhs_weap_m72a7							|		M72A7	|		Weapon	|	RocketLauncher
+rhs_weap_m76							|		M-76	|		Weapon	|	AssaultRifle
+rhs_weap_m92							|		M-92	|		Weapon	|	AssaultRifle
+rhs_weap_m92_fold							|		M-92 (Folded)	|		Weapon	|	AssaultRifle
+rhs_weap_makarov_pm							|		PM	|		Weapon	|	Handgun
+rhs_weap_mk18							|		Mk 18 Mod 1	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_bk							|		Mk 18 Mod 1 (Black Rail)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_d							|		Mk 18 Mod 1 (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_KAC							|		Mk 18 Mod 1 (SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_KAC_bk							|		Mk 18 Mod 1 (Black Rail/SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_KAC_d							|		Mk 18 Mod 1 (Desert/SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_KAC_wd							|		Mk 18 Mod 1 (Woodland/SOPMOD Stock)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_m320							|		Mk 18 Mod 1 (M320)	|		Weapon	|	AssaultRifle
+rhs_weap_mk18_wd							|		Mk 18 Mod 1 (Woodland)	|		Weapon	|	AssaultRifle
+rhs_weap_pkm							|		PKM	|		Weapon	|	MachineGun
+rhs_weap_pkp							|		PKP	|		Weapon	|	MachineGun
+rhs_weap_pp2000							|		PP-2000	|		Weapon	|	AssaultRifle
+rhs_weap_pp2000_folded							|		PP-2000 (Folded)	|		Weapon	|	Handgun
+rhs_weap_pya							|		MP-443	|		Weapon	|	Handgun
+rhs_weap_rpg26							|		RPG-26	|		Weapon	|	RocketLauncher
+rhs_weap_rpg7							|		RPG-7V2	|		Weapon	|	RocketLauncher
+rhs_weap_rshg2							|		RShG-2	|		Weapon	|	RocketLauncher
+rhs_weap_rsp30_green							|		RSP-30 (Green)	|		Weapon	|	Handgun
+rhs_weap_rsp30_red							|		RSP-30 (Red)	|		Weapon	|	Handgun
+rhs_weap_rsp30_white							|		RSP-30 (White)	|		Weapon	|	Handgun
+rhs_weap_smaw							|		MK153 Mod 0 SMAW (Black)	|		Weapon	|	RocketLauncher
+rhs_weap_smaw_green							|		MK153 Mod 0 SMAW (Green)	|		Weapon	|	RocketLauncher
+rhs_weap_sr25							|		Mk 11 Mod 0	|		Weapon	|	AssaultRifle
+rhs_weap_sr25_d							|		Mk 11 Mod 0 (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_sr25_ec							|		Mk 11 Mod 0 (EC)	|		Weapon	|	AssaultRifle
+rhs_weap_sr25_ec_d							|		Mk 11 Mod 0 (EC/Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_sr25_ec_wd							|		Mk 11 Mod 0 (EC/Woodland)	|		Weapon	|	AssaultRifle
+rhs_weap_sr25_wd							|		Mk 11 Mod 0 (Woodland)	|		Weapon	|	AssaultRifle
+rhs_weap_svdp							|		SVDM	|		Weapon	|	AssaultRifle
+rhs_weap_svdp_npz							|		SVDM (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_svdp_wd							|		SVDM (Camo)	|		Weapon	|	AssaultRifle
+rhs_weap_svdp_wd_npz							|		SVDM (Camo/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_svds							|		SVDS	|		Weapon	|	AssaultRifle
+rhs_weap_svds_npz							|		SVDS (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_tr8							|		TR-8 Periscope	|		Weapon	|	Handgun
+rhs_weap_vss							|		VSS Vintorez	|		Weapon	|	AssaultRifle
+rhs_weap_vss_grip							|		VSS Vintorez (GRIP)	|		Weapon	|	AssaultRifle
+rhs_weap_vss_grip_npz							|		VSS Vintorez (GRIP/NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_vss_npz							|		VSS Vintorez (NPZ)	|		Weapon	|	AssaultRifle
+rhs_weap_XM2010							|		M2010 ESR	|		Weapon	|	AssaultRifle
+rhs_weap_XM2010_d							|		M2010 ESR (Desert)	|		Weapon	|	AssaultRifle
+rhs_weap_XM2010_sa							|		M2010 ESR (Semi-arid)	|		Weapon	|	AssaultRifle
+rhs_weap_XM2010_wd							|		M2010 ESR (Camo)	|		Weapon	|	AssaultRifle
+rhsusf_weap_glock17g4							|		Glock 17	|		Weapon	|	Handgun
+rhsusf_weap_m1911a1							|		M1911A1	|		Weapon	|	Handgun
+rhsusf_weap_m9							|		M9 Beretta	|		Weapon	|	Handgun
+rhsusf_weap_MP7A1_aor1							|		MP7A1 (AOR1)	|		Weapon	|	SubmachineGun
+rhsusf_weap_MP7A1_base_f							|		MP7A1	|		Weapon	|	SubmachineGun
+rhsusf_weap_MP7A1_desert							|		MP7A1 (Desert)	|		Weapon	|	SubmachineGun
+rhsusf_weap_MP7A1_winter							|		MP7A1 (Winter)	|		Weapon	|	SubmachineGun
+SMG_01_F							|		Vector SMG	|		Weapon	|	SubmachineGun
+SMG_02_F							|		Scorpion Evo 3 A1	|		Weapon	|	SubmachineGun
+SMG_05_F							|		MP5K	|		Weapon	|	AssaultRifle
+srifle_DMR_01_F							|		VS-121	|		Weapon	|	SniperRifle
+srifle_DMR_02_camo_F							|		Noreen "Bad News" ULR (Camo)	|		Weapon	|	SniperRifle
+srifle_dmr_02_f							|		Noreen "Bad News" ULR (Black)	|		Weapon	|	SniperRifle
+srifle_DMR_02_sniper_F							|		Noreen "Bad News" ULR (Sand)	|		Weapon	|	SniperRifle
+srifle_dmr_03_f							|		SIG 556 (Black)	|		Weapon	|	SniperRifle
+srifle_DMR_03_khaki_F							|		SIG 556 (Khaki)	|		Weapon	|	SniperRifle
+srifle_DMR_03_multicam_F							|		SIG 556 (Camo)	|		Weapon	|	SniperRifle
+srifle_DMR_03_spotter_F							|		SIG 556 (provisional) spotter	|		Weapon	|	SniperRifle
+srifle_DMR_03_tan_F							|		SIG 556 (Sand)	|		Weapon	|	SniperRifle
+srifle_DMR_03_woodland_F							|		SIG 556 (Woodland)	|		Weapon	|	SniperRifle
+srifle_dmr_04_f							|		ASP-1 Kir (Black)	|		Weapon	|	SniperRifle
+srifle_DMR_04_Tan_F							|		ASP-1 Kir (Tan)	|		Weapon	|	SniperRifle
+srifle_dmr_05_blk_f							|		Cyrus (Black)	|		Weapon	|	SniperRifle
+srifle_DMR_05_hex_F							|		Cyrus (Hex)	|		Weapon	|	SniperRifle
+srifle_DMR_05_tan_f							|		Cyrus (Tan)	|		Weapon	|	SniperRifle
+srifle_dmr_06_camo_f							|		M14 (Camo)	|		Weapon	|	SniperRifle
+srifle_DMR_06_olive_F							|		M14 (Olive)	|		Weapon	|	SniperRifle
+srifle_DMR_07_blk_F							|		QBU-88 (Black)	|		Weapon	|	SniperRifle
+srifle_DMR_07_ghex_F							|		QBU-88 (Green Hex)	|		Weapon	|	SniperRifle
+srifle_DMR_07_hex_F							|		QBU-88 (Hex)	|		Weapon	|	SniperRifle
+srifle_EBR_F							|		Mk14 Mod 1 EBR	|		Weapon	|	AssaultRifle
+srifle_GM6_camo_F							|		GM6 Lynx (Camo)	|		Weapon	|	AssaultRifle
+srifle_GM6_F							|		GM6 Lynx	|		Weapon	|	AssaultRifle
+srifle_GM6_ghex_F							|		GM6 Lynx (Green Hex)	|		Weapon	|	AssaultRifle
+srifle_LRR_camo_F							|		M200 Intervention (Camo)	|		Weapon	|	AssaultRifle
+srifle_LRR_F							|		M200 Intervention	|		Weapon	|	AssaultRifle
+srifle_LRR_tna_F							|		M200 Intervention (Tropic)	|		Weapon	|	AssaultRifle
