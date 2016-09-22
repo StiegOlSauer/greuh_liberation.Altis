@@ -10,8 +10,12 @@ loadout_autorifleman = compile preprocessFileLineNumbers (format ["%1%2.sqf", _l
 loadout_rifleman_light = compile preprocessFileLineNumbers (format ["%1%2.sqf", _loadouts_folder, "rifleman_light" ]);
 loadout_marksman = compile preprocessFileLineNumbers (format ["%1%2.sqf", _loadouts_folder, "marksman" ]);
 loadout_at = compile preprocessFileLineNumbers (format ["%1%2.sqf", _loadouts_folder, "at" ]);
+loadout_mg = compile preprocessFileLineNumbers (format ["%1%2.sqf", _loadouts_folder, "mg" ]);
+//hunter with a shotgun
+//hunter with light sniper rifle
+//engineer
 
-militia_standard_squad = [ loadout_sl, loadout_autorifleman, loadout_rifleman, loadout_rifleman, loadout_rifleman_light, loadout_rifleman_light, loadout_marksman, loadout_at, loadout_at, loadout_at ];
+militia_standard_squad = [ loadout_sl, loadout_autorifleman, loadout_rifleman, loadout_rifleman, loadout_rifleman_light, loadout_rifleman_light, loadout_marksman, loadout_at, loadout_at, loadout_at, loadout_mg, loadout_autorifleman, loadout_rifleman, loadout_rifleman_light, loadout_rifleman ];
 
 opfor_sentry_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opfor\soldier_lat.sqf";		
 opfor_rifleman_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opfor\soldier.sqf";		
@@ -31,9 +35,4 @@ opfor_medic_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opfor\
 opfor_engineer_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opfor\engineer.sqf";		
 opfor_crew_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opfor\loadout_crewman.sqf";
 
-/*opfor_squad_low_intensity_loadout = [opfor_team_leader_loadout,opfor_machinegunner_loadout,opfor_medic_loadout,opfor_rpg_loadout,opfor_sentry_loadout,opfor_sentry_loadout,opfor_sentry_loadout,opfor_sentry_loadout];
-opfor_squad_8_standard_loadout = [opfor_squad_leader_loadout,opfor_team_leader_loadout,opfor_machinegunner_loadout,opfor_heavygunner_loadout,opfor_medic_loadout,opfor_marksman_loadout,opfor_grenadier_loadout,opfor_rpg_loadout];
-opfor_squad_8_infkillers_loadout = [opfor_squad_leader_loadout,opfor_machinegunner_loadout,opfor_machinegunner_loadout,opfor_heavygunner_loadout,opfor_medic_loadout,opfor_marksman_loadout,opfor_sharpshooter_loadout,opfor_sniper_loadout];
-opfor_squad_8_tankkillers_loadout = [opfor_squad_leader_loadout,opfor_medic_loadout,opfor_machinegunner_loadout,opfor_rpg_loadout,opfor_rpg_loadout,opfor_at_loadout,opfor_at_loadout,opfor_at_loadout];
-opfor_squad_8_airkillers_loadout = [opfor_squad_leader_loadout,opfor_medic_loadout,opfor_machinegunner_loadout,opfor_rpg_loadout,opfor_rpg_loadout,opfor_aa_loadout,opfor_aa_loadout,opfor_aa_loadout];
-*/
+civilian_loadout = compile preprocessFileLineNumbers "scripts\loadouts\civilian.sqf";

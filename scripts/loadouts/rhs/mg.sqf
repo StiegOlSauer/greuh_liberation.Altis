@@ -7,16 +7,17 @@ removeVest _unit;
 removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
-
-_unit addVest "V_Chestrig_oli";
+_unit addVest "V_I_G_resistanceLeader_F";
 _unit addItemToVest "FirstAidKit";
 for "_i" from 1 to 2 do {_unit addItemToVest "MiniGrenade";};
+_unit addItemToVest "SmokeShell";
 for "_i" from 1 to 2 do {_unit addItemToVest "RH_8Rnd_9x18_Mak";};
-for "_i" from 1 to 6 do {_unit addItemToVest "hlc_30Rnd_762x39_b_ak";};
-_unit addHeadgear "H_Cap_blk";
-_unit addGoggles "G_Balaclava_oli";
-
-_unit addWeapon "hlc_rifle_ak47";
+_unit addBackpack "B_TacticalPack_oli";
+_unit addItemToVest "rhs_100Rnd_762x54mmR_green";
+for "_i" from 1 to 4 do {_unit addItemToBackpack "rhs_100Rnd_762x54mmR_green";};
+_unit addHeadgear "H_Watchcap_khk";
+_unit addGoggles "G_Balaclava_lowprofile";
+_unit addWeapon "rhs_weap_pkm";
 _unit addWeapon "RH_mak";
 _unit linkItem "ItemMap";
 _unit linkItem "ItemCompass";
