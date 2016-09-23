@@ -4,14 +4,14 @@ if (!isServer) exitWith {};
 //pick one location which is not the location task completed for
 //create new task in that location
 params ["_completedTask"];
-private ["_newTaskLocations", "_fob", "_fobPos", "_newTask", "_sectorMarkers", "_marker", "_random"];
+private ["_newTaskLocations", "_fob", "_fobPos", "_newTask", "_sectorMarkers", "_marker", "_random", "_countFobs"];
 
 _fob = nearestObject [getMarkerPos _completedTask, FOB_typename];
 _fobPos = getPos _fob;
 _newTaskLocations = [];
 
 _sectorMarkers = [_fobPos] call F_tasks_getNearestMarkers;
-_sectorMarkers resize (((count GRLIB_all_fobs) * 5) + 2);
+//TODO: handle free task starvation case
 diag_log "_sectorMarkers";
 diag_log _sectorMarkers;
 {

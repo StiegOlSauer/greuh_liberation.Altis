@@ -88,3 +88,4 @@ publicVariable "GRLIB_allowed_weapons";
 
 GRLIB_tasksAssigned = [];
 GRLIB_tasksRunning = [];
+GRLIB_tasksCompleted = [];

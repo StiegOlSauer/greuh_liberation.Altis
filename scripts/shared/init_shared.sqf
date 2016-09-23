@@ -9,6 +9,8 @@ reinforcements_remote_call = compileFinal preprocessFileLineNumbers "scripts\ser
 sector_liberated_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\sector_liberated_remote_call.sqf";
 intel_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\intel_remote_call.sqf";
 start_secondary_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\start_secondary_remote_call.sqf";
+recalculate_unitcap_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\recalculate_unitcap_remote_call.sqf";
+//terror_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\terror_remote_call.sqf";
 
 remote_call_sector = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_sector.sqf";
 remote_call_fob = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_fob.sqf";
@@ -19,6 +21,7 @@ remote_call_switchmove = compileFinal preprocessFileLineNumbers "scripts\client\
 remote_call_ammo_bounty = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_ammo_bounty.sqf";
 remote_call_intel = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_intel.sqf";
 remote_call_incoming = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_incoming.sqf";
+//remote_call_terror = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_terror.sqf";
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\shared\scan_skill.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\shared\diagnostics.sqf";
