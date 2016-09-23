@@ -18,7 +18,7 @@ while { GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0 } do {
 
 	waitUntil {
 		sleep 5;
-	 	combat_readiness >= 70 &&
+	 	combat_readiness >= 75 &&
 	 	(armor_weight >= 50 || air_weight >= 50);
 
 	 };
