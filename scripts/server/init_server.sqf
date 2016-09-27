@@ -33,8 +33,13 @@ veh_hunt = compileFinal preprocessFileLineNumbers "scripts\server\secondary\veh_
 terror_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\terror.sqf";
 planecrash_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\planecrash.sqf";
 
+//Convoy helpers
+convoy_setFormation = compileFinal preprocessFileLineNumbers "scripts\server\ai\ConvoyMaxspeed.sqf";
+convoyInit =  compileFinal preprocessFileLineNumbers "scripts\server\ai\convoyDefend_init.sqf";
+
 // Tasks
 task_banditCamp = compileFinal preprocessFileLineNumbers "scripts\server\tasks\banditCamp.sqf";
+task_roadblock = compileFinal preprocessFileLineNumbers "scripts\server\tasks\roadblock.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
@@ -89,3 +94,4 @@ publicVariable "GRLIB_allowed_weapons";
 GRLIB_tasksAssigned = [];
 GRLIB_tasksRunning = [];
 GRLIB_tasksCompleted = [];
+GRLIB_tasksTOD = [];
