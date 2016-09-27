@@ -2,7 +2,6 @@ if (!isServer) exitWith {};
 waitUntil { time > 1 };
 waitUntil { !isNil "GRLIB_all_fobs" };
 waitUntil { !isNil "save_is_loaded" };
-private ["_index"];
 
 if ( count GRLIB_all_fobs > 0 ) then {
 	{
@@ -12,13 +11,11 @@ if ( count GRLIB_all_fobs > 0 ) then {
 		{
 			_marker = format ["task_c_%1", _x];
 			_taskMarkers = _taskMarkers + [_marker];
-		} foreach _sectorMarkers;
-		
-		_index = 0;
+		} foreach _sectorMarkers;		
+
 		{
-			_nil = [_x, _sectorMarkers select _index] call F_tasks_spawnTask;
-			GRLIB_tasksAssigned = GRLIB_tasksAssigned + [_x];
-			_index = _index + 1;
+			_nil = [_x] call F_tasks_spawnTask;
+			GRLIB_tasksAssigned = GRLIB_tasksAssigned + [_x];			
 			sleep 2;
 		} foreach _taskMarkers;
 	} foreach GRLIB_all_fobs;

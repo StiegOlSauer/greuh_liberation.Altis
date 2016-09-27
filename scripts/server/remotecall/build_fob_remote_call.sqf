@@ -1,7 +1,7 @@
 if (!isServer) exitWith {};
 
 params [ "_new_fob", "_create_fob_building" ];
-private [ "_fob_building", "_fob_pos", "_sectorMarkers", "_taskMarkers", "_marker", "_tmpTasksArray", "_index", "_count"];
+private [ "_fob_building", "_fob_pos", "_sectorMarkers", "_taskMarkers", "_marker", "_tmpTasksArray", "_count"];
 
 GRLIB_all_fobs pushback _new_fob;
 publicVariable "GRLIB_all_fobs";
@@ -41,13 +41,11 @@ _taskMarkers resize _count;
 diag_log format ["FOB REPACKAGE: TASK MARKERS: %1",_taskMarkers];
 GRLIB_tasksAssigned = GRLIB_tasksAssigned + (_taskMarkers - _tmpTasksArray) - (_tmpTasksArray - _taskMarkers);
 
-_index = 0;
 {
 	if (!(_x in _tmpTasksArray)) then {
 		diag_log format ["FOB REPACKAGE: Starting spawn tasks routine for %1",_x];
-		_nil = [_x, _sectorMarkers select _index] call F_tasks_spawnTask;
+		_nil = [_x] call F_tasks_spawnTask;
 	};
-	_index = _index + 1;
 	sleep 0.1;
 } foreach _taskMarkers;
 

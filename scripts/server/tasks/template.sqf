@@ -22,63 +22,6 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 		
 		_spawnedAlready = true;
 		_prepareInProgress = false;
-		
-		sleep 1;
-		_base_objects = [getMarkerPos _taskMarker, (random 360), call (compile (preprocessFileLineNumbers "scripts\fob_templates\banditCamp.sqf"))] call BIS_fnc_ObjectsMapper;		
-		sleep 5;
-
-		_grpdefenders = createGroup EAST;
-		{	
-			if ((typeOf _x) == "VR_Area_01_square_1x1_grey_F") then {
-				_pos = getPos _x;
-				_arrayOfPositions append [_pos];
-				_unitToSpawn = militia_squad call bis_fnc_selectrandom;
-				deleteVehicle _x;
-				_unitToSpawn createUnit [_pos, _grpdefenders,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
-				diag_log "unit spawned";
-				sleep 0.5;
-			};
-			
-			if ((typeOf _x) == "Box_East_Wps_F") then {
-				clearWeaponCargoGlobal _x;
-				clearMagazineCargoGlobal _x;
-				clearItemCargoGlobal _x;
-				clearBackpackCargoGlobal _x;
-				_x addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
-				_ammoboxes = _ammoboxes + [_x];
-			};
-		} foreach _base_objects;
-		
-		_grpdefenders setBehaviour "CARELESS";
-
-		{
-			_defendersAlive = _defendersAlive + [_x];			
-			if ((count _arrayOfPositions) > 0) then {
-				_x setPos (_arrayOfPositions select 0);
-				_arrayOfPositions deleteAt 0;
-			};
-			[_x] join grpNull;
-			[_x] call ( militia_standard_squad call BIS_fnc_selectRandom ); 
-		} foreach (units _grpdefenders);
-
-		sleep 1;
-		{ _x setDamage 0; } foreach (_base_objects);
-		_base_objects = _base_objects - _ammoboxes;
-		
-		_grpsentry = createGroup EAST;
-		for [ {_idx=0},{_idx < 4},{_idx=_idx+1} ] do {
-			_unitToSpawn = militia_squad call bis_fnc_selectrandom;
-			_unitToSpawn createUnit [getMarkerPos _taskMarker, _grpsentry,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
-			sleep 0.5;
-			diag_log "patrol spawned";
-		};		
-		{	
-			[_x] call ( militia_standard_squad call BIS_fnc_selectRandom ); 
-		} foreach (units _grpsentry);
-		
-		0 = [_grpsentry,  markerpos _taskMarker, 50] call BIS_fnc_taskPatrol;
-		
-		_defendersAlive = _defendersAlive + (units _grpsentry);
 		0 = [_taskMarker, getMarkerPos _taskMarker] call BIS_fnc_taskSetDestination;
 		0 = [_taskMarker, "ASSIGNED",false] spawn BIS_fnc_taskSetState;
 	};
@@ -86,10 +29,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 	//mission was spawned, but then unassigned - cleanup and restore starting state
 	if ((_spawnedAlready) && !(_taskMarker in GRLIB_tasksRunning)) then {		
 		diag_log format ["task %1 ENTERED BRANCH CLEANUP",_taskMarker];		
-		diag_log _base_objects;
 		
-		{sleep 0.1; deleteVehicle _x;} foreach _base_objects;
-		{sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;	
 		//need to return marker back
 		_prepareInProgress = true;
 		_spawnedAlready = false;
@@ -129,7 +69,6 @@ if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning))
 //	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
 //	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 };
-
 
 {sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;		
 {sleep 0.1; deleteVehicle _x;} foreach _base_objects;
