@@ -13,7 +13,7 @@ if ( count _this == 1 ) then {
 
 
 _vehicle_pool = opfor_battlegroup_vehicles;
-if ( combat_readiness < 50 ) then {
+if ( combat_readiness < 75 ) then {
 	_vehicle_pool = opfor_battlegroup_vehicles_low_intensity;
 };
 

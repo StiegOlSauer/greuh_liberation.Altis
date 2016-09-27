@@ -12,7 +12,7 @@ if ( _sector in sectors_military ) then {
 };
 
 _grp = creategroup WEST;
-{ _x createUnit [ markerpos _sector, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach _squad_type;
+//{ _x createUnit [ markerpos _sector, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach _squad_type;
 
 sleep 60;
 

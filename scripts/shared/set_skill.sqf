@@ -3,7 +3,7 @@ private [ "_side", "_wounded", "_skillmodifier" ];
 
 _side = side _unit;
 _wounded = false;
-(group _unit) allowFleeing 0;
+//(group _unit) allowFleeing 0;
 /*if ( damage _unit > 0.25 ) then { _wounded = true; };
 
 _skillmodifier = sqrt GRLIB_difficulty_modifier;
