@@ -5,6 +5,10 @@ sectors_factory = [];
 sectors_military = [];
 sectors_tower = [];
 sectors_opfor = [];
+sectors_crashsite = [];
+tasks_c_markers = [];
+//tasks_factory = [];
+//tasks_military = [];
 
 {
 	_ismissionsector = false;
@@ -39,7 +43,14 @@ sectors_opfor = [];
 		_x setMarkerTextLocal format ["%1 %2",markerText _x, mapGridPosition (markerPos _x)];
 		_ismissionsector = true;
 	};
-
+	_tempmarker = toArray _x; _tempmarker resize 9;
+	if ( toString _tempmarker == "crashsite" ) then {
+		sectors_crashsite pushback _x;
+	};
+	_tempmarker = toArray _x; _tempmarker resize 7;
+	if ( toString _tempmarker == "task_c_" ) then {
+		tasks_c_markers pushback _x;
+	};
 	if ( _ismissionsector ) then {
 		sectors_allSectors pushback _x;
 	};

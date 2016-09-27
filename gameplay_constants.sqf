@@ -32,18 +32,25 @@ GRLIB_terror_civilians = [];
 GRLIB_terror_enabled = false;
 
 GRLIB_markerToTask = [
-["task_c_capture_13_1_2_26_12",[0]],
-["task_c_capture_13_1_2_26_27_1",[0]],
-["task_c_capture_13_1_2_26_27",[0]],
-["task_c_capture_13_1_2_26_15",[0]],
-["task_c_capture_13_1_2_26_14",[0]],
-["task_c_capture_66",[0]],
-["task_c_capture_13_1_2_26_19",[0]],
-["task_c_capture_13_1_2_26_5_1",[0]],
-["task_c_capture_13_1_2_26_5",[0]],
-["task_c_capture_67",[0]]
+["task_c_capture_13_1_2_26_12",		[0, "task_c_capture_13_1_2_26_12"]],						//Nidasos
+["task_c_capture_13_1_2_26_27_1",	[0, "task_c_capture_13_1_2_26_27_1"]],						//Sofia
+["task_c_capture_13_1_2_26_27",		[0, "task_c_capture_13_1_2_26_27"]],						//Gatolia
+["task_c_capture_13_1_2_26_15",		[0, "task_c_capture_13_1_2_26_15"]],						//Delfinaki
+["task_c_capture_13_1_2_26_14",		[0, "task_c_capture_13_1_2_26_14"]],						//Ioannina
+["task_c_capture_66",				[0, "task_c_capture_66"]],									//Pefkas
+["task_c_capture_13_1_2_26_19",		[0, "task_c_capture_13_1_2_26_19"]],						//Iraklia
+["task_c_capture_13_1_2_26_5_1",	[0, "task_c_capture_13_1_2_26_5_1"]],						//Thelos
+["task_c_capture_13_1_2_26_5",		[0, "task_c_capture_13_1_2_26_5"]],							//Kalochori
+["task_c_capture_67",				[1,"task_c_capture_67", "task_c_capture_67_r1"]],			//Almyra
+["task_c_capture_13_1_2_19",		[0, "task_c_capture_13_1_2_19"]],							//Nifi
+["task_c_capture_13_1_2_18",		[0, "task_c_capture_13_1_2_18"]],							//Rodopoli
+["task_c_capture_68",				[0, "task_c_capture_68"]],									//Kategidis
+["task_c_capture_13_1_2_20",		[0, "task_c_capture_13_1_2_20"]],							//Dorida
+["task_c_capture_13_1_2_26_5_1_2",	[0, "task_c_capture_13_1_2_26_5_1_2"]],						//Chalkeia
+["task_c_capture_13_1_2_26_7",		[0, "task_c_capture_13_1_2_26_7"]]							//Aktinarki
 ];
 
 GRLIB_taskDescriptions = [
-["kill bandits", "Local town authority asked us to purge unclean in bandit's camp location nearby", "Eliminate bandits camp"]
+["kill bandits", "Local town authority asked us to purge unclean in bandit's camp location nearby.", "Eliminate bandits camp"],
+["destroy roadblock", "Town major notified us that OPFOR roadblock nearby causes heavy business losses to his town - road mostly closed for his drivers to pass government convoys. The best time to ambush something.", "Capture and ambush"]
 ];
