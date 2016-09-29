@@ -41,7 +41,8 @@ GRLIB_markerToTask = [
 ["task_c_capture_13_1_2_26_19",		[0, "task_c_capture_13_1_2_26_19"]],						//Iraklia
 ["task_c_capture_13_1_2_26_5_1",	[0, "task_c_capture_13_1_2_26_5_1"]],						//Thelos
 ["task_c_capture_13_1_2_26_5",		[0, "task_c_capture_13_1_2_26_5"]],							//Kalochori
-["task_c_capture_67",				[1,"task_c_capture_67", "task_c_capture_67_r1"]],			//Almyra
+//["task_c_capture_67",				[1,"task_c_capture_67", "task_c_capture_67_r1"]],			//Almyra
+["task_c_capture_67",				[2,"task_c_capture_67"]],									//Almyra - commArray
 ["task_c_capture_13_1_2_19",		[0, "task_c_capture_13_1_2_19"]],							//Nifi
 ["task_c_capture_13_1_2_18",		[0, "task_c_capture_13_1_2_18"]],							//Rodopoli
 ["task_c_capture_68",				[0, "task_c_capture_68"]],									//Kategidis
@@ -52,5 +53,6 @@ GRLIB_markerToTask = [
 
 GRLIB_taskDescriptions = [
 ["kill bandits", "Local town authority asked us to purge unclean in bandit's camp location nearby.", "Eliminate bandits camp"],
-["destroy roadblock", "Town major notified us that OPFOR roadblock nearby causes heavy business losses to his town - road mostly closed for his drivers to pass government convoys. The best time to ambush something.", "Capture and ambush"]
+["destroy roadblock", "Town major notified us that OPFOR roadblock nearby causes heavy business losses to his town - road mostly closed for his drivers to pass government convoys. The best time to ambush something.", "Capture and ambush"],
+["comm array", "Peaople of nearby town are very unhappy of small military communications post situated near the town. It was illegally powered from city's electrical network causing major issues with network stabiliity inside the town and lots of burned toasters. Locals will be pleased if you solve this problem.", "Destroy communications post"]
 ];
