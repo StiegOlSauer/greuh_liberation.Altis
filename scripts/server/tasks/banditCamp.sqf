@@ -1,9 +1,8 @@
 if (!isServer) exitWith {};
 
 params ["_taskMarker", "_markerArray"];
-private ["_taskCity","_base_objects", "_unitToSpawn", "_defendersAlive", "_arrayOfPositions", "_ammoboxes", "_taskStates", "_pos", "_spawnedAlready", "_prepareInProgress"];
+private ["_taskCity","_base_objects", "_unitToSpawn", "_defendersAlive", "_arrayOfPositions", "_ammoboxes", "_pos", "_spawnedAlready", "_prepareInProgress"];
 
-_taskStates = [];
 _base_objects = [];
 _defendersAlive = [];
 _arrayOfPositions = [];
@@ -11,14 +10,15 @@ _spawnedAlready = false;
 _prepareInProgress = true;
 _ammoboxes = [];
 _taskCity = [_taskMarker] call BIS_fnc_taskDestination;
-diag_log "Bandit camp task created";
+
+diag_log format ["BANDITCAMP task %1 INITIALIZATION START",_taskMarker];
 
 while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do {
 
 	sleep 5; 
 	//mission is assigned - spawn it
 	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
-		diag_log format ["task %1 ENTERED BRANCH SPAWN",_taskMarker];
+		diag_log format ["BANDITCAMP task %1 ENTERED BRANCH SPAWN",_taskMarker];
 		
 		_spawnedAlready = true;
 		_prepareInProgress = false;
@@ -50,6 +50,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 		} foreach _base_objects;
 		
 		_grpdefenders setBehaviour "CARELESS";
+		_grpdefenders spawn {waitUntil {sleep 5; {!(alive _x)} count (units _this) > 0}; _this setBehaviour "COMBAT";};
 
 		{
 			_defendersAlive = _defendersAlive + [_x];			
@@ -57,7 +58,6 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 				_x setPos (_arrayOfPositions select 0);
 				_arrayOfPositions deleteAt 0;
 			};
-			[_x] join grpNull;
 			[_x] call ( militia_standard_squad call BIS_fnc_selectRandom ); 
 		} foreach (units _grpdefenders);
 
@@ -99,7 +99,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 	
 	//FOB relocated and mission did not appear again - check if it was spawned before, cleanup, end thread
 	if (!(_taskMarker in GRLIB_tasksAssigned)) then {
-		diag_log format ["task %1 ENTERED BRANCH END",_taskMarker];
+		diag_log format ["task %1 ENTERED BRANCH END",_taskMarker];		
 		//do cleanup
 		_prepareInProgress = false;
 		_spawnedAlready = false;

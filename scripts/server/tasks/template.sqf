@@ -1,8 +1,10 @@
+//template for 1-phase simple mission
 if (!isServer) exitWith {};
 
-params ["_taskMarker", "_markerArray"];
-private ["_taskCity","_base_objects", "_unitToSpawn", "_defendersAlive", "_arrayOfPositions", "_ammoboxes", "_taskStates", "_pos", "_spawnedAlready", "_prepareInProgress"];
+params ["_markersArray"];
+private ["_taskPrefix", "_taskMarker", "_taskCity","_base_objects", "_unitToSpawn", "_defendersAlive", "_arrayOfPositions", "_ammoboxes", "_taskStates", "_pos", "_spawnedAlready", "_prepareInProgress"];
 
+_taskPrefix = "";
 _taskStates = [];
 _base_objects = [];
 _defendersAlive = [];
@@ -10,15 +12,18 @@ _arrayOfPositions = [];
 _spawnedAlready = false;
 _prepareInProgress = true;
 _ammoboxes = [];
+_taskMarker = _markersArray deleteAt 0;
 _taskCity = [_taskMarker] call BIS_fnc_taskDestination;
-diag_log "Bandit camp task created";
+diag_log format ["%1 task %2 INITIALIZATION START",_taskPrefix, _taskMarker];
 
-while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do {
+while {(({alive _x} count _defendersAlive) > 0) || (_prepareInProgress)} do {
 
 	sleep 5; 
 	//mission is assigned - spawn it
 	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
-		diag_log format ["task %1 ENTERED BRANCH SPAWN",_taskMarker];
+		diag_log format ["%1 task %2 ENTERED BRANCH SPAWN",_taskPrefix, _taskMarker];
+		
+		//code goes here
 		
 		_spawnedAlready = true;
 		_prepareInProgress = false;
@@ -28,7 +33,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 	
 	//mission was spawned, but then unassigned - cleanup and restore starting state
 	if ((_spawnedAlready) && !(_taskMarker in GRLIB_tasksRunning)) then {		
-		diag_log format ["task %1 ENTERED BRANCH CLEANUP",_taskMarker];		
+		diag_log format ["%1 task %2 ENTERED BRANCH CLEANUP",_taskPrefix, _taskMarker];		
 		
 		//need to return marker back
 		_prepareInProgress = true;
@@ -39,7 +44,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 	
 	//FOB relocated and mission did not appear again - check if it was spawned before, cleanup, end thread
 	if (!(_taskMarker in GRLIB_tasksAssigned)) then {
-		diag_log format ["task %1 ENTERED BRANCH END",_taskMarker];
+		diag_log format ["%1 task %2 ENTERED BRANCH END",_taskPrefix, _taskMarker];
 		//do cleanup
 		_prepareInProgress = false;
 		_spawnedAlready = false;
@@ -47,7 +52,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 	};
 };
 
-diag_log format ["task %1 EXITED FROM LOOP",_taskMarker];
+diag_log format ["%1 task %2 EXITED FROM LOOP",_taskPrefix, _taskMarker];
 //cleanup code
 if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning)) then {
 	_nil = [_taskMarker, "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
@@ -57,9 +62,7 @@ if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning))
 	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
 	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 	
-	diag_log "GRLIB_tasksRunning GRLIB_tasksAssigned";
-	diag_log GRLIB_tasksRunning;
-	diag_log GRLIB_tasksAssigned;
+	diag_log format ["%1 task %2 SUCCEEDED. AAR: GRLIB_tasksRunning, GRLIB_tasksAssigned: %3 ; %4",_taskPrefix, _taskMarker, GRLIB_tasksRunning, GRLIB_tasksAssigned];
 	
 	sleep 1;
 	[_taskMarker] call F_tasks_replaceTask;

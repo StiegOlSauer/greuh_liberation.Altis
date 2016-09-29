@@ -41,7 +41,7 @@ _taskType = _taskTypeArray deleteAt 0;											// 1
 diag_log format ["SPAWN TASK: _taskType: %1", _taskType];
 
 //store all task markers. Task logic should handle them on its own, we just pass array.
-_taskMarkersArray = _arrayOfCompatTasksAndMarkers deleteAt 0;					// "task_c_capture_67", "task_c_capture_67_r1"
+//_taskMarkersArray = _arrayOfCompatTasksAndMarkers deleteAt 0;					// "task_c_capture_67", "task_c_capture_67_r1"
 
 _taskObject = GRLIB_taskDescriptions select _taskType;
 _taskDescription = _taskObject select 1;
@@ -53,5 +53,6 @@ _taskTitle = _taskObject select 2;
 //now we need to start a task, I think. Via spawn. Ensure that spawned task knows its name - it will need to delete itself on completion
 switch _taskType do {
 	case 0: {[_taskMarker] spawn task_banditCamp};
-	case 1: {[_taskMarkersArray] spawn task_roadblock};
+	case 1: {[_taskTypeArray] spawn task_roadblock};
+	case 2: {[_taskTypeArray] spawn task_commarray};
 };

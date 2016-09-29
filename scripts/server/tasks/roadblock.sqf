@@ -23,7 +23,7 @@ diag_log format ["task %1 SPAWNED AS ROADBLOCK",_taskMarker];
 
 while {(({ alive _x } count _defendersAlive ) > 0) || ((_phaseOnePrepare) && !(_phaseOneDone))} do {
 
-	sleep 5; 
+	sleep 5;
 	//mission is assigned - spawn it
 	if ((_taskMarker in GRLIB_tasksRunning) && !(_phaseOneSpawned)) then {
 		diag_log format ["ROADBLOCK task %1 ENTERED BRANCH SPAWN",_taskMarker];
@@ -132,7 +132,7 @@ if ((({ alive _x } count _defendersAlive ) == 0) && (_taskMarker in GRLIB_tasksR
 //Beginning of phase two
 while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_phaseTwoPrepare))} do {	
 	
-	sleep 5;
+	sleep 300 + (random 300);
 	//mission is assigned - spawn it
 	if ((_taskMarker in GRLIB_tasksRunning) && !(_phaseTwoSpawned)) then {
 		diag_log format ["ROADBLOCK task %1 calculated TODs: %2",_taskMarker,GRLIB_tasksTOD];

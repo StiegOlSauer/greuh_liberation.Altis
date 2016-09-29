@@ -6,8 +6,9 @@ if (!isServer) exitWith {};
 params ["_completedTask"];
 private ["_newTaskLocations", "_fob", "_fobPos", "_newTask", "_sectorMarkers", "_marker"];
 
-_fob = nearestObject [getMarkerPos _completedTask, FOB_typename];
-_fobPos = getPos _fob;
+//_fob = nearestObject [getMarkerPos _completedTask, FOB_typename];
+_fob = [GRLIB_all_fobs,[],{(getMarkerPos _completedTask) distance _x},"ASCEND"] call BIS_fnc_sortBy;
+_fobPos = _fob deleteAt 0;
 _newTaskLocations = [];
 diag_log format ["REPLACE TASK: replacing task for FOB: _fobPos: %1", _fobPos];
 
@@ -24,4 +25,5 @@ diag_log format ["REPLACE TASK: _newTaskLocations: %1", _newTaskLocations];
 
 _newTask = selectRandom _newTaskLocations;
 diag_log format ["REPLACE TASK: replacing task with _newTask: %1", _newTask];
+GRLIB_tasksAssigned append [_newTask];
 0 = [_newTask] call F_tasks_spawnTask;
