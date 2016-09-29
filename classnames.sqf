@@ -48,8 +48,8 @@ light_vehicles = [
 ["CUP_B_LR_Special_Des_CZ_D",0,5,2],
 ["rhs_tigr_sts_vv",0,15,5],
 ["CUP_O_UAZ_METIS_RU",0,30,5],
-["CUP_O_BRDM2_CHDKZ",0,25,5],
-["CUP_O_BRDM2_ATGM_CHDKZ",0,50,5],
+["rhsgref_BRDM2_msv",0,25,5],
+["rhsgref_BRDM2_ATGM_msv",0,50,5],
 ["rhs_btr80a_vv",0,90,10],
 ["B_Boat_Transport_01_F",0,0,2],
 ["B_Boat_Armed_01_minigun_F",0,30,10]
@@ -250,7 +250,7 @@ opfor_choppers = ["CUP_B_UH1Y_GUNSHIP_USMC","RHS_AH1Z_GS","RHS_AH64D","CUP_I_UH6
 opfor_air = ["CUP_B_AV8B_Hydra19"];
 
 // Vehicles to be used in secondary objectives
-opfor_mrap = "O_MRAP_02_F";
+opfor_mrap = "O_LSV_02_armed_F";
 opfor_mrap_armed = "rhsusf_m1025_d_m2";
 opfor_transport_helo = "O_Heli_Transport_04_bench_F";
 opfor_transport_truck = "O_Truck_03_covered_F";
