@@ -2,7 +2,7 @@
 if (!isServer) exitWith {};
 
 params ["_markersArray"];
-private ["_taskMarker", "_taskCity","_base_objects", "_unitToSpawn", "_defendersAlive", "_arrayOfPositions", "_pos", "_spawnedAlready", "_prepareInProgress", "_spawnpos", "_taskObjects"];
+private ["_taskMarker", "_taskCity","_base_objects", "_unitToSpawn", "_defendersAlive", "_arrayOfPositions", "_pos", "_spawnedAlready", "_prepareInProgress", "_spawnpos", "_taskObjects", "_testedPos"];
 
 _base_objects = [];
 _taskObjects = [];
@@ -14,36 +14,24 @@ _taskMarker = _markersArray deleteAt 0;
 _taskCity = [_taskMarker] call BIS_fnc_taskDestination;
 diag_log format ["COMMARRAY task %1 INITIALIZATION START",_taskMarker];
 
-while {((({ alive _x } count _defendersAlive) > 0) || (({ alive _x } count _taskObjects) > 0)) || (_prepareInProgress)} do {
+while {((({ alive _x } count _defendersAlive) > 1) || (({ alive _x } count _taskObjects) > 0)) || (_prepareInProgress)} do {
 
 	sleep 5; 
 	//mission is assigned - spawn it
 	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
 		diag_log format ["COMMARRAY task %1 ENTERED BRANCH SPAWN",_taskMarker];
 		
-		_spawnpos = [];
-		_testedPos = [];
-		_radius = 0;
-		_tmpPos = [];
-		_testedPos =  (getMarkerPos _taskMarker) findEmptyPosition [_radius, 150, 'B_Heli_Transport_01_F'];
-		while {((count _spawnpos) == 0) && (_radius < 140)} do {	
-			_tmpPos = _testedPos;
-			diag_log format ["COMMARRAY _tmpPos %1",_tmpPos];
-			_spawnpos = _testedPos isFlatEmpty [10, -1, 0.5, 1, 0, false];
-			diag_log format ["COMMARRAY _spawnpos %1",_spawnpos];
-			diag_log format ["COMMARRAY count _spawnpos %1",(count _spawnpos)];
-			if ((_spawnpos isEqualTo []) || (isOnRoad _spawnpos)) then {
-				_spawnpos = [];
-				_radius = _radius + 10;
-				diag_log format ["COMMARRAY _radius %1",_radius];
-				_testedPos = _tmpPos findEmptyPosition [_radius, 150, 'B_Heli_Transport_01_F'];
-				diag_log format ["COMMARRAY _testedPos %1",_testedPos];
-			};
+		_spawnpos = [(getMarkerPos _taskMarker), 10, 400, 12, 0, 5, 0] call BIS_fnc_findSafePos;
+		while {count (_spawnpos nearRoads 30) > 0} do {
+			_testedPos = [_spawnpos, (random 50), (random 360)] call BIS_fnc_relPos;
+			_spawnpos = [_testedPos, 10, 400, 12, 0, 5, 0] call BIS_fnc_findSafePos;
+			diag_log format ["COMMARRAY tested _spawnpos %1",_spawnpos];
 		};
 		diag_log format ["COMMARRAY task %1 FOUND THE POSITION: %2",_taskMarker, _spawnpos];
+		if (_spawnpos isEqualTo []) exitWith {diag_log format ["COMMARRAY task %1 DID NOT FIND THE POSITION :(",_taskMarker]};
 		
 		sleep 0.5;
-		_base_objects = [getMarkerPos _taskMarker, (random 360), call (compile (preprocessFileLineNumbers "scripts\fob_templates\commArray.sqf"))] call BIS_fnc_ObjectsMapper;		
+		_base_objects = [_spawnpos, (random 360), call (compile (preprocessFileLineNumbers "scripts\fob_templates\commArray.sqf"))] call BIS_fnc_ObjectsMapper;		
 		sleep 5;
 
 		_grpdefenders = createGroup EAST;
@@ -80,12 +68,12 @@ while {((({ alive _x } count _defendersAlive) > 0) || (({ alive _x } count _task
 		_grpsentry = createGroup EAST;
 		for [ {_idx=0},{_idx < 4},{_idx=_idx+1} ] do {
 			_unitToSpawn = opfor_squad_8_standard call bis_fnc_selectrandom;
-			_unitToSpawn createUnit [getMarkerPos _taskMarker, _grpsentry,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
+			_unitToSpawn createUnit [_spawnpos, _grpsentry,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
 			sleep 0.5;
 		};		
 		[units _grpsentry] call F_loadouts_swapOpfor;
 		
-		0 = [_grpsentry,  markerpos _taskMarker, 50] call BIS_fnc_taskPatrol;
+		0 = [_grpsentry,  _spawnpos, 50] call BIS_fnc_taskPatrol;
 		
 		_defendersAlive = _defendersAlive + (units _grpsentry);
 		
@@ -102,6 +90,9 @@ while {((({ alive _x } count _defendersAlive) > 0) || (({ alive _x } count _task
 		//need to return marker back
 		_prepareInProgress = true;
 		_spawnedAlready = false;
+		{sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;
+		{sleep 0.1; deleteVehicle _x;} foreach _base_objects;
+		
 		0 = [_taskMarker, _taskCity] call BIS_fnc_taskSetDestination;
 		0 = [_taskMarker, "CREATED",false] spawn BIS_fnc_taskSetState;
 	};
