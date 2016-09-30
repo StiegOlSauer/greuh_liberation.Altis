@@ -1,6 +1,3 @@
-_is_rhs = true;
-_rhs_classnames = [ "rhs_weap_ak74m_camo_folded","rhs_weap_ak74m_camo_npz","rhs_weap_pkm","rhs_weap_akms","rhs_weap_ak74m_camo_npz","rhs_weap_svdp_wd_npz","rhs_weap_akm","rhs_weap_rpg7" ];
-
 _loadouts_folder = "scripts\loadouts\rhs\";
 
 loadout_crewman = compile preprocessFileLineNumbers (format ["%1%2.sqf", _loadouts_folder, "crewman" ]);
@@ -36,3 +33,10 @@ opfor_engineer_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opf
 opfor_crew_loadout = compile preprocessFileLineNumbers "scripts\loadouts\opfor\loadout_crewman.sqf";
 
 civilian_loadout = compile preprocessFileLineNumbers "scripts\loadouts\civilian.sqf";
+
+hobo1_loadout = compile preprocessFileLineNumbers "scripts\loadouts\hobos\hobo1.sqf";
+hobo2_loadout = compile preprocessFileLineNumbers "scripts\loadouts\hobos\hobo2.sqf";
+hobo3_loadout = compile preprocessFileLineNumbers "scripts\loadouts\hobos\hobo3.sqf";
+hobo4_loadout = compile preprocessFileLineNumbers "scripts\loadouts\hobos\hobo4.sqf";
+
+hobo_loadouts = [hobo1_loadout, hobo2_loadout, hobo3_loadout, hobo4_loadout];
