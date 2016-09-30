@@ -42,7 +42,7 @@ GRLIB_markerToTask = [
 ["task_c_capture_13_1_2_26_5_1",	[0, "task_c_capture_13_1_2_26_5_1"]],						//Thelos
 ["task_c_capture_13_1_2_26_5",		[0, "task_c_capture_13_1_2_26_5"]],							//Kalochori
 //["task_c_capture_67",				[1,"task_c_capture_67", "task_c_capture_67_r1"]],			//Almyra
-["task_c_capture_67",				[2,"task_c_capture_67"]],									//Almyra - commArray
+["task_c_capture_67",				[2,"task_c_capture_67"]],									//Almyra - wheels
 ["task_c_capture_13_1_2_19",		[0, "task_c_capture_13_1_2_19"]],							//Nifi
 ["task_c_capture_13_1_2_18",		[0, "task_c_capture_13_1_2_18"]],							//Rodopoli
 ["task_c_capture_68",				[0, "task_c_capture_68"]],									//Kategidis
@@ -54,5 +54,7 @@ GRLIB_markerToTask = [
 GRLIB_taskDescriptions = [
 ["kill bandits", "Local town authority asked us to purge unclean in bandit's camp location nearby.", "Eliminate bandits camp"],
 ["destroy roadblock", "Town major notified us that OPFOR roadblock nearby causes heavy business losses to his town - road mostly closed for his drivers to pass government convoys. The best time to ambush something.", "Capture and ambush"],
-["comm array", "Peaople of nearby town are very unhappy of small military communications post situated near the town. It was illegally powered from city's electrical network causing major issues with network stabiliity inside the town and lots of burned toasters. Locals will be pleased if you solve this problem.", "Destroy communications post"]
+["comm array", "People of nearby town are very unhappy of small military communications post situated near the town. It was illegally powered from city's electrical network causing major issues with network stabiliity inside the town and lots of burned toasters. Locals will be pleased if you solve this problem.", "Destroy communications post"],
+["demolitions", "As town elder said, bunch of hobos turned peaceful area near his town into disgusting slums. Locals did their best to kick hobos off, but they always returned back. We were asked to blow off that place to hell. Elder notified us that his people saw a pistol under the jacket of one of hobos. We don't think they are armed, but you never know.", "Peaceful demolitions"],
+["deliver wheels", "Today morning your usual routine of checking nearby towns requests was suddenly broken by rude man's voice, calling from a radio tuned on town major's frequency. 'Owner of this voice must be made of iron' - you thought - 'This request definitely needs some attention'.\n 'Hello, son. This is Tom... *cough* Corporal MacGrant speaking. Aside that your goddamn war is freaking out my citizens, it is messing with our business. You may think, rednecks like us don't have any obligations, but hell you are wrong. One of my trucks is out of duty because some goddamn cowboy shot two tyres and I don't have a spare. Thankfully, driver was not injured, he's a good fella.'\n Then iron man turned into Watto - junk dealer from Tatooine - and continued: 'So, could you be so kind and deliver 4 brand new truck wheels to my fellow town. You are not with army, I know you have new things all around. That small ddonation will help to arrange deal between us. MacGrant over.'", "Wheels of Freedom"]
 ];

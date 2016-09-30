@@ -40,6 +40,9 @@ convoyInit =  compileFinal preprocessFileLineNumbers "scripts\server\ai\convoyDe
 // Tasks
 task_banditCamp = compileFinal preprocessFileLineNumbers "scripts\server\tasks\banditCamp.sqf";
 task_roadblock = compileFinal preprocessFileLineNumbers "scripts\server\tasks\roadblock.sqf";
+task_commArray = compileFinal preprocessFileLineNumbers "scripts\server\tasks\commArray.sqf";
+task_demolitions = compileFinal preprocessFileLineNumbers "scripts\server\tasks\demolitions.sqf";
+task_wheels = compileFinal preprocessFileLineNumbers "scripts\server\tasks\deliverWheels.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
