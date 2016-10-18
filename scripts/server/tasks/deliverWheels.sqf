@@ -17,10 +17,10 @@ diag_log format ["%1 task %2 INITIALIZATION START",_taskPrefix, _taskMarker];
 
 while {(count _deliveredWheels < 4) || (_prepareInProgress)} do {
 
-	sleep 10;
+	sleep 2;
 	_deliveredWheels = nearestObjects [(getMarkerPos _taskMarker), ["ACE_wheel"], 30];
 	//mission is assigned - spawn it
-	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
+	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_spawnedAlready)) then {
 		diag_log format ["%1 task %2 ENTERED BRANCH SPAWN",_taskPrefix, _taskMarker];
 		private _truck = "CUP_I_V3S_Covered_TKG" createVehicle (getMarkerPos _taskMarker);
 		_truck setHit ["wheel_1_2_steering", 1];
@@ -36,7 +36,7 @@ while {(count _deliveredWheels < 4) || (_prepareInProgress)} do {
 	};
 	
 	//mission was spawned, but then unassigned - cleanup and restore starting state
-	if ((_spawnedAlready) && !(_taskMarker in GRLIB_tasksRunning)) then {		
+	if ((_spawnedAlready) && !(([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {		
 		diag_log format ["%1 task %2 ENTERED BRANCH CLEANUP",_taskPrefix, _taskMarker];		
 		
 		//need to return marker back
@@ -61,25 +61,22 @@ while {(count _deliveredWheels < 4) || (_prepareInProgress)} do {
 
 diag_log format ["%1 task %2 EXITED FROM LOOP",_taskPrefix, _taskMarker];
 //cleanup code
-if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning)) then {
+if ((_taskMarker in GRLIB_tasksAssigned) && (([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {
 	_nil = [_taskMarker, "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 	GRLIB_tasksCompleted append [_taskMarker];
 	sleep 5;
 	0 = [_taskMarker] call BIS_fnc_deleteTask;
 	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
-	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
+//	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 	
-	diag_log format ["%1 task %2 SUCCEEDED. AAR: GRLIB_tasksRunning, GRLIB_tasksAssigned: %3 ; %4",_taskPrefix, _taskMarker, GRLIB_tasksRunning, GRLIB_tasksAssigned];
+	diag_log format ["%1 task %2 SUCCEEDED. AAR: GRLIB_tasksAssigned: %3",_taskPrefix, _taskMarker, GRLIB_tasksAssigned];
 	
 	sleep 1;
 	[_taskMarker] call F_tasks_replaceTask;
 	sleep 30;
 } else {
 	0 = [_taskMarker] call BIS_fnc_deleteTask;
-//	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
-//	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 };
 
 deleteVehicle _truck;
-{sleep 0.1; deleteVehicle _x;} foreach _deliveredWheels;		
-//{sleep 0.1; deleteVehicle _x;} foreach _base_objects;
+{sleep 0.1; deleteVehicle _x;} foreach _deliveredWheels;

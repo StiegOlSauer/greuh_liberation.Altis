@@ -15,18 +15,19 @@ diag_log format ["BANDITCAMP task %1 INITIALIZATION START",_taskMarker];
 
 while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do {
 
-	sleep 5; 
+	sleep 2; 
 	//mission is assigned - spawn it
-	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
+	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_spawnedAlready)) then {
+//	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
 		diag_log format ["BANDITCAMP task %1 ENTERED BRANCH SPAWN",_taskMarker];
 		
 		_spawnedAlready = true;
 		_prepareInProgress = false;
 		
-		_spawnpos = [_taskCity, 10, 400, 12, 0, 20, 0] call BIS_fnc_findSafePos;
+		_spawnpos = [_taskCity, 10, 400, 5, 0, 20, 0] call BIS_fnc_findSafePos;
 		while {count (_spawnpos nearRoads 30) > 0} do {
 			_testedPos = [_spawnpos, (random 50), (random 360)] call BIS_fnc_relPos;
-			_spawnpos = [_testedPos, 10, 400, 12, 0, 5, 0] call BIS_fnc_findSafePos;
+			_spawnpos = [_testedPos, 10, 400, 5, 0, 20, 0] call BIS_fnc_findSafePos;
 			diag_log format ["BANDITCAMP tested _spawnpos %1",_spawnpos];
 		};
 		diag_log format ["BANDITCAMP task %1 FOUND THE POSITION: %2",_taskMarker, _spawnpos];
@@ -93,7 +94,7 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 	};
 	
 	//mission was spawned, but then unassigned - cleanup and restore starting state
-	if ((_spawnedAlready) && !(_taskMarker in GRLIB_tasksRunning)) then {		
+	if ((_spawnedAlready) && (([_taskMarker] call BIS_fnc_taskState) != "ASSIGNED")) then {		
 		diag_log format ["BANDITCAMP task %1 ENTERED BRANCH CLEANUP",_taskMarker];
 		
 		{sleep 0.1; deleteVehicle _x;} foreach _base_objects;
@@ -117,16 +118,15 @@ while {( ({ alive _x } count _defendersAlive ) > 0) || (_prepareInProgress)} do 
 
 diag_log format ["task %1 EXITED FROM LOOP",_taskMarker];
 //cleanup code
-if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning)) then {
+if ((_taskMarker in GRLIB_tasksAssigned) && (([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {
 	_nil = [_taskMarker, "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 	GRLIB_tasksCompleted append [_taskMarker];
 	sleep 5;
 	0 = [_taskMarker] call BIS_fnc_deleteTask;
 	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
-	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
+//	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 	
-	diag_log "GRLIB_tasksRunning GRLIB_tasksAssigned";
-	diag_log GRLIB_tasksRunning;
+	diag_log "GRLIB_tasksAssigned";
 	diag_log GRLIB_tasksAssigned;
 	
 	sleep 1;

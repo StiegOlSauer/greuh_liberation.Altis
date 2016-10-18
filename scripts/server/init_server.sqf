@@ -43,6 +43,8 @@ task_roadblock = compileFinal preprocessFileLineNumbers "scripts\server\tasks\ro
 task_commArray = compileFinal preprocessFileLineNumbers "scripts\server\tasks\commArray.sqf";
 task_demolitions = compileFinal preprocessFileLineNumbers "scripts\server\tasks\demolitions.sqf";
 task_wheels = compileFinal preprocessFileLineNumbers "scripts\server\tasks\deliverWheels.sqf";
+task_roadblock_small = compileFinal preprocessFileLineNumbers "scripts\server\tasks\roadblockSmall.sqf";
+task_foodorder = compileFinal preprocessFileLineNumbers "scripts\server\tasks\foodorder.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
@@ -98,3 +100,5 @@ GRLIB_tasksAssigned = [];
 GRLIB_tasksRunning = [];
 GRLIB_tasksCompleted = [];
 GRLIB_tasksTOD = [];
+GRLIB_unitToTaskPool = [];
+GRLIB_addUnitTask = [];

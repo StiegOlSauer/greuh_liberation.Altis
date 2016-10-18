@@ -55,6 +55,8 @@ if ( typeof player == commander_classname ) then {
 
 player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 
+player addEventHandler ["TaskSetAsCurrent",{_newTask = "";_tmp1 = format ["%1", _this select 1]; _tmp2 = _tmp1 splitString " ";_tmpNewTask = _tmp2 select 1; _tmpUnit = _this select 0; GRLIB_addUnitTask = [_tmpUnit,_tmpNewTask]; publicVariableServer "GRLIB_addUnitTask";}];
+
 {
 	[_x] call BIS_fnc_drawCuratorLocations;
 } foreach allCurators;

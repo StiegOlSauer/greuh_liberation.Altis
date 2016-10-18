@@ -16,9 +16,9 @@ diag_log format ["COMMARRAY task %1 INITIALIZATION START",_taskMarker];
 
 while {((({ alive _x } count _defendersAlive) > 1) || (({ alive _x } count _taskObjects) > 0)) || (_prepareInProgress)} do {
 
-	sleep 5; 
+	sleep 2; 
 	//mission is assigned - spawn it
-	if ((_taskMarker in GRLIB_tasksRunning) && !(_spawnedAlready)) then {
+	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_spawnedAlready)) then {
 		diag_log format ["COMMARRAY task %1 ENTERED BRANCH SPAWN",_taskMarker];
 		
 		_spawnpos = [(getMarkerPos _taskMarker), 10, 400, 12, 0, 5, 0] call BIS_fnc_findSafePos;
@@ -84,7 +84,7 @@ while {((({ alive _x } count _defendersAlive) > 1) || (({ alive _x } count _task
 	};
 	
 	//mission was spawned, but then unassigned - cleanup and restore starting state
-	if ((_spawnedAlready) && !(_taskMarker in GRLIB_tasksRunning)) then {		
+	if ((_spawnedAlready) && !(([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {		
 		diag_log format ["COMMARRAY task %1 ENTERED BRANCH CLEANUP",_taskMarker];		
 		
 		//need to return marker back
@@ -109,31 +109,22 @@ while {((({ alive _x } count _defendersAlive) > 1) || (({ alive _x } count _task
 
 diag_log format ["COMMARRAY task %1 EXITED FROM LOOP",_taskMarker];
 //cleanup code
-if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning)) then {
+if ((_taskMarker in GRLIB_tasksAssigned) && (([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {
 	_nil = [_taskMarker, "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 	GRLIB_tasksCompleted append [_taskMarker];
 	sleep 5;
 	0 = [_taskMarker] call BIS_fnc_deleteTask;
 	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
-	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
+//	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 	
-	diag_log format ["COMMARRAY task %1 SUCCEEDED. AAR: GRLIB_tasksRunning, GRLIB_tasksAssigned: %2 ; %3",_taskMarker, GRLIB_tasksRunning, GRLIB_tasksAssigned];
+	diag_log format ["COMMARRAY task %1 SUCCEEDED. AAR: GRLIB_tasksRunning, GRLIB_tasksAssigned: %2",_taskMarker, GRLIB_tasksAssigned];
 	
 	sleep 1;
 	[_taskMarker] call F_tasks_replaceTask;
 	sleep 30;
 } else {
 	0 = [_taskMarker] call BIS_fnc_deleteTask;
-//	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
-//	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 };
 
 {sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;		
 {sleep 0.1; deleteVehicle _x;} foreach _base_objects;
-
-/*
-waitUntil {
-	sleep 5;
-	diag_log GRLIB_tasksRunning;
-	(_taskMarker in GRLIB_tasksRunning)};
-*/
