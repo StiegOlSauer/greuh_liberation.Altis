@@ -23,9 +23,9 @@ diag_log format ["task %1 SPAWNED AS ROADBLOCK",_taskMarker];
 
 while {(({ alive _x } count _defendersAlive ) > 0) || ((_phaseOnePrepare) && !(_phaseOneDone))} do {
 
-	sleep 5;
+	sleep 2;
 	//mission is assigned - spawn it
-	if ((_taskMarker in GRLIB_tasksRunning) && !(_phaseOneSpawned)) then {
+	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_phaseOneSpawned)) then {
 		diag_log format ["ROADBLOCK task %1 ENTERED BRANCH SPAWN",_taskMarker];
 		
 		sleep 1;
@@ -58,9 +58,13 @@ while {(({ alive _x } count _defendersAlive ) > 0) || ((_phaseOnePrepare) && !(_
 		_normalizedDir = _dir1 + (_dir2 - _dir1)/2;
 		diag_log format ["ROADBLOCK task: directions: %1, %2, %3", _dir1, _dir2, _normalizedDir];
 		
-		//136 is a direction offset for this particular composition
-		_base_objects = [(_adjacent select 1), _normalizedDir + 137, call (compile (preprocessFileLineNumbers "scripts\fob_templates\roadblock.sqf"))] call BIS_fnc_ObjectsMapper;
-
+		//137 is a direction offset for this particular composition
+		if (_normalizedDir > 223) then {
+			_base_objects = [(_adjacent select 1), (_normalizedDir + 137 - 360), call (compile (preprocessFileLineNumbers "scripts\fob_templates\roadblock.sqf"))] call BIS_fnc_ObjectsMapper;
+		} else {
+			_base_objects = [(_adjacent select 1), _normalizedDir + 137, call (compile (preprocessFileLineNumbers "scripts\fob_templates\roadblock.sqf"))] call BIS_fnc_ObjectsMapper;
+		};
+		
 		_grpdefenders = createGroup EAST;
 		{	
 			if ((typeOf _x) == "VR_Area_01_square_1x1_grey_F") then {
@@ -95,7 +99,7 @@ while {(({ alive _x } count _defendersAlive ) > 0) || ((_phaseOnePrepare) && !(_
 	};
 	
 	//mission was spawned, but then unassigned - cleanup and restore starting state
-	if ((_phaseOneSpawned) && !(_taskMarker in GRLIB_tasksRunning)) then {		
+	if ((_phaseOneSpawned) && !(([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {		
 		diag_log format ["ROADBLOCK task %1 ENTERED BRANCH CLEANUP",_taskMarker];		
 		{sleep 0.1; deleteVehicle _x;} foreach _base_objects;
 		{sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;
@@ -116,11 +120,11 @@ while {(({ alive _x } count _defendersAlive ) > 0) || ((_phaseOnePrepare) && !(_
 		_phaseOneDone = false;
 		{sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;
 	};
-	diag_log format ["ROADBLOCK task _defendersAlive: %1, %2, %3",({ alive _x } count _defendersAlive), _phaseOnePrepare, _phaseOneDone];
+//	diag_log format ["ROADBLOCK task _defendersAlive: %1, %2, %3",({ alive _x } count _defendersAlive), _phaseOnePrepare, _phaseOneDone];
 };
 sleep 1;
 diag_log format ["ROADBLOCK task %1 ended its first phase",_taskMarker];
-if ((({ alive _x } count _defendersAlive ) == 0) && (_taskMarker in GRLIB_tasksRunning) && (_taskMarker in GRLIB_tasksAssigned)) then {
+if ((({ alive _x } count _defendersAlive ) == 0) && (([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && (_taskMarker in GRLIB_tasksAssigned)) then {
 	_phaseOneDone = true;
 	_phaseTwoDone = false;
 	_phaseOnePrepare = false;
@@ -132,9 +136,9 @@ if ((({ alive _x } count _defendersAlive ) == 0) && (_taskMarker in GRLIB_tasksR
 //Beginning of phase two
 while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_phaseTwoPrepare))} do {	
 	
-	sleep 300 + (random 300);
+	sleep 10;
 	//mission is assigned - spawn it
-	if ((_taskMarker in GRLIB_tasksRunning) && !(_phaseTwoSpawned)) then {
+	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_phaseTwoSpawned)) then {
 		diag_log format ["ROADBLOCK task %1 calculated TODs: %2",_taskMarker,GRLIB_tasksTOD];
 		diag_log format ["ROADBLOCK task %1 entered phase two spawn",_taskMarker];
 				
@@ -156,9 +160,9 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		private _tailConvoy = [[ getMarkerPos _convoyStartMarker, 50, 180 ] call BIS_fnc_relPos, "rhsusf_m1025_d_Mk19", true, false, false ] call F_libSpawnVehicle;
 		sleep 0.5;
 			
-		if ((GRLIB_tasksTOD select 4) - (GRLIB_tasksTOD select 0) > 15) then {						
+		if ((GRLIB_tasksTOD select 4) - (GRLIB_tasksTOD select 0) > 15) then {
 			_truckConvoy = [[ getMarkerPos _convoyStartMarker, 70, 180 ] call BIS_fnc_relPos, "O_Truck_02_transport_F", true, false, false ] call F_libSpawnVehicle;
-			sleep 0.5;			
+			sleep 0.5;
 		};
 		
 		private _convoyGroup = group driver _scoutConvoy;
@@ -168,6 +172,8 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 			(crew _truckConvoy) joinSilent _convoyGroup;
 		};
 		
+		diag_log format ["ROADBLOCK task %1 formed convoy group: %2",_taskMarker, (units _convoyGroup)];
+		
 		["AddCargoByClass", [ammocrate_o_typename, _ammoConvoy, 2]] call ace_common_fnc_localEvent;
 		
 		_convoyGroup setFormation "FILE";
@@ -176,10 +182,16 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		_convoyGroup setSpeedMode "LIMITED";
 
 		while {(count (waypoints _convoyGroup)) != 0} do {deleteWaypoint ((waypoints _convoyGroup) select 0);};
+		diag_log format ["ROADBLOCK task %1 started waypoint generation",_taskMarker];
 		_wpArray = [];
-		_wpArray append [([(getMarkerPos _taskMarker), _taskCity, 200, true] call F_tasks_followRoad)];
-		_wpArray append [([(getMarkerPos _taskMarker), _taskCity, 600, true] call F_tasks_followRoad)];
-		_wpArray append [([(getMarkerPos _taskMarker), _taskCity, 1300, false] call F_tasks_followRoad)];
+		_wpArray append [([(getMarkerPos _convoyStartMarker), (getMarkerPos _taskMarker), 300, true] call F_tasks_followRoad)];
+		diag_log format ["ROADBLOCK task %1: 1 waypoint generated: %2",_taskMarker, _wpArray];
+		_wpArray append [([(getMarkerPos _taskMarker), (getMarkerPos _convoyStartMarker), 300, true] call F_tasks_followRoad)];
+		diag_log format ["ROADBLOCK task %1: 2 waypoints generated: %2",_taskMarker, _wpArray];
+		_wpArray append [([(getMarkerPos _taskMarker), (_wpArray select 1), 1000, false] call F_tasks_followRoad)];
+		diag_log format ["ROADBLOCK task %1: 3 waypoints generated: %2",_taskMarker, _wpArray];
+		
+		diag_log format ["ROADBLOCK task %1 generated waypoints: %2",_taskMarker, _wpArray];
 		
 		private _troopsGroup = createGroup EAST;
 		{ _x createUnit [getMarkerPos _convoyStartMarker, _troopsGroup,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach ([] call F_getAdaptiveSquadComp);
@@ -191,6 +203,8 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 			sleep 0.2;
 			if (vehicle _x == _x) then {deleteVehicle _x;};
 		} foreach (units _troopsGroup);
+		
+		diag_log format ["ROADBLOCK task %1 spawned armed grunts",_taskMarker];
 		
 		_convoyComposition = [_scoutConvoy, _apcConvoy, _ammoConvoy, _fuelConvoy, _tailConvoy];
 		_convoyDefenders = (units _convoyGroup) + (units _troopsGroup);
@@ -213,7 +227,9 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		{_x setDamage 0} foreach _convoyComposition;
 		[_wpArray, _convoyComposition] spawn convoyInit;
 		
-		private _flarePos = [(getMarkerPos _taskMarker), _taskCity, 600, true] call F_tasks_followRoad;
+		diag_log format ["ROADBLOCK task %1: convoy initialized",_taskMarker];
+		
+		private _flarePos = [(getMarkerPos _taskMarker), (getMarkerPos _convoyStartMarker), 150, true] call F_tasks_followRoad;
 		private _flare = "F_40mm_Red" createvehicle[_flarePos select 0, _flarePos select 1, 150];
 		_flare setVelocity [0,0,-4];
 		
@@ -221,12 +237,13 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		GRLIB_tasksTOD = [];
 		_phaseTwoSpawned = true;
 		_phaseTwoPrepare = false;
-		0 = [_taskMarker, getMarkerPos _taskMarker] call BIS_fnc_taskSetDestination;
-		0 = [_taskMarker, "ASSIGNED",false] spawn BIS_fnc_taskSetState;
+		0 = [_taskMarker, getMarkerPos _convoyStartMarker] call BIS_fnc_taskSetDestination;
+		0 = [_taskMarker, ["destroy roadblock", "Roadblock cleared, not it is time to take care about convoy", "Capture and ambush"]] call BIS_fnc_taskSetDescription
+		0 = [_taskMarker, "ASSIGNED",true] spawn BIS_fnc_taskSetState;
 	};
 	
 	//mission was spawned, but then unassigned - cleanup and restore starting state
-	if ((_phaseTwoSpawned) && !(_taskMarker in GRLIB_tasksRunning)) then {		
+	if ((_phaseTwoSpawned) && !(([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {		
 		diag_log format ["ROADBLOCK task %1 ENTERED BRANCH CLEANUP",_taskMarker];		
 		{sleep 0.1; deleteVehicle _x;} foreach _convoyDefenders;
 		{sleep 0.1; deleteVehicle _x;} foreach _convoyComposition;
@@ -245,21 +262,20 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		_phaseTwoSpawned = false;
 		{sleep 0.1; deleteVehicle _x;} foreach _defendersAlive;
 	};
-	diag_log format ["ROADBLOCK task _convoyDefenders: %1, %2, %3",({ alive _x } count _convoyDefenders), _phaseOneDone, _phaseTwoPrepare];
+//	diag_log format ["ROADBLOCK task _convoyDefenders: %1, %2, %3",({ alive _x } count _convoyDefenders), _phaseOneDone, _phaseTwoPrepare];
 };
 
 diag_log format ["ROADBLOCK task %1 EXITED FROM LOOP",_taskMarker];
 //cleanup code
-if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning)) then {
+if ((_taskMarker in GRLIB_tasksAssigned) && (([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED")) then {
 	_nil = [_taskMarker, "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 	GRLIB_tasksCompleted append [_taskMarker];
 	sleep 5;
 	0 = [_taskMarker] call BIS_fnc_deleteTask;
 	0 = GRLIB_tasksAssigned deleteAt (GRLIB_tasksAssigned find _taskMarker);
-	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
+//	0 = GRLIB_tasksRunning deleteAt (GRLIB_tasksRunning find _taskMarker);
 	
-	diag_log "GRLIB_tasksRunning GRLIB_tasksAssigned";
-	diag_log GRLIB_tasksRunning;
+	diag_log "GRLIB_tasksAssigned";
 	diag_log GRLIB_tasksAssigned;
 	
 	sleep 1;
@@ -275,10 +291,3 @@ if ((_taskMarker in GRLIB_tasksAssigned) && (_taskMarker in GRLIB_tasksRunning))
 {sleep 0.1; deleteVehicle _x;} foreach _convoyDefenders;
 {sleep 0.1; deleteVehicle _x;} foreach _convoyComposition;	
 {sleep 0.1; deleteVehicle _x;} foreach _base_objects;
-
-/*
-waitUntil {
-	sleep 5;
-	diag_log GRLIB_tasksRunning;
-	(_taskMarker in GRLIB_tasksRunning)};
-*/
