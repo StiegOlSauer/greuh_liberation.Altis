@@ -29,17 +29,9 @@ while { GRLIB_endgame == 0 } do {
 	if (_is_infantry) then {
 		_grp = createGroup EAST;
 		_squad = [] call F_getAdaptiveSquadComp;
+		
 		{
-			_i = 0;
-			_x createUnit [_sector_spawn_pos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
-			switch (_squadies_to_spawn) do {
-				case opfor_squad_low_intensity: {[ _x ] call ( opfor_squad_low_intensity_loadout select _i )};
-				case opfor_squad_8_standard: {[ _x ] call ( opfor_squad_8_standard_loadout select _i )};
-				case opfor_squad_8_tankkillers: {[ _x ] call ( opfor_squad_8_tankkillers_loadout select _i )};
-				case opfor_squad_8_airkillers: {[ _x ] call ( opfor_squad_8_airkillers_loadout select _i )};
-				case opfor_squad_8_infkillers: {[ _x ] call ( opfor_squad_8_infkillers_loadout select _i )};
-			};
-			_i = _i + 1;
+			_x createUnit [_sector_spawn_pos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];			
 		} foreach _squad;
 	} else {
 
@@ -54,8 +46,9 @@ while { GRLIB_endgame == 0 } do {
 		_grp = group ((crew _vehicle_object) select 0);
 	};
 
+	[units _grp] call F_loadouts_swapOpfor;
 	[_grp] spawn patrol_ai;
-
+	
 	_started_time = time;
 	_patrol_continue = true;
 
