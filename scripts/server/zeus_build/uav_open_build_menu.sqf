@@ -1,25 +1,33 @@
-private [ "_oldbuildtype", "_cfg", "_initindex", "_dialog", "_iscommandant", "_squadname", "_buildpages", "_build_list", "_classnamevar", "_entrytext", "_icon", "_affordable", "_affordable_crew", "_selected_item", "_linked", "_linked_unlocked", "_base_link", "_link_color", "_link_str" ];
+params ["_unit"];
+if ((typeOf _unit) != FOB_typename) exitWith {diag_log "FOBMENU exited on click";};
 
-if ( ( [ getpos player , 500 , EAST ] call F_getUnitsCount ) > 4 ) exitWith { hint localize "STR_BUILD_ENEMIES_NEARBY"; };
+private [ "_oldbuildtype", "_cfg", "_initindex", "_dialog", "_iscommandant", "_squadname", "_buildpages", "_build_list", "_classnamevar", "_entrytext", "_icon", "_affordable", "_affordable_crew", "_selected_item", "_linked", "_linked_unlocked", "_base_link", "_link_color", "_link_str", "_curCameraPos", "_curCameraDir"];
 
-if ( isNil "buildtype" ) then { buildtype = 1 };
+blufor_curator  setCuratorCoef ["edit", -1e8];
+diag_log "FOBMENU entered cycle";
+
+player setPos (getPos curatorCamera);
+player setDir (getDir curatorCamera);
+player setVectorUp (vectorUp curatorCamera);
+player setPos _curCameraPos;
+ _curCameraDir;
+
+0 = [false, false] call BIS_fnc_forceCuratorInterface;
+findDisplay 312 closeDisplay 2;
+
+GRLIB_chosenFOB = _unit;
+
+if ( ( [ getpos _unit , 500 , EAST ] call F_getUnitsCount ) > 4 ) exitWith { hint localize "STR_BUILD_ENEMIES_NEARBY"; };
+
+if ( isNil "buildtype" ) then { buildtype = 2 };
 if ( isNil "buildindex" ) then { buildindex = -1 };
 dobuild = 0;
 _oldbuildtype = -1;
 _cfg = configFile >> "cfgVehicles";
 _initindex = buildindex;
 
-_dialog = createDialog "liberation_build";
+_dialog = createDialog "liberation_zeus_build";
 waitUntil { dialog };
-
-_iscommandant = false;
-if ( player == [] call F_getCommander ) then {
-	_iscommandant = true;
-};
-
-ctrlShow [ 108, _iscommandant ];
-ctrlShow [ 1085, _iscommandant ];
-ctrlShow [ 121, _iscommandant ];
 
 _squadname = "";
 _buildpages = [
@@ -33,12 +41,11 @@ localize "STR_BUILD7",
 localize "STR_BUILD8"
 ];
 
-while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
-	_build_list = build_lists select buildtype;
-
+while { dialog && alive _unit && (dobuild == 0 || buildtype == 1)} do {
+	_build_list = build_lists select buildtype;	
 	if ( buildtype == 7 ) then {
 		_build_list = [];
-		while { count _build_list < (count (build_lists select buildtype)) - 2 } do {
+		while { count _build_list < (count (build_lists select buildtype)) - 3 } do {
 			_build_list pushback ((build_lists select buildtype) select (count _build_list));
 		};
 	};
@@ -116,10 +123,8 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 
 	_selected_item = lbCurSel 110;
 	_affordable = false;
-	_squad_full = false;
-	if ((buildtype == 1) && (count (units group player) >= 10)) then {
-		_squad_full = true;
-	};
+	_squad_full = true;
+
 	_linked = false;
 	_linked_unlocked = true;
 	_base_link = "";
@@ -150,8 +155,8 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 		};
 	};
 
-	ctrlEnable [ 120, _affordable && _linked_unlocked && !(_squad_full) ];
-	ctrlEnable [ 121, _affordable_crew && _linked_unlocked ];
+	ctrlEnable [120, _affordable && _linked_unlocked];
+	ctrlEnable [121, false];
 
 	ctrlSetText [131, format [ "%1 : %2/%3" , localize "STR_MANPOWER" , (floor resources_infantry), infantry_cap]] ;
 	ctrlSetText [132, format [ "%1 : %2" , localize "STR_AMMO" , (floor resources_ammo)] ];
@@ -179,4 +184,8 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 	sleep 0.1;
 };
 
-if (!alive player || dobuild != 0) then { closeDialog 0 };
+if (!alive _unit || dobuild != 0) then { closeDialog 0 };
+
+openCuratorInterface;
+0 = [true, false] call BIS_fnc_forceCuratorInterface;
+player setPos [0,0,0];

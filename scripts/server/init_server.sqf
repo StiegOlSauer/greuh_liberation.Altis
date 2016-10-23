@@ -10,6 +10,8 @@ patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\patrol_ai.
 prisonner_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\prisonner_ai.sqf";
 troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\ai\troup_transport.sqf";
 fnc_searchBuilding = compileFinal preprocessFileLineNumbers "scripts\server\ai\fn_SearchBuilding.sqf";
+uav_open_build_menu = compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_open_build_menu.sqf";
+uav_do_build = compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_do_build.sqf";
 
 // Battlegroup
 spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_air.sqf";
@@ -45,6 +47,7 @@ task_demolitions = compileFinal preprocessFileLineNumbers "scripts\server\tasks\
 task_wheels = compileFinal preprocessFileLineNumbers "scripts\server\tasks\deliverWheels.sqf";
 task_roadblock_small = compileFinal preprocessFileLineNumbers "scripts\server\tasks\roadblockSmall.sqf";
 task_foodorder = compileFinal preprocessFileLineNumbers "scripts\server\tasks\foodorder.sqf";
+task_escape = compileFinal preprocessFileLineNumbers "scripts\server\tasks\escape.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
@@ -73,7 +76,8 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\save_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\spawn_radio_towers.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\synchronise_vars.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\zeus_synchro.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\zeus_opfor.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\zeus_blufor.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\offload_calculation.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\offload_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\show_fps.sqf";

@@ -3,6 +3,7 @@
 #include "liberation_titles.hpp"
 #include "liberation_recycle.hpp"
 #include "liberation_build.hpp"
+#include "liberation_zeus_build.hpp"
 #include "liberation_deploy.hpp"
 #include "liberation_menu.hpp"
 #include "liberation_tutorial.hpp"

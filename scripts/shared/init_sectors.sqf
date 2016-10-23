@@ -7,8 +7,6 @@ sectors_tower = [];
 sectors_opfor = [];
 sectors_crashsite = [];
 tasks_c_markers = [];
-//tasks_factory = [];
-//tasks_military = [];
 
 {
 	_ismissionsector = false;

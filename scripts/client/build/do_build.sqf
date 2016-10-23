@@ -1,4 +1,7 @@
 private [ "_maxdist", "_truepos", "_built_object_remote", "_pos", "_grp", "_classname", "_idx", "_unitrank", "_posfob", "_ghost_spot", "_vehicle", "_dist", "_actualdir", "_near_objects", "_near_objects_25", "_debug_colisions" ];
+sleep 2;
+
+if (((typeOf player) == opfor_commander_classname) || ((typeOf player) == commander_classname)) exitWith {};
 
 build_confirmed = 0;
 _maxdist = GRLIB_fob_range;
@@ -41,6 +44,7 @@ while { true } do {
 			_grp = createGroup WEST;
 		};
 		_classname createUnit [_pos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
+		[[],"recalculate_unitcap_remote_call"] call BIS_fnc_MP;
 		build_confirmed = 0;
 	} else {
 		if ( buildtype == 8 ) then {
@@ -54,7 +58,7 @@ while { true } do {
 				if(_idx == 1) then { _unitrank = "corporal"; };
 				_x createUnit [_pos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, _unitrank];
 				_idx = _idx + 1;
-
+				[[],"recalculate_unitcap_remote_call"] call BIS_fnc_MP;
 			} foreach _classname;
 			_grp setCombatMode "GREEN";
 			_grp setBehaviour "AWARE";
@@ -85,7 +89,7 @@ while { true } do {
 			_vehicle = _classname createVehicleLocal _ghost_spot;
 			_vehicle allowdamage false;
 			_vehicle setVehicleLock "LOCKED";
-			_vehicle enableSimulationGlobal false;
+			_vehicle enableSimulationGlobal false;			
 
 			_dist = 0.6 * (sizeOf _classname);
 			if (_dist < 3.5) then { _dist = 3.5 };
@@ -238,6 +242,11 @@ while { true } do {
 				clearMagazineCargoGlobal _vehicle;
 				clearItemCargoGlobal _vehicle;
 				clearBackpackCargoGlobal _vehicle;
+				if ((typeOf _vehicle) == "B_Truck_01_Repair_F") then {
+					//["ACE_Track", _vehicle] call ace_cargo_fnc_addCargoItem;
+					["AddCargoByClass", ["ACE_Track", _vehicle, 5]] call ace_common_fnc_localEvent;
+					["AddCargoByClass", ["ACE_Wheel", _vehicle, 5]] call ace_common_fnc_localEvent;
+				};
 				if ( buildtype == 6 || buildtype == 99 ) then {
 					_vehicle setVectorUp [0,0,1];
 				} else {

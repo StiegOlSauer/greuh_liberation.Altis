@@ -12,12 +12,14 @@ if ( typeOf player == "VirtualSpectator_F" ) exitWith {
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\ui_manager.sqf";
 };
 
+GRLIB_chosenFOB = "";
 ["Preload"] call BIS_fnc_arsenal;
 respawn_lhd = compileFinal preprocessFileLineNumbers "scripts\client\spawn\respawn_lhd.sqf";
 spawn_camera = compileFinal preprocessFileLineNumbers "scripts\client\spawn\spawn_camera.sqf";
 cinematic_camera = compileFinal preprocessFileLineNumbers "scripts\client\ui\cinematic_camera.sqf";
 write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\write_credit_line.sqf";
 do_load_box = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\do_load_box.sqf";
+
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\action_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\intel_manager.sqf";
@@ -26,6 +28,10 @@ do_load_box = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\d
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\ammobox_action_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\build\build_overlay.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\build\do_build.sqf";
+
+if ((typeOf player) == commander_classname) then {
+	[] spawn compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_do_build.sqf";
+};
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\commander\enforce_whitelist.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\empty_vehicles_marker.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\fob_markers.sqf";

@@ -2,7 +2,7 @@ GRLIB_conflicting_objects = [];
 GRLIB_buildoverlay_icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";
 GRLIB_buildoverlay_color = [ 1, 0, 0, 1 ];
 GRLIB_buildoverlay_cfg = configFile >> "cfgVehicles";
-
+if (((typeOf player) == opfor_commander_classname) || ((typeOf player) == commander_classname)) exitWith {};
 ["build_overlay", "onEachFrame", {
 
 	if ( build_confirmed == 1 ) then {

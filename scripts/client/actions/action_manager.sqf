@@ -23,6 +23,8 @@ waitUntil { !isNil "build_confirmed" };
 waitUntil { !isNil "one_synchro_done" };
 waitUntil { one_synchro_done };
 
+if (((typeOf player) == opfor_commander_classname) || ((typeOf player) == commander_classname)) exitWith {};
+
 while { true } do {
 
 	_nearfob = [] call F_getNearestFob;

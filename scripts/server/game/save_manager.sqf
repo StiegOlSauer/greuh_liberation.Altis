@@ -221,6 +221,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			_nextobj = ((units _grp) select ((count (units _grp)) - 1));
 			_nextobj setPosATL _nextpos;
 			_nextobj setDir _nextdir;
+			[_nextobj, true] call F_curatorBluforLoadout;
 		} foreach _nextgroup;
 	} foreach ai_groups;
 };
