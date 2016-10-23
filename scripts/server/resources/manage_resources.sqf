@@ -2,13 +2,20 @@ waitUntil { !isNil "save_is_loaded" };
 waitUntil { !isNil "blufor_sectors" };
 waitUntil { !isNil "saved_ammo_res" };
 waitUntil { !isNil "saved_intel_res" };
+waitUntil { !isNil "unitcap" };
 
 resources_ammo = saved_ammo_res;
 resources_intel = saved_intel_res;
+if (saved_unitcap > (count allPlayers)) then {unitcap = saved_unitcap} else {unitcap = unitcap_respawns_limit};
+
+private [ "_localUnitcap"];
+_localUnitcap = unitcap;
+_ammo_increase = 0;
 
 while { GRLIB_endgame == 0 } do {
 
 	_base_tick_period = 4800;
+//	_base_tick_period = 10;
 
 	if ( count allPlayers > 0 ) then {
 
@@ -16,21 +23,36 @@ while { GRLIB_endgame == 0 } do {
 		{
 			if ( _x in sectors_military ) then {
 				_blufor_mil_sectors pushback _x;
-				_base_tick_period = _base_tick_period * 0.82;
+				_base_tick_period = 1200;
+//				_base_tick_period = 10;
 			};
 		} foreach blufor_sectors;
 
 		_base_tick_period = _base_tick_period / GRLIB_resources_multiplier;
 
-		if ( _base_tick_period < 300 ) then { _base_tick_period = 300 };
+//		if ( _base_tick_period < 300 ) then { _base_tick_period = 300 };
 
 		sleep _base_tick_period;
-
+		
+		{
+			if (unitcap <= 20) then {
+				unitcap = unitcap + 5;
+			} else {
+				unitcap = unitcap + 2;
+			};
+			if ( unitcap > unitcap_respawns_limit ) then {
+				unitcap = unitcap_respawns_limit;			
+			};
+		} foreach blufor_sectors;
+		
 		if ( count _blufor_mil_sectors > 0 ) then {
 
 			if ( GRLIB_passive_income ) then {
-
-				_ammo_increase = round ( 50 + (random 25));
+				if (combat_readiness < 65) then {
+					_ammo_increase = 15;
+				} else {
+					_ammo_increase = round ( 25 + (random 15));
+				};
 				resources_ammo = resources_ammo + _ammo_increase;
 
 			} else {
@@ -61,4 +83,5 @@ while { GRLIB_endgame == 0 } do {
 	};
 
 	sleep 300;
+//	sleep 10;
 };

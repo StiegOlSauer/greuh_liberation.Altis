@@ -26,9 +26,14 @@ if (isServer) then {
 	};
 
 	if ( GRLIB_passive_income ) then {
-		resources_ammo = resources_ammo + (floor (75 + (random 50)));
+		resources_ammo = resources_ammo + (floor (random 20));
 	};
 
+	_unitcap_local = unitcap + 10;
+	if (_unitcap_local <= unitcap_respawns_limit) then {
+		unitcap = _unitcap_local;
+	};
+	
 	combat_readiness = combat_readiness + _combat_readiness_increase;
 	if ( combat_readiness > 100.0 && GRLIB_difficulty_modifier <= 2.0 ) then { combat_readiness = 100.0 };
 	stats_readiness_earned = stats_readiness_earned + _combat_readiness_increase;
@@ -50,7 +55,7 @@ if (isServer) then {
 
 	if ( GRLIB_endgame == 0 ) then {
 		if ( (!( _liberated_sector in sectors_tower )) && (((random (200.0 / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity) )) < (combat_readiness - 20)) || ( _liberated_sector in sectors_bigtown )) && ([] call F_opforCap < GRLIB_battlegroup_cap) ) then {
-			[ _liberated_sector ] spawn spawn_battlegroup;
+			[ _liberated_sector ] spawn spawn_battlegroup;		
 		};
 	};
 };

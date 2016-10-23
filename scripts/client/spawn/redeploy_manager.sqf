@@ -97,6 +97,9 @@ while { true } do {
 		if ( lbCurSel 201 == -1 ) then {
 			 lbSetCurSel [201,0];
 		};
+	//		_respawn_trucks = call F_getMobileRespawns;
+			_respawn_trucks = [];
+			if (unitcap <= 0) then { _respawn_trucks = [] } else {_respawn_trucks = call F_getMobileRespawns;};
 
 		if ( lbCurSel 201 != _oldsel ) then {
 			_oldsel = lbCurSel 201;

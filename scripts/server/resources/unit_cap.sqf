@@ -1,6 +1,15 @@
-unitcap = 0;
+//unitcap = unitcap_respawns_limit;
+waitUntil { !isNil "unitcap_respawns_limit" };
+waitUntil { !isNil "unitcap" };
 
-while { true } do {
+while {true} do {
+
+	if ((isNil "unitcap") || (unitcap == 0) || (unitcap > unitcap_respawns_limit)) then {
+		unitcap = unitcap_respawns_limit;
+	};
+	sleep 30;
+};
+/*while { true } do {
 	while { true } do {
 		_local_unitcap = 0;
 		{
@@ -12,3 +21,5 @@ while { true } do {
 		sleep 1.06;
 	};
 };
+*/
+
