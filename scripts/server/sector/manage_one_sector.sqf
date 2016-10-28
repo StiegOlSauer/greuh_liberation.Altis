@@ -46,8 +46,8 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 	if ( _sector in sectors_bigtown ) then {
 		_vehtospawn =
 		[ ( [] call F_getAdaptiveVehicle ) ,
-		(militia_vehicles call BIS_fnc_selectRandom),
-		(militia_vehicles call BIS_fnc_selectRandom)];
+		([] call F_getAdaptiveMilVehicle),
+		([] call F_getAdaptiveMilVehicle)];
 		_infsquad = "militia";
 		_squad1 = ([] call F_getAdaptiveSquadComp);
 		_squad2 = ([] call F_getAdaptiveSquadComp);
@@ -57,8 +57,8 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 		if ( GRLIB_unitcap >= 1.5) then {
 			_squad4 = ([] call F_getAdaptiveSquadComp);
 		};
-		if((random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
-		if((random 100) > (50 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
+		if((random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ([] call F_getAdaptiveMilVehicle); };
+		if((random 100) > (50 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ([] call F_getAdaptiveMilVehicle); };
 		if((random 100) > (33 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		_spawncivs = true;
 
@@ -72,8 +72,8 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 		_vehtospawn = [];
 		_infsquad = "militia";
 		while { count _squad1 < ( 10 * _popfactor) } do { _squad1 pushback ( militia_squad call BIS_fnc_selectRandom ) };
-		if((random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
-		if((random 100) > (33 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
+		if((random 100) > (66 / GRLIB_difficulty_modifier)) then {_vehtospawn pushback ([] call F_getAdaptiveMilVehicle);};
+		if((random 100) > (33 / GRLIB_difficulty_modifier)) then {_vehtospawn pushback ([] call F_getAdaptiveMilVehicle);};
 		_spawncivs = true;
 		_building_ai_max = round ((floor (18 + (round (combat_readiness / 10 )))) * _popfactor);
 		_building_range = 70;
@@ -92,7 +92,9 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 			_squad4 = ([] call F_getAdaptiveSquadComp);
 		};
 		_vehtospawn = [( [] call F_getAdaptiveVehicle ),( [] call F_getAdaptiveVehicle )];
-		if((random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
+		if((random 100) > (66 / GRLIB_difficulty_modifier)) then {
+		_vehtospawn pushback ( [] call F_getAdaptiveVehicle ); 
+		};
 		if((random 100) > (40 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		_spawncivs = false;
 		_building_ai_max = round ((floor (18 + (round (combat_readiness / 4 )))) * _popfactor);
@@ -105,8 +107,8 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 		if ( GRLIB_unitcap >= 1.25) then {
 			_squad2 = ([] call F_getAdaptiveSquadComp);
 		};
-		if((random 100) > 66) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
-		if((random 100) > 33) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
+		if((random 100) > 66) then {_vehtospawn pushback ( [] call F_getAdaptiveVehicle );};		
+		if((random 100) > 33) then { _vehtospawn pushback ([] call F_getAdaptiveMilVehicle);};
 		_spawncivs = false;
 		_building_ai_max = round ((floor (18 + (round (combat_readiness / 10 )))) * _popfactor);
 		_building_range = 100;
@@ -208,9 +210,9 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 		_taskNameCapture = format ["task_c_%1", _sector];
 		_taskNameMilitary = format ["task_m_%1", _sector];
 		
-		if ( ( [_sectorpos, _local_capture_size] call F_sectorOwnership == WEST ) && ( GRLIB_endgame == 0 ) && (!(_taskNameCapture in GRLIB_tasksAssigned) || !(_taskNameMilitary in GRLIB_tasksAssigned)) ) then {
+//		if ( ( [_sectorpos, _local_capture_size] call F_sectorOwnership == WEST ) && ( GRLIB_endgame == 0 ) && (_taskNameCapture in GRLIB_tasksCompleted)) then {
 		
-//		if ( ( [_sectorpos, _local_capture_size] call F_sectorOwnership == WEST ) && ( GRLIB_endgame == 0 ) ) then {
+		if ( ( [_sectorpos, _local_capture_size] call F_sectorOwnership == WEST ) && ( GRLIB_endgame == 0 ) ) then {
 
 			diag_log format [ "Sector %2 checkpoint N at %1", time, _sector ];
 

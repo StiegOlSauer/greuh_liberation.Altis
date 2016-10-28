@@ -35,7 +35,7 @@ clearMagazineCargoGlobal _newvehicle;
 clearItemCargoGlobal _newvehicle;
 clearBackpackCargoGlobal _newvehicle;
 
-if ( _classname in militia_vehicles ) then {
+if ((_classname in militia_vehicles) || (_classname in militia_heavy_vehicles)) then {
 	[ _newvehicle ] call F_libSpawnMilitiaCrew;
 } else {
 	[ _newvehicle ] call F_libSpawnOpforCrew;
