@@ -18,6 +18,7 @@ if ( isNil "ammobox_b_typename" ) then { ammobox_b_typename = "Box_NATO_AmmoVeh_
 if ( isNil "ammobox_o_typename" ) then { ammobox_o_typename = "Box_East_AmmoVeh_F"; };
 if ( isNil "ammocrate_o_typename" ) then { ammocrate_o_typename = "Box_East_Wps_F"; };
 if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "O_Truck_03_transport_F"; };  // Make sure this thing can transport ammo boxes (see box_transport_config down below) otherwise thins will break
+if ( isNil "pilot_classname" ) then { pilot_classname = "B_Helipilot_F" };
 
 
 
@@ -218,7 +219,9 @@ opfor_crew = ["CUP_O_TK_Engineer","CUP_O_TK_Crew","LOP_TKA_Infantry_Crewman"];
 militia_squad = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
 
 // Militia vehicles to choose from
-militia_vehicles = ["CUP_I_BRDM2_TK_Gue","CUP_I_BRDM2_TK_Gue","I_MU_mercs_Offroad_01_armed_F","CUP_I_Datsun_PK_TK","CUP_I_Datsun_PK_TK_Random","B_G_Offroad_01_armed_F","CUP_I_Datsun_PK_TK", "LOP_SLA_UAZ_DshKM","CUP_O_Ural_ZU23_TKA","CUP_O_LR_SPG9_TKA", "LOP_SLA_UAZ_DshKM", "LOP_ISTS_Landrover_M2", "CUP_O_UAZ_SPG9_TKA"];
+militia_vehicles = ["CUP_I_BRDM2_TK_Gue","CUP_I_BRDM2_TK_Gue","I_MU_mercs_Offroad_01_armed_F","CUP_I_Datsun_PK_TK","CUP_I_Datsun_PK_TK_Random","B_G_Offroad_01_armed_F","CUP_I_Datsun_PK_TK", "LOP_SLA_UAZ_DshKM","CUP_O_Ural_ZU23_TKA","CUP_O_LR_SPG9_TKA", "LOP_SLA_UAZ_DshKM", "LOP_ISTS_Landrover_M2", "CUP_O_UAZ_SPG9_TKA", "rhsgref_cdf_gaz66_zu23", "CUP_O_UAZ_SPG9_TKA"];
+
+militia_heavy_vehicles = ["CUP_I_BRDM2_TK_Gue", "CUP_O_UAZ_SPG9_TKA", "rhsgref_cdf_bmp1", "rhsgref_cdf_bmp2e", "rhsgref_cdf_t72ba_tv", "rhsgref_cdf_ural_Zu23", "LOP_AFR_M113_W", "rhsgref_cdf_b_zsu234"];
 
 // All the vehicles that can spawn as sector defenders and patrols
 opfor_vehicles = ["CUP_B_LAV25_USMC", "rhsusf_m113d_usarmy_M240","rhsusf_m113d_usarmy_M240","CUP_B_HMMWV_TOW_USA","CUP_B_HMMWV_DSHKM_GPK_ACR","CUP_B_HMMWV_AGS_GPK_ACR","CUP_B_HMMWV_DSHKM_GPK_ACR","CUP_I_M163_RACS", "CUP_B_Dingo_CZ_Des", "rhsusf_m113d_usarmy_MK19","CUP_B_HMMWV_AGS_GPK_ACR", "CUP_B_Jackal2_L2A1_GB_D", "CUP_B_Jackal2_GMG_GB_D", "rhsusf_m1025_d_Mk19", "rhsusf_m1025_d_s_Mk19", "CUP_B_HMMWV_Avenger_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M1114_USMC", "CUP_B_HMMWV_M2_USMC", "CUP_B_HMMWV_M2_GPK_USA", "rhsusf_m1025_d_m2", "rhsusf_m1025_d_s_m2", "CUP_B_M1126_ICV_M2_Desert",  "CUP_B_M1128_MGS_Desert"];
@@ -274,9 +277,9 @@ GRLIB_whitelisted_from_arsenal = [
 "RH_M16A2",
 "rhs_weap_akm",
 "rhs_weap_akm_gp25",
-"RH_m9",
-"RH_mak",
-"RH_m1911",
+"rhsusf_weap_m1911a1",
+"rhs_weap_pya",
+"rhs_weap_makarov_pmm",
 "CUP_launch_RPG18",
 "rhs_weap_rpg7",
 "rhs_weap_M136_hedp"
@@ -511,10 +514,10 @@ GRLIB_allowed_weapons = [
 "rhs_weap_vss_grip",
 "rhs_weap_XM2010",			
 "rhs_weap_XM2010_d",		
-"rhs_weap_XM2010_sa",		
+"rhs_weap_XM2010_sa",
+"hgun_Pistol_01_F",
 "rhsusf_weap_m9",
 "rhsusf_weap_glock17g4",
-"rhsusf_weap_m1911a1",
 "SMG_01_F",
 "SMG_02_F",	
 "srifle_DMR_02_camo_F",
@@ -691,6 +694,9 @@ GRLIB_ignore_colisions_when_building = [
 	"TMR_Autorest_Georef",
 	"Land_ClutterCutter_large_F"
 ];
+
+GRLIB_sar_wreck = "Land_Wreck_Heli_Attack_01_F";
+GRLIB_sar_fire = "test_EmptyObjectForFireBig";
 
 GRLIB_arsenal_rifles = [
 "rhs_weap_m16a4",						
@@ -965,22 +971,20 @@ GRLIB_arsenal_specWeapons = [
 GRLIB_arsenal_pistols = [
 "rhsusf_weap_m9",
 "rhsusf_weap_glock17g4",
-"rhsusf_weap_m1911a1",
-"rhs_weap_pya",
-"rhs_weap_makarov_pmm",
 "hgun_ACPC2_F",
 "hgun_P07_F",
 "hgun_Pistol_heavy_01_F",
-"RH_m9",
-"RH_mak",
-"RH_m1911",
 "CUP_hgun_Compact",
 "CUP_hgun_Duty",
 "CUP_hgun_PB6P9",
 "CUP_hgun_Phantom",
 "hlc_smg_mp5k",
 "CUP_hgun_TaurusTracker455_gold",
-"rhs_weap_M320"
+"hgun_Pistol_01_F",
+"rhs_weap_M320",
+"rhsusf_weap_m1911a1",
+"rhs_weap_pya",
+"rhs_weap_makarov_pmm"
 ];
 
 GRLIB_arsenal_opticsNATO = [

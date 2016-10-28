@@ -10,7 +10,6 @@ removeGoggles _unit;
 
 _unit addVest "V_TacVest_camo";
 _unit addItemToVest "FirstAidKit";
-for "_i" from 1 to 3 do { _unit addItemToVest "RH_8Rnd_9x18_Mak";};
 for "_i" from 1 to 3 do { _unit addItemToVest "rhs_30Rnd_762x39mm";};
 for "_i" from 1 to 2 do { _unit addItemToVest "MiniGrenade";};
 for "_i" from 1 to 2 do { _unit addItemToVest "SmokeShell";};
@@ -19,7 +18,6 @@ _unit addHeadgear "H_Cap_headphones";
 _unit addGoggles "G_Balaclava_combat";
 
 _unit addWeapon "rhs_weap_akms";
-_unit addWeapon "RH_mak";
 
 _unit linkItem "ItemMap";
 _unit linkItem "ItemCompass";

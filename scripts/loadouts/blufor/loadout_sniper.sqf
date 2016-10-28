@@ -9,16 +9,6 @@ private ["_mainWeapon", "_mainMags1", "_optics", "_opticsCompat", "_weaponCandid
 //get all first optic slots for all weapons. Check that when integrating new addons
 //allOptics = [];datVariable2 = "";{datVariable2 = (((format ["%1",(configProperties [configFile >> "CfgWeapons" >> _x >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems"])]) splitString ",") select 0) splitString "/"; datVariable2 = datVariable2 select ((count datVariable2) - 1);allOptics append [datVariable2];} foreach GRLIB_whitelisted_from_arsenal;
 
-comment "Remove existing items";
-removeAllWeapons _unit;
-removeAllItems _unit;
-removeAllAssignedItems _unit;
-removeUniform _unit;
-removeVest _unit;
-removeBackpack _unit;
-removeHeadgear _unit;
-removeGoggles _unit;
-
 //bring random weapon from unlocked
 _weaponCandidate = "";
 _mainWeapon = "";
@@ -63,6 +53,16 @@ _mainMags1 = selectRandom (getArray (configFile / "CfgWeapons" / _mainWeapon / "
 _pistolMags = selectRandom (getArray (configFile / "CfgWeapons" / _pistol / "magazines"));
 
 diag_log format ["LOADOUTS: magazines: %1, %2", _mainMags1, _pistolMags];
+
+comment "Remove existing items";
+removeAllWeapons _unit;
+removeAllItems _unit;
+removeAllAssignedItems _unit;
+removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
+removeHeadgear _unit;
+removeGoggles _unit;
 
 comment "Add containers";
 _unit forceAddUniform "rhs_uniform_gorka_r_y";

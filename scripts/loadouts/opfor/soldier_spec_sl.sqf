@@ -9,7 +9,7 @@ _unit addBackpack "B_TacticalPack_oli";
 
 for "_i" from 1 to 2 do {_unit addItemToVest "MiniGrenade";};
 for "_i" from 1 to 2 do {
-	_unit addItemToVest "RH_15Rnd_9x19_M9";
+	_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";
 	_unit addItemToVest "ACE_quikclot";
 	_unit addItemToVest "ACE_morphine";
 	_unit addItemToVest "SmokeShell";
@@ -20,4 +20,4 @@ for "_i" from 1 to 10 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
 _unit addWeapon "RH_m4a1_ris_m203_des";
 _unit addPrimaryWeaponItem "RH_eotech553_tan";
 //_unit addPrimaryWeaponItem "rhsusf_acc_ACOG";
-_unit addWeapon "RH_m9";
+_unit addWeapon "rhsusf_weap_m9";

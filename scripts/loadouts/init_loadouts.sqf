@@ -41,14 +41,3 @@ hobo4_loadout = compile preprocessFileLineNumbers "scripts\loadouts\hobos\hobo4.
 
 hobo_loadouts = [hobo1_loadout, hobo2_loadout, hobo3_loadout, hobo4_loadout];
 
-blufor_GL_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_gl.sqf";
-blufor_AT_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_at.sqf";
-blufor_AA_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_aa.sqf";
-blufor_AR_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_ar.sqf";
-blufor_MG_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_mg.sqf";
-blufor_mark_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_mark.sqf";
-blufor_sniper_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_sniper.sqf";
-blufor_crew_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_crew.sqf";
-blufor_spec_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_spec.sqf";
-blufor_rfl_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_rfl.sqf";
-blufor_light_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_light.sqf";

@@ -1,7 +1,8 @@
-if (!isServer) exitWith {};
+//if (!isServer) exitWith {};
 params ["_unit", ["_save", false]];
 private ["_unitsGL", "_unitsAT", "_unitsAA", "_unitsAR", "_unitsMG", "_unitsMarksman", "_unitsSniper", "_unitsCrew", "_unitsSpecial", "_unitsRifleman", "_unitsRiflemanLight", "_classMatch"];
 
+diag_log "REMOTEEXEC: started loadout swap on server";
 _unitsGL = [
 "rhsusf_army_ucp_grenadier",
 "rhsusf_army_ucp_riflemanat",
@@ -308,7 +309,7 @@ _unitsRiflemanLight = [
 ];
 
 _classMatch = ["rhsusf", (typeOf _unit)] call KK_fnc_inString;
-if (!(_save) && (_classMatch)) then {unitcap = unitcap - 1;};
+if (!(_save) && (_classMatch)) then {unitcap = unitcap - 1; publicVariable "unitcap";};
 
 if ((typeOf _unit) in _unitsGL) then {[_unit] call blufor_GL_loadout;};
 if ((typeOf _unit) in _unitsAT) then {[_unit] call blufor_AT_loadout;};

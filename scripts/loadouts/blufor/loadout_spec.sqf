@@ -1,16 +1,6 @@
 _unit = _this select 0;
 private ["_mainWeapon", "_mainMags1", "_mainMags2", "_pistol", "_pistolMags", "_weaponCandidate", "_tmpArray"];
 
-comment "Remove existing items";
-removeAllWeapons _unit;
-removeAllItems _unit;
-removeAllAssignedItems _unit;
-removeUniform _unit;
-removeVest _unit;
-removeBackpack _unit;
-removeHeadgear _unit;
-removeGoggles _unit;
-
 //bring random weapon from unlocked
 _weaponCandidate = "";
 _mainWeapon = "";
@@ -43,6 +33,16 @@ _mainMags2 = selectRandom ((getArray (configFile / "CfgWeapons" / _mainWeapon / 
 _pistolMags = selectRandom (getArray (configFile / "CfgWeapons" / _pistol / "magazines"));
 
 diag_log format ["LOADOUTS: magazines: %1, %2, %3", _mainMags1, _mainMags2, _pistolMags];
+
+comment "Remove existing items";
+removeAllWeapons _unit;
+removeAllItems _unit;
+removeAllAssignedItems _unit;
+removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
+removeHeadgear _unit;
+removeGoggles _unit;
 
 comment "Add containers";
 _unit forceAddUniform "LOP_U_US_Fatigue_06";

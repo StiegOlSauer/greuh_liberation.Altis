@@ -16,7 +16,7 @@ if (combat_readiness < 65) then {
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_morphine";
-	for "_i" from 1 to 3 do {_unit addItemToUniform "RH_20Rnd_32cal_vz61";};
+	for "_i" from 1 to 3 do {_unit addItemToUniform "rhsusf_mag_7x45acp_MHP";};
 	for "_i" from 1 to 2 do {_unit addItemToUniform "SmokeShell";};
 	_unit addVest "LOP_V_6Sh92_Radio_OLV";
 	for "_i" from 1 to 7 do {_unit addItemToVest "rhsusf_20Rnd_762x51_m118_special_Mag";};
@@ -28,7 +28,7 @@ if (combat_readiness < 65) then {
 	comment "Add weapons";
 	_unit addWeapon "hlc_rifle_M14";
 	_unit addPrimaryWeaponItem "hlc_optic_LRT_m14";
-	_unit addWeapon "RH_vz61";
+	_unit addWeapon "rhsusf_weap_m1911a1";
 	_unit addWeapon "Binocular";
 
 	comment "Add items";

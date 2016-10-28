@@ -17,7 +17,7 @@ if (combat_readiness < 65) then {
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "rhs_mag_rgd5";
 	_unit addItemToUniform "SmokeShell";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "RH_8Rnd_9x18_Mak";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "rhs_mag_9x18_8_57N181S";};
 	_unit addVest "V_TacVest_camo";
 	for "_i" from 1 to 15 do {_unit addItemToVest "ACE_morphine";};
 	for "_i" from 1 to 4 do {_unit addItemToVest "ACE_epinephrine";};
@@ -33,7 +33,7 @@ if (combat_readiness < 65) then {
 
 	comment "Add weapons";
 	_unit addWeapon "RH_M16a1";
-	_unit addWeapon "RH_mak";
+	_unit addWeapon "rhs_weap_makarov_pm";
 
 	comment "Add items";
 	_unit linkItem "ItemMap";
