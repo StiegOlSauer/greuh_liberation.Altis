@@ -23,6 +23,16 @@ class CfgNotifications
 		color[] = {1,1,0,1};
 		sound = "taskCanceled";
     };
+	
+	class lib_sector_terror : lib_default_notification
+    {
+        title = $STR_NOTIFICATION_SECTORTERROR_TITLE;
+		description = $STR_NOTIFICATION_SECTORTERROR_TEXT;
+        iconPicture = "res\notif\ui_notif_sec_una.paa";
+		color[] = {1,1,0,1};
+		sound = "taskCanceled";
+    };
+	
 	class lib_sector_lost : lib_default_notification
     {
         title = $STR_NOTIFICATION_SECTORLOST_TITLE;
@@ -128,4 +138,18 @@ class CfgNotifications
 		color[] = {1,1,0,1};
 		sound = "taskCanceled";
     };
+	class lib_intel_sar : lib_intel
+    {
+    	description = $STR_NOTIFICATION_SAR_STARTED;
+    };
+    class lib_intel_sar_failed : lib_secondary_fob_destroyed
+    {
+    	description = $STR_NOTIFICATION_SAR_FAILED;
+    	color[] = {1,0,0,1};
+		sound = "taskFailed";
+    };
+    class lib_intel_sar_succeeded : lib_secondary_fob_destroyed
+    {
+    	description = $STR_NOTIFICATION_SAR_SUCCESS;
+	};
 };

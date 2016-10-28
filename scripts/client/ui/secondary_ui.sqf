@@ -8,17 +8,26 @@ waitUntil { dialog };
 
 lbAdd [ 101, localize "STR_SECONDARY_MISSION0" ];
 lbAdd [ 101, localize "STR_SECONDARY_MISSION1" ];
+lbAdd [ 101, localize "STR_SECONDARY_MISSION2" ];
+lbAdd [ 101, localize "STR_SECONDARY_MISSION3" ];
+lbAdd [ 101, localize "STR_SECONDARY_MISSION4" ];
 
 private [ "_oldchoice", "_images", "_briefings", "_missioncost" ];
 
 _images = [
 	"res\secondary\fob_hunting.paa",
-	"res\secondary\convoy_hijack.paa"
+	"res\secondary\convoy_hijack.paa",
+	"res\secondary\convoy_hijack.paa",
+	"res\secondary\convoy_hijack.paa",
+	"res\secondary\sar.jpg"
 ];
 
 _briefings = [
 	"STR_SECONDARY_BRIEFING0",
-	"STR_SECONDARY_BRIEFING1"
+	"STR_SECONDARY_BRIEFING1",
+	"STR_SECONDARY_BRIEFING1",
+	"STR_SECONDARY_BRIEFING1",
+	"STR_SECONDARY_BRIEFING4"
 ];
 
 _oldchoice = -1;

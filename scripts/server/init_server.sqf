@@ -10,8 +10,6 @@ patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\patrol_ai.
 prisonner_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\prisonner_ai.sqf";
 troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\ai\troup_transport.sqf";
 fnc_searchBuilding = compileFinal preprocessFileLineNumbers "scripts\server\ai\fn_SearchBuilding.sqf";
-uav_open_build_menu = compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_open_build_menu.sqf";
-uav_do_build = compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_do_build.sqf";
 
 // Battlegroup
 spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_air.sqf";
@@ -32,8 +30,9 @@ recalculate_caps = compileFinal preprocessFileLineNumbers "scripts\server\resour
 fob_hunting = compileFinal preprocessFileLineNumbers "scripts\server\secondary\fob_hunting.sqf";
 convoy_hijack = compileFinal preprocessFileLineNumbers "scripts\server\secondary\convoy_hijack.sqf";
 veh_hunt = compileFinal preprocessFileLineNumbers "scripts\server\secondary\veh_hunt.sqf";
-terror_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\terror.sqf";
+//terror_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\terror.sqf";
 planecrash_mission = compileFinal preprocessFileLineNumbers "scripts\server\secondary\planecrash.sqf";
+search_and_rescue = compileFinal preprocessFileLineNumbers "scripts\server\secondary\search_and_rescue.sqf";
 
 //Convoy helpers
 convoy_setFormation = compileFinal preprocessFileLineNumbers "scripts\server\ai\ConvoyMaxspeed.sqf";
@@ -57,6 +56,9 @@ ied_manager = compileFinal preprocessFileLineNumbers "scripts\server\sector\ied_
 manage_ammoboxes = compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_ammoboxes.sqf";
 manage_one_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_one_sector.sqf";
 wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\wait_to_spawn_sector.sqf";
+
+//client part of loadouts
+
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\base\startgame.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\base\huron_manager.sqf";

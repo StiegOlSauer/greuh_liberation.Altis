@@ -16,6 +16,7 @@ _unit enableAI "ANIM";
 _unit enableAI "MOVE";
 sleep 2;
 [ [ _unit ], "remote_call_switchmove" ] call bis_fnc_mp;
+if ( typeof _unit == pilot_classname ) exitWith {};
 
 waitUntil { sleep 5;
 
