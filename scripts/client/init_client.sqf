@@ -13,13 +13,13 @@ if ( typeOf player == "VirtualSpectator_F" ) exitWith {
 };
 
 GRLIB_chosenFOB = "";
+GRLIB_client_JIP = true;
 ["Preload"] call BIS_fnc_arsenal;
 respawn_lhd = compileFinal preprocessFileLineNumbers "scripts\client\spawn\respawn_lhd.sqf";
 spawn_camera = compileFinal preprocessFileLineNumbers "scripts\client\spawn\spawn_camera.sqf";
 cinematic_camera = compileFinal preprocessFileLineNumbers "scripts\client\ui\cinematic_camera.sqf";
 write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\write_credit_line.sqf";
 do_load_box = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\do_load_box.sqf";
-
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\action_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\intel_manager.sqf";
@@ -57,6 +57,9 @@ if ((typeOf player) == commander_classname) then {
 
 if ( typeof player == commander_classname ) then {
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\delete_groups.sqf";
+	blufor_curator addEventHandler ["CuratorObjectSelectionChanged",{[_this select 1] spawn uav_open_build_menu}];
+	//blufor_curator addEventHandler ["CuratorObjectPlaced",{[_this select 1] spawn remote_call_zeusGearSelect}];F_curatorBluforLoadout
+	blufor_curator addEventHandler ["CuratorObjectPlaced",{[_this select 1] spawn F_curatorBluforLoadout}];
 };
 
 player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];

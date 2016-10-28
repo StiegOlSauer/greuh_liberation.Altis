@@ -4,11 +4,11 @@ class liberation_zeus_build {
 	controlsBackground[] = {};
 
 	controls[] = {"OuterBG", "RecycleBG", "OuterBG_F", "InnerBG", "InnerBG_F", "Header",
-	"ButtonClose","BuildInfantryButton","BuildTransportVehicleButton",
+	"ButtonClose","BuildTransportVehicleButton",
 	"BuildCombatVehicleButton","BuildAerialButton","BuildDefenceButton",
-	"BuildSupportButton","BuildSquadButton","BuildBuildingButton","BuildInfantryImage",
+	"BuildSupportButton","BuildBuildingButton",
 	"BuildTransportVehicleImage","BuildCombatVehicleImage","BuildAerialImage","ManpowerImageShadow","AmmoImageShadow","FuelImageShadow",
-	"BuildDefenceImage","BuildSupportImage","BuildSquadImage","BuildBuildingImage","ListBG","ManpowerImage","AmmoImage","FuelImage",
+	"BuildDefenceImage","BuildSupportImage","BuildBuildingImage","ListBG","ManpowerImage","AmmoImage","FuelImage",
 	"BuildList","BuildButton","LabelManpower","LabelAmmo","LabelFuel","LabelCap","BuildMannedButton","PageLabel", "LinkedSector"
 
 	};

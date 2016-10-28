@@ -37,13 +37,31 @@ while { true } do {
 
 	//removed fatigue settings because ACE
 	
-	if (((typeOf player) == opfor_commander_classname) || ((typeOf player) == commander_classname)) then {
-		player setPos [0,0,0];
-		private _fob = selectRandom GRLIB_all_fobs;
-		player setPos [_fob select 0, _fob select 1, (_fob select 2)+25];
-		openCuratorInterface;
-		0 = [true, false] call BIS_fnc_forceCuratorInterface;
-		player setPos [0,0,0];
+	if ((((typeOf player) == opfor_commander_classname) || ((typeOf player) == commander_classname)) && (alive player)) then {
+		if ((typeOf player) == commander_classname) then {
+			player setPos [0,0,0];
+			[] remoteExec ["assign_curator_remotecall",0];
+			sleep 2;
+			[] remoteExec ["assign_curator_remotecall",0];
+			sleep 1;			
+			private _fob = selectRandom GRLIB_all_fobs;
+			player setPos [_fob select 0, _fob select 1, (_fob select 2)+25];
+			openCuratorInterface;
+			0 = [true, false] call BIS_fnc_forceCuratorInterface;
+			player setPos [0,0,0];
+		};
+		if ((typeOf player) == opfor_commander_classname) then {
+			[] remoteExec ["assign_curator_opfor_remotecall",0];
+			sleep 1;
+			[] remoteExec ["assign_curator_opfor_remotecall",0];
+			sleep 1;
+			player setPos [0,0,0];
+			private _viewPoint = selectRandom sectors_capture;
+			player setPos [_viewPoint select 0, _viewPoint select 1, (_viewPoint select 2)+25];
+			openCuratorInterface;
+			0 = [true, false] call BIS_fnc_forceCuratorInterface;
+			player setPos [0,0,0];
+		};
 	} else {
 	
 		_dialog = createDialog "liberation_deploy";

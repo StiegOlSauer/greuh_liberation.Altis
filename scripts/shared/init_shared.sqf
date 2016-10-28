@@ -10,6 +10,8 @@ sector_liberated_remote_call = compileFinal preprocessFileLineNumbers "scripts\s
 intel_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\intel_remote_call.sqf";
 start_secondary_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\start_secondary_remote_call.sqf";
 recalculate_unitcap_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\recalculate_unitcap_remote_call.sqf";
+assign_curator_remotecall = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\assign_curator_remotecall.sqf";
+assign_curator_opfor_remotecall = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\assign_curator_opfor_remotecall.sqf";
 //terror_remote_call = compileFinal preprocessFileLineNumbers "scripts\server\remotecall\terror_remote_call.sqf";
 
 remote_call_sector = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_sector.sqf";
@@ -21,8 +23,27 @@ remote_call_switchmove = compileFinal preprocessFileLineNumbers "scripts\client\
 remote_call_ammo_bounty = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_ammo_bounty.sqf";
 remote_call_intel = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_intel.sqf";
 remote_call_incoming = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_incoming.sqf";
+remote_call_addEscapeActions = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_addEscapeActions.sqf";
+//remote_handleZeusJip = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_handleZeusJip.sqf";
 //remote_call_terror = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_terror.sqf";
 
-[] spawn compileFinal preprocessFileLineNumbers "scripts\shared\scan_skill.sqf";
+F_curatorBluforLoadout = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_curatorBluforLoadout.sqf";
+uav_open_build_menu = compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_open_build_menu.sqf";
+uav_do_build = compileFinal preprocessFileLineNumbers "scripts\server\zeus_build\uav_do_build.sqf";
+
+//we need them here to fire from client on unit spawn
+blufor_GL_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_gl.sqf";
+blufor_AT_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_at.sqf";
+blufor_AA_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_aa.sqf";
+blufor_AR_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_ar.sqf";
+blufor_MG_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_mg.sqf";
+blufor_mark_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_mark.sqf";
+blufor_sniper_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_sniper.sqf";
+blufor_crew_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_crew.sqf";
+blufor_spec_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_spec.sqf";
+blufor_rfl_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_rfl.sqf";
+blufor_light_loadout = compile preprocessFileLineNumbers "scripts\loadouts\blufor\loadout_light.sqf";
+
+//[] spawn compileFinal preprocessFileLineNumbers "scripts\shared\scan_skill.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\shared\diagnostics.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\shared\manage_weather.sqf";

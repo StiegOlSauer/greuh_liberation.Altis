@@ -23,10 +23,21 @@ private ["_vehicleClassnames", "_ieds", "_zeusunits", "_units_to_remove", "_bluf
 _vehicleClassnames = [];
 _ieds = ["IEDLandBig_F","IEDLandSmall_F","IEDUrbanBig_F","IEDUrbanSmall_F"];
 
-waituntil {sleep 0.3; alive blufor_curator};
+waituntil {sleep 0.5; alive blufor_curator};
+//waituntil {sleep 0.5; !isNull commandant};
 
-blufor_curator addEventHandler ["CuratorObjectPlaced",{[_this select 1] remoteExec ["F_curatorBluforLoadout",2]}];
-blufor_curator addEventHandler ["CuratorObjectSelectionChanged",{[_this select 1] spawn uav_open_build_menu}];
+//blufor_curator addEventHandler ["CuratorObjectPlaced",{GRLIB_curatorUnitSpawned = _this select 1;publicVariable "GRLIB_curatorUnitSpawned";}];
+//blufor_curator addEventHandler ["CuratorObjectSelectionChanged",{GRLIB_curatorMenu = _this select 1;publicVariable "GRLIB_curatorMenu";}];
+
+//[-1, {player globalChat _this}, "TEST"] call CBA_fnc_globalExecute;
+//blufor_curator addEventHandler ["CuratorObjectPlaced",{diag_log "loadout EH fired on server";[0,{diag_log "loadout EH fired";[_this] spawn F_curatorBluforLoadout}, _this select 1] call CBA_fnc_globalExecute;}];
+//blufor_curator addEventHandler ["CuratorObjectSelectionChanged",{diag_log "menu EH fired on server";[0,{diag_log "menu EH fired";[_this] spawn uav_open_build_menu}, _this select 1] call CBA_fnc_globalExecute;}];
+
+//blufor_curator addEventHandler ["CuratorObjectPlaced",{[_this select 1] remoteExec ["F_curatorBluforLoadout",0]}];
+//blufor_curator addEventHandler ["CuratorObjectPlaced",{[_this select 1] spawn remote_call_zeusGearSelect}];
+//blufor_curator addEventHandler ["CuratorObjectPlaced",{[_this select 1] spawn F_curatorBluforLoadout}];
+//blufor_curator addEventHandler ["CuratorObjectSelectionChanged",{[_this select 1] spawn uav_open_build_menu}];
+//blufor_curator addEventHandler ["CuratorObjectSelectionChanged",{[_this select 1] remoteExec ["uav_open_build_menu",0]}];
 
 sleep 1;
 
@@ -131,5 +142,5 @@ while {true} do {
 	_previousAmountOfAreas = _i;
 	
 	blufor_curator  setCuratorCoef ["edit", 0];
-	sleep 20;
+	sleep 10;
 };
