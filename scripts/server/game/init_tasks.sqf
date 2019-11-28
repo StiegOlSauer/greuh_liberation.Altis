@@ -55,7 +55,7 @@ if ( count GRLIB_all_fobs > 0 ) then {
 	_i = 0;
 	{
 		_current = {_x == (GRLIB_tasksAssigned select _i)} count _taskPopularityArray;
-		if (_current > _max) then {
+		if (_current >= _max) then {
 			_topTask = (GRLIB_tasksAssigned select _i);
 			_max = _current;
 		};

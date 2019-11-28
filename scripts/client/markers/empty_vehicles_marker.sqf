@@ -7,6 +7,7 @@ _vehtomark = [];
 
 _support_to_skip = [
 	ammobox_o_typename,
+	ammocrate_o_typename,
 	"B_Slingload_01_Repair_F",
 	"B_Slingload_01_Fuel_F",
 	"B_Slingload_01_Ammo_F"

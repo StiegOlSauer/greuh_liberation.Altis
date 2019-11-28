@@ -23,7 +23,7 @@ diag_log format ["task %1 SPAWNED AS ROADBLOCK",_taskMarker];
 
 while {(({ alive _x } count _defendersAlive ) > 0) || ((_phaseOnePrepare) && !(_phaseOneDone))} do {
 
-	sleep 2;
+	sleep 10;
 	//mission is assigned - spawn it
 	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_phaseOneSpawned)) then {
 		diag_log format ["ROADBLOCK task %1 ENTERED BRANCH SPAWN",_taskMarker];
@@ -136,7 +136,7 @@ if ((({ alive _x } count _defendersAlive ) == 0) && (([_taskMarker] call BIS_fnc
 //Beginning of phase two
 while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_phaseTwoPrepare))} do {	
 	
-	sleep 10;
+	sleep 300 + (random 60);
 	//mission is assigned - spawn it
 	if ((([_taskMarker] call BIS_fnc_taskState) == "ASSIGNED") && !(_phaseTwoSpawned)) then {
 		diag_log format ["ROADBLOCK task %1 calculated TODs: %2",_taskMarker,GRLIB_tasksTOD];
@@ -175,6 +175,7 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		diag_log format ["ROADBLOCK task %1 formed convoy group: %2",_taskMarker, (units _convoyGroup)];
 		
 		["AddCargoByClass", [ammocrate_o_typename, _ammoConvoy, 2]] call ace_common_fnc_localEvent;
+		//20:35:09 [ACE] (common) WARNING: ace_common_fnc_localEvent is deprecated. Support will be dropped in version 3.8.0. Replaced by: CBA_fnc_localEvent File: z\ace\addons\common\functions\fnc_localEvent.sqf Line: 12
 		
 		_convoyGroup setFormation "FILE";
 		_convoyGroup setBehaviour "SAFE";
@@ -190,8 +191,6 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		diag_log format ["ROADBLOCK task %1: 2 waypoints generated: %2",_taskMarker, _wpArray];
 		_wpArray append [([(getMarkerPos _taskMarker), (_wpArray select 1), 1000, false] call F_tasks_followRoad)];
 		diag_log format ["ROADBLOCK task %1: 3 waypoints generated: %2",_taskMarker, _wpArray];
-		
-		diag_log format ["ROADBLOCK task %1 generated waypoints: %2",_taskMarker, _wpArray];
 		
 		private _troopsGroup = createGroup EAST;
 		{ _x createUnit [getMarkerPos _convoyStartMarker, _troopsGroup,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach ([] call F_getAdaptiveSquadComp);
@@ -238,7 +237,7 @@ while {(({ alive _x } count _convoyDefenders ) > 2) || ((_phaseOneDone) && (_pha
 		_phaseTwoSpawned = true;
 		_phaseTwoPrepare = false;
 		0 = [_taskMarker, getMarkerPos _convoyStartMarker] call BIS_fnc_taskSetDestination;
-		0 = [_taskMarker, ["destroy roadblock", "Roadblock cleared, not it is time to take care about convoy", "Capture and ambush"]] call BIS_fnc_taskSetDescription
+		0 = [_taskMarker, ["destroy roadblock", "Roadblock cleared, not it is time to take care about convoy", "Capture and ambush"]] call BIS_fnc_taskSetDescription;
 		0 = [_taskMarker, "ASSIGNED",true] spawn BIS_fnc_taskSetState;
 	};
 	

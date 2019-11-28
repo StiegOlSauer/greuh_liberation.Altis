@@ -3,12 +3,17 @@ if (!isServer) exitWith {};
 params ["_startingPoint", "_targetPoint", "_targetDistance", "_direction"];
 private ["_currentDistance", "_road", "_roadObjects", "_roadSegment1", "_roadSegment2", "_distance1", "_distance2", "_debug"];
 
+diag_log "FOLLOWROAD invocated";
+
 _currentDistance = _startingPoint distance _targetPoint;
 
-_roadObjects = _startingPoint nearRoads 50;
+_roadObjects = _startingPoint nearRoads 20;
+diag_log format ["FOLLOWROAD found roads: %1",_roadObjects];
 _road = selectRandom _roadObjects;
+diag_log format ["FOLLOWROAD has chosen random road: %1",_road];
 
 if (!(_direction)) then {
+	diag_log format ["FOLLOWROAD travels from target"];
 	while {_currentDistance < _targetDistance} do {
 
 		_roadSegment1 = (roadsConnectedTo _road) select 0;
@@ -22,10 +27,12 @@ if (!(_direction)) then {
 		} else {
 			_road = _roadSegment2;
 		};
-		_currentDistance = (getPos _road) distance _targetPoint;
+		diag_log format ["FOLLOWROAD travels from target, iteration pass, chosen road: %1", (getPos _road)];
+		_currentDistance = (getPos _road) distance _targetPoint;		
 	};
 } else {
-			while {_currentDistance > _targetDistance} do {
+	diag_log format ["FOLLOWROAD travels to target"];
+	while {_currentDistance > _targetDistance} do {
 
 		_roadSegment1 = (roadsConnectedTo _road) select 0;
 		_roadSegment2 = (roadsConnectedTo _road) select 1;
@@ -38,7 +45,8 @@ if (!(_direction)) then {
 		} else {
 			_road = _roadSegment2;
 		};
-		_currentDistance = (getPos _road) distance _targetPoint;
+		diag_log format ["FOLLOWROAD travels to target, iteration pass, chosen road: %1", (getPos _road)];
+		_currentDistance = (getPos _road) distance _targetPoint;		
 	};
 };
 //_debug = createMarker [format ["markername_%1", (floor (random 500))],(getPos _road)];

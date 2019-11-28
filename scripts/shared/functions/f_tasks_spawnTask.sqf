@@ -33,21 +33,17 @@ diag_log format ["SPAWN TASK: calculated task ID _counter: %1", _counter];
 _arrayOfCompatTasksAndMarkers = +(GRLIB_markerToTask select _counter); 			// ["task_c_capture_67",	[0,"task_c_capture_67"], [1,"task_c_capture_67","task_c_capture_67_r1"]]
 0 = _arrayOfCompatTasksAndMarkers deleteAt 0;
 
-diag_log format ["SPAWN TASK: _arrayOfCompatTasksAndMarkers: %1", _arrayOfCompatTasksAndMarkers];
 //then go deeper
 _taskTypeArray = selectRandom _arrayOfCompatTasksAndMarkers;					// [1,"task_c_capture_67", "task_c_capture_67_r1"]
 diag_log format ["SPAWN TASK: _taskTypeArray: %1", _taskTypeArray];
 _taskType = _taskTypeArray deleteAt 0;											// 1
 diag_log format ["SPAWN TASK: _taskType: %1", _taskType];
 
-//store all task markers. Task logic should handle them on its own, we just pass array.
-//_taskMarkersArray = _arrayOfCompatTasksAndMarkers deleteAt 0;					// "task_c_capture_67", "task_c_capture_67_r1"
-
 _taskObject = GRLIB_taskDescriptions select _taskType;
 _taskDescription = _taskObject select 1;
 _taskTitle = _taskObject select 2;
 
-[west,[_taskMarker],[_taskDescription,_taskTitle,_taskMarker],getMarkerPos _taskCity,"CREATED",1,false,"attack",true] call BIS_fnc_taskCreate;
+[WEST,_taskMarker,[_taskDescription,_taskTitle,_taskMarker],getMarkerPos _taskCity,"CREATED",1,false,"attack",false] call BIS_fnc_taskCreate;
 //0          1                              2                                  3         4     5   6       7     8
 
 //now we need to start a task, I think. Via spawn. Ensure that spawned task knows its name - it will need to delete itself on completion
@@ -55,4 +51,9 @@ switch _taskType do {
 	case 0: {[_taskMarker] spawn task_banditCamp};
 	case 1: {[_taskTypeArray] spawn task_roadblock};
 	case 2: {[_taskTypeArray] spawn task_commarray};
+	case 3: {[_taskTypeArray] spawn task_demolitions};
+	case 4: {[_taskTypeArray] spawn task_wheels};
+	case 5: {[_taskTypeArray] spawn task_roadblock_small};
+	case 6: {[_taskTypeArray] spawn task_foodorder};
+	case 7: {[_taskTypeArray] spawn task_escape};
 };

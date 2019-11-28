@@ -60,4 +60,4 @@ F_tasks_getNearestMarkers = compileFinal preprocessFileLineNumbers "scripts\shar
 F_tasks_spawnTask = compileFinal preprocessFileLineNumbers "scripts\shared\functions\f_tasks_spawnTask.sqf";
 F_tasks_replaceTask = compileFinal preprocessFileLineNumbers "scripts\shared\functions\f_tasks_replaceTask.sqf";
 F_tasks_followRoad = compileFinal preprocessFileLineNumbers "scripts\shared\functions\f_tasks_followRoad.sqf";
-F_curatorBluforLoadout = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_curatorBluforLoadout.sqf";
+F_getAdaptiveMilVehicle = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getAdaptiveMilVehicle.sqf";

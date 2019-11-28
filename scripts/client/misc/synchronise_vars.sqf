@@ -16,6 +16,7 @@ while { true } do {
 	unitcap = sync_vars select 5;
 	combat_readiness = sync_vars select 6;
 	resources_intel = sync_vars select 7;
+	unitcap_respawns_limit = sync_vars select 8;
 	sync_vars = [];
 	one_synchro_done = true;
 	synchro_done = true;

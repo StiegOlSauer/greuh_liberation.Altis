@@ -52,5 +52,6 @@ while { true } do {
 		};	
 	dobuild = 0;
 	blufor_curator addCuratorEditableObjects [[_vehicle],true];
+//	[_vehicle, true] remoteExec ["blufor_curator addCuratorEditableObjects",2];
 	manned = false;
 };

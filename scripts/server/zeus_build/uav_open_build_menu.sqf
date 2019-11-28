@@ -9,8 +9,6 @@ diag_log "FOBMENU entered cycle";
 player setPos (getPos curatorCamera);
 player setDir (getDir curatorCamera);
 player setVectorUp (vectorUp curatorCamera);
-player setPos _curCameraPos;
- _curCameraDir;
 
 0 = [false, false] call BIS_fnc_forceCuratorInterface;
 findDisplay 312 closeDisplay 2;

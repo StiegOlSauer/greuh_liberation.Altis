@@ -18,4 +18,19 @@ if ( _mission_index == 1 ) then {
 	[] call convoy_hijack;
 };
 
+if ( _mission_index == 2 ) then {
+	resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
+	[] call veh_hunt;
+};
+
+if ( _mission_index == 3 ) then {
+	resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
+	[] call planecrash_mission;
+};
+
+if ( _mission_index == 4 ) then {
+	resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
+	[] call search_and_rescue;
+};
+
 GRLIB_secondary_starting = false; publicVariable "GRLIB_secondary_starting";

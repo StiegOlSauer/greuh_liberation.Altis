@@ -246,6 +246,8 @@ while { true } do {
 					//["ACE_Track", _vehicle] call ace_cargo_fnc_addCargoItem;
 					["AddCargoByClass", ["ACE_Track", _vehicle, 5]] call ace_common_fnc_localEvent;
 					["AddCargoByClass", ["ACE_Wheel", _vehicle, 5]] call ace_common_fnc_localEvent;
+//					["AddCargoByClass", ["ACE_Track", _vehicle, 5]] call CBA_fnc_localEvent;
+//					["AddCargoByClass", ["ACE_Track", _vehicle, 5]] call CBA_fnc_localEvent;
 				};
 				if ( buildtype == 6 || buildtype == 99 ) then {
 					_vehicle setVectorUp [0,0,1];
